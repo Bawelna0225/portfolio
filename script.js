@@ -438,7 +438,11 @@ const emailIsValid = (emailInput) =>{
     let pattern = /\S+@\S+\.\S+/;
     return pattern.test(emailInput)
 }
+
+
 //////////////////////////////////////////// Toggle Social Icons //////////////////////////////
+
+
 let toggleSocialIconsBtn = document.getElementById('toggle-social')
 const socialIcons = document.querySelector('.social')
 let deg = -90
