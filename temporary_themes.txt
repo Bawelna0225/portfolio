@@ -1,0 +1,384 @@
+
+//Theme Switcher
+//https://mxb.dev/blog/color-theme-switcher/
+
+
+
+
+
+/*                                     TODO:                                       */
+
+
+//1. Create JSON file with data of themes
+//2. Transform the colors in the JSON data into custom properties to use in CSS.
+//3. Switch Theme after click on button
+
+
+
+
+
+// To Read
+//https://itnext.io/building-consistency-with-css-custom-properties-json-157578d633d3
+//https://robkendal.co.uk/blog/using-css-custom-properties-to-apply-themes-in-javascript-or-react
+//
+
+
+
+//https://stackoverflow.com/questions/46416177/return-json-array-if-matches-input
+
+
+
+
+
+
+
+
+
+
+  // window.onclick = (event) =>{
+  //   if (event.target == dropDown) {
+  //     dropDown.classList.remove('show');
+  //   }
+  //   if (!event.target.matches('#dropbtn')) {
+  //     let dropdowns = document.getElementsByClassName("dropdown-content");
+  //     for (let i = 0; i < dropdowns.length; i++) {
+  //       let openDropdown = dropdowns[i];
+  //       if (openDropdown.classList.contains('show')) {
+  //         openDropdown.classList.remove('show');
+  //       }
+  //     }
+  //   }
+  // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="Logo.png" type="image/gif" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script  src="./script.js"></script>
+    <script type="module" src="./themes.js"></script>
+    <title>Portfolio Demo</title>
+</head>
+<body>
+    <div class="navbar" id="navbar">
+        <div class="logo">
+            <!-- <img src="Logo.png" style="width: 100px;"> -->
+            <svg width="214" height="94" viewBox="0 0 214 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.99" fill-rule="evenodd" clip-rule="evenodd" d="M135.69 86.6235C134.898 89.5559 136.633 92.5754 139.565 93.3678C142.498 94.1601 145.517 92.4253 146.31 89.4929L168.482 7.43569C169.274 4.50329 167.54 1.48378 164.607 0.691417C161.675 -0.100942 158.655 1.6339 157.863 4.56631L135.69 86.6235ZM1.851 44.0732C2.09195 43.8275 2.35031 43.6092 2.62217 43.4183L29.6881 16.3524C31.836 14.2045 35.3184 14.2045 37.4663 16.3524C39.6142 18.5003 39.6142 21.9827 37.4663 24.1305L13.653 47.9438L37.4736 71.3042C39.6424 73.431 39.6763 76.9132 37.5495 79.082C35.4227 81.2507 31.9404 81.2847 29.7717 79.1578L1.92686 51.851C-0.241867 49.7241 -0.275833 46.2419 1.851 44.0732ZM176.111 78.4662C173.963 76.3184 173.963 72.836 176.111 70.6881L200.33 46.4688L176.826 22.1927C174.713 20.0104 174.769 16.5284 176.951 14.4155C179.134 12.3026 182.616 12.3588 184.729 14.5411L211.857 42.56C213.646 44.408 213.88 47.1881 212.584 49.2795C212.319 49.8628 211.946 50.4092 211.466 50.8891L183.889 78.4662C181.741 80.6141 178.259 80.6141 176.111 78.4662ZM52.452 56.4894H44.388V35.9694H38.232V61.2414H52.452V56.4894ZM60.7883 59.8374C62.7803 60.9414 64.9643 61.4934 67.3403 61.4934C69.7163 61.4934 71.8883 60.9414 73.8563 59.8374C75.8243 58.7334 77.3843 57.1974 78.5363 55.2294C79.6883 53.2374 80.2643 51.0054 80.2643 48.5334C80.2643 46.0614 79.6883 43.8414 78.5363 41.8734C77.4083 39.9053 75.8483 38.3694 73.8563 37.2654C71.8883 36.1614 69.7163 35.6094 67.3403 35.6094C64.9643 35.6094 62.7803 36.1614 60.7883 37.2654C58.8203 38.3694 57.2483 39.9053 56.0723 41.8734C54.9203 43.8414 54.3443 46.0614 54.3443 48.5334C54.3443 51.0054 54.9203 53.2374 56.0723 55.2294C57.2483 57.1974 58.8203 58.7334 60.7883 59.8374ZM72.1643 53.8614C70.9643 55.2054 69.3563 55.8774 67.3403 55.8774C65.3003 55.8774 63.6683 55.2174 62.4443 53.8974C61.2443 52.5534 60.6443 50.7654 60.6443 48.5334C60.6443 46.2774 61.2443 44.4893 62.4443 43.1693C63.6683 41.8493 65.3003 41.1894 67.3403 41.1894C69.3563 41.1894 70.9643 41.8614 72.1643 43.2053C73.3883 44.5254 74.0003 46.3014 74.0003 48.5334C74.0003 50.7414 73.3883 52.5174 72.1643 53.8614ZM98.4851 42.0533C99.3491 42.4854 100.009 43.1213 100.465 43.9613H107.269C106.597 41.3694 105.217 39.3414 103.129 37.8773C101.065 36.4133 98.5211 35.6814 95.4971 35.6814C93.0011 35.6814 90.7811 36.2334 88.8371 37.3373C86.8931 38.4174 85.3691 39.9414 84.2651 41.9094C83.1851 43.8534 82.6451 46.0734 82.6451 48.5694C82.6451 51.0654 83.1851 53.2854 84.2651 55.2294C85.3691 57.1734 86.8931 58.6974 88.8371 59.8014C90.8051 60.8814 93.0371 61.4214 95.5331 61.4214C97.6451 61.4214 99.5411 61.0134 101.221 60.1974C102.901 59.3814 104.281 58.3134 105.361 56.9934C106.465 55.6734 107.245 54.2453 107.701 52.7094V46.9854H94.3091V51.5214H102.121C101.641 52.9614 100.873 54.0654 99.8171 54.8334C98.7851 55.6014 97.5131 55.9854 96.0011 55.9854C93.7931 55.9854 92.0531 55.3374 90.7811 54.0414C89.5331 52.7214 88.9091 50.8974 88.9091 48.5694C88.9091 46.3854 89.5091 44.6454 90.7091 43.3493C91.9091 42.0294 93.5051 41.3694 95.4971 41.3694C96.6491 41.3694 97.6451 41.5974 98.4851 42.0533ZM116.511 59.8374C118.503 60.9414 120.687 61.4934 123.063 61.4934C125.439 61.4934 127.611 60.9414 129.579 59.8374C131.547 58.7334 133.107 57.1974 134.259 55.2294C135.411 53.2374 135.987 51.0054 135.987 48.5334C135.987 46.0614 135.411 43.8414 134.259 41.8734C133.131 39.9053 131.571 38.3694 129.579 37.2654C127.611 36.1614 125.439 35.6094 123.063 35.6094C120.687 35.6094 118.503 36.1614 116.511 37.2654C114.543 38.3694 112.971 39.9053 111.795 41.8734C110.643 43.8414 110.067 46.0614 110.067 48.5334C110.067 51.0054 110.643 53.2374 111.795 55.2294C112.971 57.1974 114.543 58.7334 116.511 59.8374ZM127.887 53.8614C126.687 55.2054 125.079 55.8774 123.063 55.8774C121.023 55.8774 119.391 55.2174 118.167 53.8974C116.967 52.5534 116.367 50.7654 116.367 48.5334C116.367 46.2774 116.967 44.4893 118.167 43.1693C119.391 41.8493 121.023 41.1894 123.063 41.1894C125.079 41.1894 126.687 41.8614 127.887 43.2053C129.111 44.5254 129.723 46.3014 129.723 48.5334C129.723 50.7414 129.111 52.5174 127.887 53.8614Z" fill="url(#paint0_linear_2_17)"/>
+                <defs>
+                <linearGradient id="paint0_linear_2_17" x1="44.5" y1="1.001" x2="94.1308" y2="100.437" gradientUnits="userSpaceOnUse">
+                <stop id="stop1" stop-color="#C23232"/>
+                <stop id="stop2" offset="0.848958" stop-color="#292931"/>
+                </linearGradient>
+                </defs>
+                </svg>
+        </div>
+        <div class="wrapper-menu" id="toggle-menu" onclick="toggleSideMenu()">
+            <div class="line-menu half start"></div>
+            <div class="line-menu"></div>
+            <div class="line-menu half end"></div>
+        </div>
+        <div class="nav-items">
+                <div class="nav-item"><a href="#home"><div class="text">Home</div><div class="icon">
+                    <svg enable-background="new 0 0 48 48" version="1.1" viewBox="0 0 48 48" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Expanded"><g><g><path d="M42,48H28V35h-8v13H6V27c0-0.552,0.447-1,1-1s1,0.448,1,1v19h10V33h12v13h10V28c0-0.552,0.447-1,1-1s1,0.448,1,1V48z"/></g><g><path d="M47,27c-0.249,0-0.497-0.092-0.691-0.277L24,5.384L1.691,26.723c-0.399,0.381-1.032,0.368-1.414-0.031     c-0.382-0.399-0.367-1.032,0.031-1.414L24,2.616l23.691,22.661c0.398,0.382,0.413,1.015,0.031,1.414     C47.526,26.896,47.264,27,47,27z"/></g><g><path d="M39,15c-0.553,0-1-0.448-1-1V8h-6c-0.553,0-1-0.448-1-1s0.447-1,1-1h8v8C40,14.552,39.553,15,39,15z"/></g></g></g></svg>
+                </div></a></div>
+                <div class="nav-item"><a href="#about"><div class="text">About Me</div><div class="icon">
+                    <svg viewBox="0 0 81 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40.5 0C29.8164 0 19.77 4.16105 12.2164 11.7164C4.66105 19.27 0.5 29.3164 0.5 40C0.5 50.6836 4.66105 60.73 12.2164 68.2836C19.77 75.8389 29.8164 80 40.5 80C51.1836 80 61.23 75.8389 68.7836 68.2836C76.3389 60.73 80.5 50.6836 80.5 40C80.5 29.3164 76.3389 19.27 68.7836 11.7164C61.23 4.16105 51.1836 0 40.5 0ZM40.5 74.3982C21.5328 74.3982 6.10175 58.9672 6.10175 40C6.10175 21.0328 21.5328 5.60175 40.5 5.60175C59.4672 5.60175 74.8982 21.0328 74.8982 40C74.8982 58.9672 59.4672 74.3982 40.5 74.3982Z" fill="#333333"/>
+                        <path d="M52.2969 18.505C49.2387 15.4468 45.1915 13.705 40.9009 13.6053C36.3617 13.4985 32.0746 15.1842 28.8309 18.3527C25.5853 21.523 23.798 25.7663 23.798 30.3002C23.798 31.8477 25.0514 33.1011 26.5989 33.1011C28.1464 33.1011 29.3998 31.8477 29.3998 30.3002C29.3998 27.2858 30.5884 24.4656 32.7451 22.3597C34.9 20.2538 37.7499 19.1352 40.7696 19.2053C46.6024 19.3418 51.4584 24.1996 51.5967 30.0324C51.693 34.1637 49.5136 37.9816 45.9074 39.9983C40.8449 42.8289 37.6991 48.1208 37.6991 53.8258C37.6991 55.3733 38.9525 56.6197 40.5 56.6197C42.0475 56.6197 43.3009 55.3576 43.3009 53.8118C43.3009 50.1497 45.3473 46.7309 48.64 44.8893C54.0632 41.8573 57.342 36.1138 57.195 29.9028C57.0952 25.6105 55.3552 21.5632 52.2969 18.505Z" fill="#333333"/>
+                        <path d="M43.2466 63.0512C43.2273 62.9619 43.2046 62.8727 43.1783 62.7851C43.152 62.6976 43.1205 62.6118 43.0855 62.5278C43.0505 62.4438 43.012 62.3597 42.97 62.2792C42.9262 62.1987 42.879 62.1199 42.8282 62.0446C42.7774 61.9676 42.7232 61.8941 42.6654 61.8223C42.6076 61.7523 42.5446 61.6823 42.4798 61.6175C42.4151 61.5545 42.3468 61.4915 42.2768 61.4337C42.205 61.3759 42.1315 61.3199 42.0545 61.2709C41.9792 61.2201 41.9004 61.1729 41.8199 61.1291C41.7394 61.0871 41.6553 61.0468 41.5713 61.0118C41.4873 60.9786 41.3998 60.9471 41.314 60.9208C41.2264 60.8928 41.1372 60.87 41.0479 60.8525C40.9569 60.835 40.8658 60.821 40.7748 60.8123C40.5928 60.793 40.4072 60.793 40.2251 60.8123C40.1341 60.821 40.0431 60.835 39.952 60.8525C39.8628 60.87 39.7735 60.8928 39.686 60.9208C39.6002 60.9471 39.5127 60.9786 39.4286 61.0118C39.3446 61.0468 39.2606 61.0871 39.1801 61.1291C39.0995 61.1729 39.0208 61.2201 38.9455 61.2709C38.8685 61.3199 38.7949 61.3759 38.7232 61.4337C38.6531 61.4915 38.5849 61.5545 38.5201 61.6175C38.4553 61.6823 38.3923 61.7523 38.3345 61.8223C38.2768 61.8941 38.2225 61.9676 38.1717 62.0446C38.121 62.1199 38.0737 62.1987 38.0299 62.2792C37.9879 62.3597 37.9477 62.4438 37.9144 62.5278C37.8794 62.6118 37.8479 62.6976 37.8216 62.7851C37.7936 62.8727 37.7726 62.9619 37.7534 63.0512C37.7359 63.1405 37.7219 63.2333 37.7131 63.3225C37.7043 63.4153 37.6991 63.5063 37.6991 63.5991C37.6991 63.6902 37.7043 63.7829 37.7131 63.874C37.7219 63.965 37.7359 64.056 37.7534 64.1453C37.7726 64.2346 37.7936 64.3239 37.8216 64.4114C37.8479 64.4989 37.8794 64.5864 37.9144 64.6705C37.9477 64.7545 37.9879 64.8385 38.0299 64.9173C38.0737 64.9996 38.121 65.0783 38.1717 65.1536C38.2225 65.2306 38.2768 65.3042 38.3345 65.3742C38.3923 65.446 38.4553 65.5142 38.5201 65.579C38.5849 65.6438 38.6531 65.7068 38.7232 65.7646C38.7949 65.8223 38.8685 65.8766 38.9455 65.9274C39.0208 65.9781 39.0995 66.0254 39.1801 66.0674C39.2606 66.1112 39.3446 66.1497 39.4286 66.1847C39.5127 66.2197 39.6002 66.2512 39.686 66.2775C39.7735 66.3037 39.8628 66.3265 39.952 66.3457C40.0431 66.3632 40.1341 66.3772 40.2251 66.386C40.3162 66.3948 40.4089 66.4 40.5 66.4C40.591 66.4 40.6838 66.3948 40.7748 66.386C40.8658 66.3772 40.9569 66.3632 41.0479 66.3457C41.1372 66.3265 41.2264 66.3037 41.314 66.2775C41.3998 66.2512 41.4873 66.2197 41.5713 66.1847C41.6553 66.1497 41.7394 66.1112 41.8181 66.0674C41.8987 66.0254 41.9792 65.9781 42.0545 65.9274C42.1315 65.8766 42.205 65.8223 42.275 65.7646C42.3468 65.7068 42.4151 65.6438 42.4798 65.579C42.5446 65.5142 42.6076 65.446 42.6654 65.3742C42.7232 65.3042 42.7774 65.2306 42.8282 65.1536C42.879 65.0783 42.9262 64.9996 42.97 64.9173C43.012 64.8385 43.0505 64.7545 43.0855 64.6705C43.1205 64.5864 43.152 64.4989 43.1783 64.4114C43.2046 64.3239 43.2273 64.2346 43.2466 64.1453C43.2641 64.056 43.2781 63.965 43.2868 63.874C43.2956 63.7829 43.3008 63.6902 43.3008 63.5991C43.3008 63.5063 43.2956 63.4153 43.2868 63.3225C43.2781 63.2333 43.2641 63.1405 43.2466 63.0512Z" fill="#333333"/>
+                        </svg>
+                </div></a></div>
+                <div class="nav-item"><a href="#skills"><div class="text">My Skills</div><div class="icon">
+                    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M45.9219 70.3125H36.4891C35.9101 70.3126 35.3516 70.0985 34.9212 69.7113C34.4907 69.3241 34.2188 68.7914 34.1578 68.2156L33.4594 61.6391C32.4844 61.3072 31.5318 60.9127 30.6078 60.4578L25.4687 64.6141C25.019 64.9763 24.4513 65.1598 23.8746 65.1292C23.2978 65.0986 22.7527 64.8562 22.3437 64.4484L15.6734 57.7781C15.2657 57.3692 15.0232 56.824 14.9927 56.2473C14.9621 55.6706 15.1455 55.1029 15.5078 54.6531L19.6656 49.5078C19.21 48.5839 18.8149 47.6314 18.4828 46.6563L11.8953 45.9531C11.3198 45.8922 10.7873 45.6205 10.4001 45.1904C10.013 44.7603 9.79868 44.2021 9.79843 43.6234V34.1891C9.79868 33.6104 10.013 33.0523 10.4001 32.6221C10.7873 32.192 11.3198 31.9203 11.8953 31.8594L18.4719 31.1609C18.8039 30.1858 19.199 29.2333 19.6547 28.3094L15.4969 23.1641C15.1346 22.7143 14.9512 22.1466 14.9817 21.5699C15.0123 20.9932 15.2547 20.448 15.6625 20.0391L22.3328 13.3688C22.7418 12.961 23.2869 12.7186 23.8636 12.688C24.4403 12.6574 25.008 12.8409 25.4578 13.2031L30.6031 17.3594C31.5272 16.9045 32.4797 16.5099 33.4547 16.1781L34.1531 9.60157C34.2131 9.02419 34.4852 8.48961 34.9168 8.10136C35.3483 7.71312 35.9086 7.49883 36.4891 7.5H45.9219C46.5008 7.49987 47.0593 7.71402 47.4898 8.10119C47.9202 8.48836 48.1921 9.02115 48.2531 9.59688L48.95 16.1734C49.9255 16.5053 50.8785 16.8998 51.8031 17.3547L56.9469 13.1984C57.3966 12.8362 57.9643 12.6527 58.5411 12.6833C59.1178 12.7139 59.6629 12.9563 60.0719 13.3641L66.7422 20.0344C67.15 20.4433 67.3924 20.9885 67.4229 21.5652C67.4535 22.1419 67.2701 22.7096 66.9078 23.1594L62.75 28.3047C63.205 29.2289 63.6001 30.1814 63.9328 31.1563L70.5094 31.8547C71.0846 31.916 71.6167 32.1879 72.0036 32.6179C72.3904 33.048 72.6045 33.6059 72.6047 34.1844V43.6188C72.6058 44.197 72.3931 44.7553 72.0074 45.1862C71.6218 45.6171 71.0905 45.8903 70.5156 45.9531L63.9391 46.6516C63.6063 47.6265 63.2112 48.5789 62.7562 49.5031L66.9141 54.6484C67.2763 55.0982 67.4598 55.6659 67.4292 56.2426C67.3986 56.8193 67.1562 57.3645 66.7484 57.7734L60.0781 64.4484C59.6692 64.8562 59.124 65.0986 58.5473 65.1292C57.9706 65.1598 57.4029 64.9763 56.9531 64.6141L51.8094 60.4578C50.8848 60.9127 49.9318 61.3073 48.9562 61.6391L48.2594 68.2156C48.1983 68.7924 47.9255 69.3261 47.4937 69.7134C47.0619 70.1007 46.5019 70.3142 45.9219 70.3125V70.3125ZM38.5937 65.625H43.8109L44.45 59.6C44.5001 59.1284 44.6922 58.6831 45.0007 58.323C45.3093 57.9628 45.7198 57.7047 46.1781 57.5828C47.829 57.1426 49.4138 56.4842 50.8906 55.625C51.3018 55.3854 51.7762 55.2767 52.2507 55.3132C52.7251 55.3498 53.1773 55.5299 53.5469 55.8297L58.2594 59.6375L61.9484 55.9484L58.1344 51.25C57.8346 50.8804 57.6545 50.4283 57.6179 49.9538C57.5814 49.4793 57.6901 49.0049 57.9297 48.5938C58.7871 47.1179 59.4434 45.5341 59.8812 43.8844C60.0033 43.4258 60.2616 43.0151 60.622 42.7066C60.9825 42.398 61.4281 42.2061 61.9 42.1563L67.9234 41.5156V36.2984L61.9 35.6578C61.4281 35.608 60.9825 35.4161 60.622 35.1075C60.2616 34.7989 60.0033 34.3882 59.8812 33.9297C59.4435 32.2794 58.7872 30.6951 57.9297 29.2188C57.6901 28.8076 57.5814 28.3332 57.6179 27.8587C57.6545 27.3842 57.8346 26.9321 58.1344 26.5625L61.9422 21.85L58.2531 18.1609L53.5406 21.9688C53.171 22.2685 52.7189 22.4486 52.2444 22.4852C51.7699 22.5218 51.2956 22.413 50.8844 22.1734C49.4082 21.3167 47.8245 20.6604 46.175 20.2219C45.7167 20.1 45.3061 19.8419 44.9976 19.4817C44.689 19.1216 44.497 18.6763 44.4469 18.2047L43.8141 12.1875H38.5937L37.9547 18.2125C37.9044 18.6843 37.7122 19.1297 37.4033 19.4899C37.0945 19.8501 36.6836 20.1081 36.225 20.2297C34.5767 20.6702 32.9945 21.3286 31.5203 22.1875C31.1091 22.4271 30.6348 22.5358 30.1603 22.4993C29.6858 22.4627 29.2337 22.2826 28.8641 21.9828L24.1562 18.1688L20.4687 21.8578L24.2781 26.5703C24.5776 26.9401 24.7575 27.3923 24.7938 27.8668C24.8301 28.3413 24.721 28.8155 24.4812 29.2266C23.6252 30.7031 22.9689 32.2867 22.5297 33.9359C22.4078 34.3943 22.1497 34.8048 21.7895 35.1134C21.4294 35.4219 20.9841 35.6139 20.5125 35.6641L14.4875 36.3047V41.5203L20.5125 42.1609C20.9841 42.2111 21.4294 42.4031 21.7895 42.7117C22.1497 43.0202 22.4078 43.4308 22.5297 43.8891C22.9688 45.5366 23.6245 47.1186 24.4797 48.5938C24.7195 49.0048 24.8285 49.4791 24.7922 49.9535C24.7559 50.428 24.5761 50.8802 24.2766 51.25L20.4687 55.9547L24.1578 59.6438L28.8719 55.8359C29.2415 55.5362 29.6936 55.3561 30.1681 55.3195C30.6426 55.2829 31.1169 55.3917 31.5281 55.6313C33.0036 56.4882 34.5869 57.1445 36.2359 57.5828C36.6945 57.7045 37.1054 57.9624 37.4143 58.3226C37.7231 58.6828 37.9154 59.1282 37.9656 59.6L38.5937 65.625Z" fill="black"/>
+                        <path d="M41.2047 53.1812C38.3814 53.1809 35.6217 52.3434 33.2743 50.7747C30.927 49.206 29.0976 46.9764 28.0174 44.368C26.9372 41.7595 26.6548 38.8893 27.2057 36.1204C27.7567 33.3514 29.1164 30.808 31.1129 28.8117C33.1093 26.8155 35.6529 25.4561 38.4219 24.9054C41.1909 24.3547 44.0611 24.6375 46.6694 25.718C49.2777 26.7985 51.5071 28.6282 53.0756 30.9756C54.6441 33.3231 55.4812 36.083 55.4812 38.9062C55.4771 42.6912 53.9716 46.3199 51.2951 48.9962C48.6186 51.6724 44.9897 53.1775 41.2047 53.1812V53.1812ZM41.2047 29.3187C39.3085 29.319 37.455 29.8816 35.8786 30.9353C34.3021 31.989 33.0735 33.4864 32.3481 35.2383C31.6227 36.9902 31.4331 38.9179 31.8032 40.7776C32.1733 42.6373 33.0865 44.3455 34.4274 45.6862C35.7683 47.0268 37.4766 47.9398 39.3364 48.3096C41.1961 48.6794 43.1238 48.4895 44.8756 47.7638C46.6274 47.0381 48.1247 45.8092 49.1781 44.2326C50.2315 42.656 50.7937 40.8024 50.7937 38.9062C50.7909 36.3641 49.7796 33.9269 47.9819 32.1295C46.1842 30.3321 43.7468 29.3212 41.2047 29.3187V29.3187Z" fill="black"/>
+                        </svg>
+                </div></a></div>
+                <div class="nav-item"><a href="#work"><div class="text">My Work</div><div class="icon">
+                    <svg viewBox="0 0 66 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M65.44 26.9H29.86V32.38H65.44V26.9Z" fill="black"/>
+                        <path d="M7.96 38.98L0.539999 31.56L4.42 27.7L7.96 31.24L16.98 22.22L20.84 26.1L7.96 38.98Z" fill="black"/>
+                        <path d="M65.44 5H29.86V10.48H65.44V5Z" fill="black"/>
+                        <path d="M7.96 17.08L0.539999 9.66L4.42 5.8L7.96 9.34L16.98 0.32L20.84 4.2L7.96 17.08Z" fill="black"/>
+                        <path d="M65.44 48.8H29.86V54.28H65.44V48.8Z" fill="black"/>
+                        <path d="M7.96 60.88L0.539999 53.48L4.42 49.6L7.96 53.14L16.98 44.12L20.84 48L7.96 60.88Z" fill="black"/>
+                        </svg>
+                </div></a></div>
+                <div class="nav-item"><a href="#contact"><div class="text">Contact Me</div><div class="icon">
+                    <svg viewBox="0 0 88 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M87.09 55.224C87.137 55.079 87.169 54.926 87.169 54.765V1.63798C87.169 1.47598 87.137 1.32198 87.089 1.17598C87.082 1.15598 87.078 1.13598 87.07 1.11598C87.006 0.944976 86.912 0.790977 86.794 0.655977C86.786 0.646977 86.785 0.635978 86.777 0.626978C86.772 0.621978 86.766 0.619977 86.761 0.614977C86.635 0.480977 86.486 0.372977 86.319 0.291977C86.306 0.285977 86.296 0.277976 86.283 0.271976C86.125 0.200976 85.953 0.160977 85.772 0.148977C85.754 0.147977 85.737 0.143976 85.719 0.143976C85.702 0.142976 85.687 0.138977 85.67 0.138977H2.46499C2.44799 0.138977 2.43199 0.142976 2.41499 0.143976C2.39899 0.144976 2.38299 0.147977 2.36699 0.148977C2.18399 0.160977 2.00899 0.201977 1.84899 0.273977C1.83899 0.277977 1.83099 0.284977 1.82099 0.288977C1.65099 0.369977 1.49999 0.479976 1.37299 0.615976C1.36799 0.620976 1.36199 0.621978 1.35699 0.626978C1.34899 0.634978 1.34799 0.645978 1.33999 0.654978C1.22199 0.789978 1.12699 0.944976 1.06299 1.11598C1.05499 1.13598 1.05099 1.15598 1.04399 1.17698C0.995989 1.32298 0.963989 1.47698 0.963989 1.63898V54.767C0.963989 54.931 0.996989 55.087 1.04599 55.235C1.05299 55.255 1.05699 55.274 1.06399 55.294C1.12899 55.466 1.22499 55.621 1.34399 55.756C1.35099 55.764 1.35299 55.774 1.35999 55.782C1.36599 55.789 1.37399 55.793 1.38099 55.8C1.42999 55.851 1.48399 55.896 1.53999 55.94C1.56499 55.959 1.58699 55.982 1.61299 56C1.67899 56.046 1.74999 56.083 1.82299 56.117C1.84099 56.125 1.85699 56.138 1.87499 56.145C2.05599 56.222 2.25499 56.266 2.46399 56.266H85.668C85.877 56.266 86.076 56.223 86.257 56.145C86.285 56.133 86.311 56.115 86.338 56.101C86.4 56.07 86.462 56.038 86.519 55.999C86.549 55.978 86.576 55.951 86.605 55.928C86.656 55.887 86.706 55.846 86.75 55.799C86.758 55.791 86.767 55.785 86.775 55.777C86.783 55.768 86.785 55.756 86.793 55.747C86.91 55.613 87.004 55.459 87.068 55.289C87.078 55.267 87.083 55.246 87.09 55.224ZM3.96499 5.03998L29.212 28.101L3.96499 51.346V5.03998ZM55.711 26.971C55.607 27.039 55.497 27.096 55.41 27.192C55.377 27.228 55.366 27.275 55.337 27.313L44.067 37.607L6.33099 3.13798H81.803L55.711 26.971ZM31.436 30.132L43.055 40.745C43.342 41.007 43.704 41.138 44.067 41.138C44.43 41.138 44.792 41.007 45.078 40.745L56.553 30.264L81.796 53.266H6.30899L31.436 30.132ZM58.778 28.232L84.169 5.03998V51.37L58.778 28.232Z"/>
+                        </svg>
+                </div></a></div>
+                <!-- <a href="#"> -->
+                <div class="nav-item last" id="dropbtn" onclick="dropdown()">
+                    <!-- Theme -->
+                    
+                    <svg width="325" height="325" viewBox="0 0 325 325" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M307.6 129.885C296.147 118.438 283.817 113.107 268.795 113.107C262.606 113.107 256.739 113.965 251.066 114.795C245.972 115.54 241.161 116.244 236.613 116.245C228.343 116.245 222.416 113.848 216.793 108.228C206.686 98.127 208.248 87.47 210.224 73.978C212.581 57.882 215.515 37.851 195.123 17.47C183.578 5.93199 167.848 0.0809937 148.372 0.0809937C111.076 0.0809937 70.005 21.627 48.71 42.91C17.398 74.205 0.100008 115.758 8.42183e-06 159.917C-0.0999916 204.085 17.018 245.573 48.199 276.737C79.276 307.798 120.651 324.905 164.703 324.908C164.708 324.908 164.71 324.908 164.716 324.908C209.031 324.908 250.736 307.619 282.144 276.227C299.38 259.001 314.286 231.998 321.044 205.756C329.291 173.738 324.517 146.793 307.6 129.885ZM309.424 202.764C303.264 226.679 289.227 252.184 273.661 267.74C244.516 296.869 205.828 312.91 164.715 312.909C164.713 312.909 164.706 312.909 164.704 312.909C123.855 312.906 85.493 297.046 56.681 268.25C27.777 239.36 11.908 200.896 12 159.944C12.092 118.982 28.142 80.432 57.191 51.399C76.262 32.338 114.699 12.082 148.371 12.082C164.551 12.082 177.427 16.751 186.64 25.959C202.767 42.077 200.621 56.728 198.35 72.239C196.283 86.355 193.94 102.354 208.31 116.717C216.181 124.583 225.174 128.246 236.614 128.245C242.035 128.244 247.509 127.443 252.803 126.669C258.051 125.901 263.479 125.107 268.795 125.107C276.733 125.107 287.352 126.615 299.117 138.374C317.724 156.971 313.562 186.699 309.424 202.764Z" fill="black"/>
+                        <path d="M142.002 43.531C140.893 43.531 139.769 43.596 138.66 43.723C122.801 45.547 111.33 59.922 113.089 75.765C114.702 90.396 127.019 101.43 141.736 101.43C142.841 101.43 143.962 101.365 145.068 101.239C160.919 99.416 172.394 85.048 170.649 69.208C169.032 54.57 156.716 43.531 142.002 43.531ZM143.7 89.317C143.048 89.392 142.387 89.43 141.737 89.43C133.147 89.43 125.959 82.989 125.016 74.445C123.984 65.149 130.72 56.716 140.032 55.645C140.687 55.57 141.349 55.531 142.003 55.531C150.59 55.531 157.778 61.977 158.723 70.524C159.747 79.816 153.006 88.247 143.7 89.317Z" fill="black"/>
+                        <path d="M102.997 113.64C101.277 106.128 96.736 99.742 90.213 95.656C85.616 92.775 80.324 91.252 74.909 91.252C64.858 91.252 55.655 96.331 50.291 104.839C46.151 111.405 44.819 119.179 46.541 126.727C48.256 134.247 52.802 140.647 59.34 144.745C63.936 147.625 69.228 149.147 74.643 149.147C84.694 149.147 93.898 144.069 99.267 135.554C103.401 128.975 104.726 121.193 102.997 113.64ZM89.111 129.16C85.958 134.161 80.548 137.146 74.642 137.146C71.484 137.146 68.396 136.257 65.712 134.576C61.895 132.183 59.241 128.448 58.24 124.058C57.232 119.641 58.013 115.088 60.44 111.239C63.593 106.238 69.002 103.252 74.908 103.252C78.066 103.252 81.154 104.142 83.841 105.825C87.647 108.209 90.295 111.935 91.299 116.318C92.312 120.743 91.534 125.306 89.111 129.16Z" fill="black"/>
+                        <path d="M70.131 173.25C66.856 173.25 63.615 173.807 60.501 174.904C45.446 180.205 37.451 196.753 42.68 211.796C46.712 223.375 57.664 231.154 69.934 231.154C73.21 231.154 76.451 230.598 79.571 229.502C94.636 224.201 102.624 207.648 97.377 192.606C93.346 181.029 82.397 173.25 70.131 173.25ZM75.589 218.182C73.753 218.828 71.851 219.155 69.934 219.155C62.766 219.155 56.368 214.612 54.013 207.853C50.95 199.039 55.649 189.335 64.489 186.223C66.319 185.578 68.218 185.25 70.132 185.25C77.297 185.25 83.692 189.792 86.046 196.554C89.12 205.37 84.429 215.072 75.589 218.182Z" fill="black"/>
+                        <path d="M140.817 229.415C137.746 228.349 134.551 227.809 131.321 227.809C119.014 227.809 107.993 235.613 103.89 247.238C101.324 254.555 101.759 262.423 105.119 269.389C108.468 276.332 114.323 281.552 121.605 284.085C124.68 285.156 127.879 285.699 131.115 285.699C143.415 285.699 154.429 277.888 158.524 266.26C161.098 258.95 160.667 251.085 157.308 244.115C153.958 237.165 148.103 231.945 140.817 229.415ZM147.206 262.275C144.799 269.109 138.333 273.7 131.115 273.7C129.227 273.7 127.356 273.382 125.552 272.753C121.299 271.273 117.882 268.229 115.929 264.178C113.964 260.104 113.71 255.498 115.211 251.221C117.619 244.396 124.094 239.81 131.321 239.81C133.209 239.81 135.08 240.127 136.882 240.752C141.13 242.227 144.545 245.272 146.498 249.325C148.46 253.399 148.711 257.998 147.206 262.275Z" fill="black"/>
+                        <path d="M212.332 213.811C206.866 213.811 201.522 215.361 196.884 218.29C183.359 226.811 179.232 244.717 187.691 258.217C193.006 266.662 202.154 271.705 212.16 271.705C217.618 271.705 222.956 270.16 227.594 267.241C241.135 258.734 245.257 240.822 236.784 227.315C231.486 218.86 222.345 213.811 212.332 213.811ZM221.205 257.082C218.48 258.797 215.352 259.704 212.16 259.704C206.303 259.704 200.953 256.758 197.853 251.834C192.906 243.938 195.34 233.444 203.286 228.439C206.01 226.719 209.138 225.81 212.333 225.81C218.187 225.81 223.525 228.754 226.616 233.688C231.577 241.597 229.151 252.09 221.205 257.082Z" fill="black"/>
+                        <path d="M255.384 141.998C254.324 141.881 253.25 141.822 252.19 141.822C237.418 141.822 225.016 152.89 223.344 167.569C222.468 175.267 224.641 182.835 229.462 188.88C234.274 194.91 241.148 198.701 248.831 199.556C249.884 199.67 250.951 199.729 252.006 199.729C266.76 199.729 279.17 188.662 280.875 173.981C281.761 166.293 279.598 158.734 274.784 152.693C269.97 146.651 263.082 142.853 255.384 141.998ZM268.955 172.602C267.954 181.226 260.668 187.729 252.007 187.729C251.386 187.729 250.756 187.695 250.147 187.628C245.667 187.13 241.653 184.916 238.844 181.397C236.025 177.863 234.755 173.434 235.269 168.927C236.249 160.316 243.524 153.823 252.191 153.823C252.814 153.823 253.447 153.858 254.066 153.927C258.564 154.426 262.589 156.644 265.4 160.171C268.209 163.697 269.472 168.114 268.955 172.602Z" fill="black"/>
+                        </svg>
+                    
+                </div>
+            <!-- </a> -->
+                
+
+            </div>
+        </div>
+        <div class="dropdown-content" id="dropdown">
+            <p>Chose Your <span>Theme</span></p>
+            <div class="dropdown-items">
+                <div class="dropdown-item" onclick="setTheme('dark-blue')">
+                    <div class="theme-descr">
+                        Theme: <br> Blue-dark
+                    </div>
+                </div>
+                <div class="dropdown-item" onclick="setTheme('light-blue')">
+                    <div class="theme-descr">
+                        Theme: <br> Blue-light
+                    </div>
+                </div>
+                <div class="dropdown-item" onclick="setTheme('dark-red')">
+                    <div class="theme-descr">
+                        Theme: <br> Red-dark
+                    </div>
+                </div>
+                <div class="dropdown-item" onclick="setTheme('light-red')">
+                    <div class="theme-descr">
+                        Theme: <br> Red-light
+                    </div>
+                </div>
+                <div class="dropdown-item" onclick="setTheme('dark-yellow')">
+                    <div class="theme-descr">
+                        Theme: <br> Yellow-dark
+                    </div>
+                </div>
+                <div class="dropdown-item" onclick="setTheme('light-yellow')">
+                    <div class="theme-descr">
+                        Theme: <br> Yellow-light
+                    </div>
+                </div>
+                <div class="dropdown-item" onclick="setTheme('dark-green')">
+                    <div class="theme-descr">
+                        Theme: <br> Green-dark
+                    </div>
+                </div>
+                <div class="dropdown-item" onclick="setTheme('light-green')">
+                    <div class="theme-descr">
+                        Theme: <br> Green-light
+                    </div>
+                </div>
+                <div class="dropdown-item" onclick="setTheme('dark-purple')">
+                    <div class="theme-descr">
+                        Theme: <br> Purple-dark
+                    </div>
+                </div>
+                <div class="dropdown-item" onclick="setTheme('light-purple')">
+                    <div class="theme-descr">
+                        Theme: <br> Purple-light
+                    </div>
+                </div>
+                <div class="dropdown-item" onclick="setTheme('dark-orange')">
+                    <div class="theme-descr">
+                        Theme: <br> Orange-dark
+                    </div>
+                </div>
+                <div class="dropdown-item" onclick="setTheme('light-orange')">
+                    <div class="theme-descr">
+                        Theme: <br>Orange-light
+                    </div>
+                </div>
+                <hr><hr><hr><hr>
+                <hr><hr><hr><hr>
+                <hr><hr><hr><hr>
+            </div>
+    </div>
+    <div class="nav hide" id="side-nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Me</a></li>
+            <li><a href="#">My Skills</a></li>
+            <li><a href="#">My Work</a></li>
+            <li><a href="#">Contact Me</a></li>
+        </ul>
+    </div>
+    <div class="backToTop" id="myBtn" onclick="scrollToTop()">
+        <!-- TOP -->
+        <?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 330 330" style="enable-background:new 0 0 330 330;" xml:space="preserve">
+<path id="XMLID_224_" d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394
+	l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393
+	C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z"/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 330 330" style="enable-background:new 0 0 330 330;" xml:space="preserve">
+<path id="XMLID_224_" d="M325.606,229.393l-150.004-150C172.79,76.58,168.974,75,164.996,75c-3.979,0-7.794,1.581-10.607,4.394
+	l-149.996,150c-5.858,5.858-5.858,15.355,0,21.213c5.857,5.857,15.355,5.858,21.213,0l139.39-139.393l139.397,139.393
+	C307.322,253.536,311.161,255,315,255c3.839,0,7.678-1.464,10.607-4.394C331.464,244.748,331.464,235.251,325.606,229.393z"/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+    </div>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+</ul>
+
+<div class="page">
+    <div class="ehh">
+        <div class="slide" id="home">
+            <div class="center">
+                <h1 id="message"></h1>
+              </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique hic ipsum dolor amet corrupti tenetur, adipisci dolorum harum veritatis alias rem beatae magnam aliquid doloremque illo sed quasi velit. Aspernatur accusantium quibusdam cupiditate nihil quis, modi molestiae quidem dolores. Repudiandae dolores.</p>
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ab possimus voluptatum asperiores, illum mollitia qui esse expedita obcaecati aecati tempora aut. Quam vitae modi numquam exercitationem error magni est aliquid! Iste velit aliquam nemo odio non totam rem porro aspernatur praesentium minima ipsum, voluptatum commodi eius dolore.</p> 
+        </div>
+    </div>
+    <div class="ehh">
+        <div class="slide" id="#">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique hic ipsum dolor amet corrupti tenetur, adipisci dolorum harum veritatis alias rem beatae magnam aliquid doloremque illo sed quasi velit. Aspernatur accusantium quibusdam cupiditate nihil quis, modi molestiae quidem dolores. Repudiandae dolores, id obcaecati cum qui rerum expedita laudantium vitae nostrum tempora pariatur voluptatibus illum sequi corrupti dolorem quam ullam hic quasi similique sunt deserunt dolorum labore! Dicta laudantium quaerat perferendis dignissimos quis nostrum, sequi in et architecto rem dolore vero fugiat ipsa, distinctio dolor tenetur illo doloremque repudiandae libero inventore fugit quibusdam dolores. Accusamus hic et fugit recusandae, ratione temporibus.</p>
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit et autem molestiae nobis.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ab possimus voluptatum asperiores, illum mollitia qui esse expedita obcaecati aecati tempora aut. Quam vitae modi numquam exercitationem error magni est aliquid! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste velit aliquam nemo odio non totam rem porro aspernatur praesentium minima ipsum, voluptatum commodi eius doloreaecati tempora aut. Quam vitae modi numquam exercitationem error magni est aliquid! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste velit aliquam nemo odio non totam rem porro aspernatur praesentium minima ipsum, voluptatum commodi eius doloretempora aut. Quam vitae modi numquam exercitationem error magni est aliquid! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste velit aliquam nemo odio non totam rem porro aspernatur praesentium minima ipsum, voluptatum commodi eius dolore.</p> 
+        </div>
+    </div>
+    <div class="ehh">
+        <div class="slide" id="#">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique hic ipsum dolor amet corrupti tenetur, adipisci doero inventore fugit quibusdam dolores. Accusamus hic et fugit recusandae, ratione temporibus.</p>
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sestiae nobis.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ab possimus voluptatum asperiores, illum molliloretempora aut. Quam vitae modi numquam exercitationem error magni est aliquid! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste velit aliquam nemo odio non totam rem porro aspernatur praesentium minima ipsum, voluptatum commodi eius dolore.</p> 
+        </div>
+    </div>
+    <div class="ehh">
+        <div class="slide" id="#">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique hic ipsum dolor amet corrupti tenetur, adipisci doero inventore fugit quibusdam dolores. Accusamus hic et fugit recusandae, ratione temporibus.</p>
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sestiae nobis.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ab possimus voluptatum asperiores, illum molliloretempora aut. Quam vitae modi numquam exercitationem error magni est aliquid! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste velit aliquam nemo odio non totam rem porro aspernatur praesentium minima ipsum, voluptatum commodi eius dolore.</p> 
+        </div>
+    </div>
+    <div class="ehh">
+        <div class="slide" id="#">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique hic ipsum dolor amet corrupti tenetur, adipisci doero inventore fugit quibusdam dolores. Accusamus hic et fugit recusandae, ratione temporibus.</p>
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sestiae nobis.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ab possimus voluptatum asperiores, illum molliloretempora aut. Quam vitae modi numquam exercitationem error magni est aliquid! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste velit aliquam nemo odio non totam rem porro aspernatur praesentium minima ipsum, voluptatum commodi eius dolore.</p> 
+        </div>
+    </div>
+</div>
+
+    <!-- <div class="home" id="about">
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique hic ipsum dolor amet corrupti tenetur, adipisci dolorum harum veritatis alias rem beatae magnam aliquid doloremque illo sed quasi velit. Aspernatur accusantium quibusdam cupiditate nihil quis, modi molestiae quidem dolores. Repudiandae dolores, id obcaecati cum qui rerum expedita laudantium vitae nostrum tempora pariatur voluptatibus illum sequi corrupti dolorem quam ullam hic quasi similique sunt deserunt dolorum labore! Dicta laudantium quaerat perferendis dignissimos quis nostrum, sequi in et architecto rem dolore vero fugiat ipsa, distinctio dolor tenetur illo doloremque repudiandae libero inventore fugit quibusdam dolores. Accusamus hic et fugit recusandae, ratione temporibus.</p>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit et autem molestiae nobis.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ab possimus voluptatum asperiores, illum mollitia qui esse expedita obcaecati aecati tempora aut. Quam vitae modi numquam exercitationem error magni est aliquid! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste velit aliquam nemo odio non totam rem porro aspernatur praesentium minima ipsum, voluptatum commodi eius doloreaecati tempora aut. Quam vitae modi numquam exercitationem error magni est aliquid! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste velit aliquam nemo odio non totam rem porro aspernatur praesentium minima ipsum, voluptatum commodi eius doloretempora aut. Quam vitae modi numquam exercitationem error magni est aliquid! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste velit aliquam nemo odio non totam rem porro aspernatur praesentium minima ipsum, voluptatum commodi eius dolore.</p>
+       
+    </div>
+    <div class="home" id="skills">
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique hic ipsum dolor amet corrupti tenetur, adipisci dolorum harum veritatis alias rem beatae magnam aliquid doloremque illo sed quasi velit. Aspernatur accusantium quibusdam cupiditate nihil quis, modi molestiae quidem dolores. Repudiandae dolores, id obcaecati cum qui rerum expedita laudantium vitae nostrum tempora pariatur voluptatibus illum sequi corrupti dolorem quam ullam hic quasi similique sunt deserunt dolorum labore! Dicta laudantium quaerat perferendis dignissimos quis nostrum, sequi in et architecto rem dolore vero fugiat ipsa, distinctio dolor tenetur illo doloremque repudiandae libero inventore fugit quibusdam dolores. Accusamus hic et fugit recusandae, ratione temporibus.</p>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit et autem molestiae nobis.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ab possimus voluptatum asperiores, illum mollitia qui esse expedita obcaecati aecati tempora aut. Quam vitae modi numquam exercitationem error magni est aliquid! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste velit aliquam nemo odio non totam rem porro aspernatur praesentium minima ipsum, voluptatum commodi eius doloreaecati tempora aut. Quam vitae modi numquam exercitationem error magni est aliquid! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste velit aliquam nemo odio non totam rem porro aspernatur praesentium minima ipsum, voluptatum commodi eius doloretempora aut. Quam vitae modi numquam exercitationem error magni est aliquid! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste velit aliquam nemo odio non totam rem porro aspernatur praesentium minima ipsum, voluptatum commodi eius dolore.</p>
+       
+    </div>
+    <div class="home" id="contact">
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique hic ipsum dolor amet corrupti tenetur, adipisci dolorum harum veritatis alias rem beatae magnam aliquid doloremque illo sed quasi velit. Aspernatur accusantium quibusdam cupiditate nihil quis, modi molestiae quidem dolores. Repudiandae dolores, id obcaecati cum qui rerum expedita laudantium vitae nostrum tempora pariatur voluptatibus illum sequi corrupti dolorem quam ullam hic quasi similique sunt deserunt dolorum labore! Dicta laudantium quaerat perferendis dignissimos quis nostrum, sequi in et architecto rem dolore vero fugiat ipsa, distinctio dolor tenetur illo doloremque repudiandae libero inventore fugit quibusdam dolores. Accusamus hic et fugit recusandae, ratione temporibus.</p>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit et autem molestiae nobis.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ab possimus voluptatum asperiores, illum mollitia qui esse expedita obcaecati aecati tempora aut. Quam vitae modi numquam exercitationem error magni est aliquid! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste velit aliquam nemo odio non totam rem porro aspernatur praesentium minima ipsum, voluptatum commodi eius doloreaecati tempora aut. Quam vitae modi numquam exercitationem error magni est aliquid! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste velit aliquam nemo odio non totam rem porro aspernatur praesentium minima ipsum, voluptatum commodi eius doloretempora aut. Quam vitae modi numquam exercitationem error magni est aliquid! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste velit aliquam nemo odio non totam rem porro aspernatur praesentium minima ipsum, voluptatum commodi eius dolore.</p>
+       
+    </div> -->
+</body>
+</html>
