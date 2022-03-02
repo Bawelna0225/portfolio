@@ -70,7 +70,7 @@ const scrollToTop = () => {
 
 
 
-const message = ['Lorem ipsum dolor sit amet consectetur adipisicing elit.']
+const message = ['Hello, my name is Pawel, and this is my website.']
 let textPosition = 0
 const speed = 100
 
@@ -453,3 +453,30 @@ toggleSocialIconsBtn.onclick = () => {
   toggleSocialIconsBtn.style.transform = `rotate(${deg}deg)`
 }
 
+
+
+/////////////////////////////////////////////////////// Scroll To Sectopm
+let scrollLocation
+const scrollToSection = (section) =>{
+  switch (section) {
+    case home:
+      // scrollLocation = document.getElementById('home').scrollIntoView();
+      scrollToTop()
+      break;
+    case about:
+      scrollLocation = document.getElementById('about').scrollIntoView();
+    break;
+    case skills:
+      scrollLocation = document.getElementById('skills').scrollIntoView();
+    break;
+    case work:
+      scrollLocation = document.getElementById('work').scrollIntoView() - 200;
+    break;
+    case contact:
+      scrollLocation = document.getElementById('contact').scrollIntoView();
+    break;
+    default:
+      break;
+  }
+
+}
