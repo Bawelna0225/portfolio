@@ -26,12 +26,15 @@ body{
    background-color: var(--primary);
   //  overflow-x: hidden;
 }
-
+::selection {
+  color: var(--primary);
+  background: var(--accent-color);
+}
 .preload{
   // visibility: hidden;
   display: flex;
   opacity: 1;
-  transition: 300ms linear;
+  // transition: 300ms linear;
   justify-content: center;
   align-items: center;
   width: 100vw;
@@ -53,7 +56,8 @@ body{
     width: 26px;
     height: 26px;
     border-radius: 50%;
-    background-color: var(--text);
+    // background-color: var(--text);
+    background-color: var(--secondary);
     box-shadow: 0px 0px 10px var(--accent-color);
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
   }
@@ -74,19 +78,21 @@ body{
     animation: lds-ellipsis3 0.6s infinite;
   }
   .loading-text{
-    opacity: 0.6;
-    font-size: 18vw;
-    letter-spacing: 3vw;
+    opacity: 0.2;
+    font-weight: 700;
+    font-size: 22vw;
+    letter-spacing: 1vw;
     // left: 0.8vw;
     position: absolute;
     color: var(--text);
-    text-shadow: 0px 0px 40px var(--accent-color);
+    // text-shadow: 0px 0px 40px var(--accent-color);
   }
 }
 .preload-finished{
+  top: -30vh;
   opacity: 0;
   // visibility: hidden;
-  transition: 300ms linear;
+  transition: 500ms linear;
   // display: none;
   pointer-events: none;
  
@@ -826,8 +832,8 @@ body{
   }
 }
 .social-icons-container{
-  top: 50vh;
-  transform: translateY(-150%);
+  top: 50%;
+  transform: translateY(-50%);
   position: fixed;
   z-index: 20;
   width: min(70px, 12vw);
@@ -849,41 +855,48 @@ body{
   svg{
     fill: var(--text);
   }
+  &:hover{
+    svg{
+      fill: var(--accent-color);
+    }
+  }
 }
 .hidesocial{
   transform: translateX(-100%);
 }
 .social{
   position: fixed;
-  width: 100%;
+  // width: 100%;
   height: 100%;
+  padding-left: min(20px, 1vw);
   font-size: 30px;
   margin-top: 25px;
-  box-shadow: 2px 2px 8px 0 var(--shadow-color);
   transition: 0.2s linear;
   z-index: 10;
     li{
-      height: 15%;
+      padding: 1px;
       position: relative;
+      list-style-type: none;
       a{
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
         height: 100%;
-        // line-height: 60px;
-        // padding-left: 25%;
-      /* border-bottom: 1px solid rgba(0, 0, 0, .4);*/
+        border-radius: 50%;
         transition: all .4s linear;
-        border: 1px solid black;
-        background: var(--secondary);
+        border: 1px solid var(--secondary);
+        background: var(--navbar-color);
         color: var(--text);
+        box-shadow: 0px 0px 2px 0 var(--shadow-color);
         svg{
           fill: var(--text);
+          padding: 5px;
         }
         &:hover
         {
-            width: 90px;
+          border: 1px solid var(--accent-color);
+          box-shadow: 0px 0px 4px 0 var(--accent-color);
         }
     }
   }
