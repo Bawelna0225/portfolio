@@ -24,17 +24,14 @@
 body{
     height: 200vh;
    background-color: var(--primary);
-  //  overflow-x: hidden;
 }
 ::selection {
   color: var(--primary);
   background: var(--accent-color);
 }
 .preload{
-  // visibility: hidden;
   display: flex;
   opacity: 1;
-  // transition: 300ms linear;
   justify-content: center;
   align-items: center;
   width: 100vw;
@@ -56,7 +53,6 @@ body{
     width: 26px;
     height: 26px;
     border-radius: 50%;
-    // background-color: var(--text);
     background-color: var(--secondary);
     box-shadow: 0px 0px 10px var(--accent-color);
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
@@ -82,18 +78,14 @@ body{
     font-weight: 700;
     font-size: 22vw;
     letter-spacing: 1vw;
-    // left: 0.8vw;
     position: absolute;
     color: var(--text);
-    // text-shadow: 0px 0px 40px var(--accent-color);
   }
 }
 .preload-finished{
   top: -30vh;
   opacity: 0;
-  // visibility: hidden;
   transition: 500ms linear;
-  // display: none;
   pointer-events: none;
  
 }
@@ -723,6 +715,7 @@ body{
   align-items: center;
   form{
       margin: 0;
+      position: relative;
       max-width: 550px;
       width: 98%;
       background-color: var(--primary);
@@ -777,7 +770,82 @@ body{
           color: var(--accent-color);
         }
       }
-                  
+      .info{
+        height: 2ch;
+        width: 2ch;
+        background-color: var(--navbar-color);
+        border: 1px solid var(--text);
+        display: flex;
+        margin-top: 8px;
+        margin-left: 95%;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        &:hover{
+          cursor: pointer;
+        }
+      }
+      .info-modal{
+        display: none;
+        position: absolute;
+        word-wrap: break-word;
+        width: min(100%, 550px);
+        overflow: auto;
+        margin: 0 auto;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 8px;
+        z-index: 10;
+        height: 500px;
+        background-color: var(--primary);
+        box-shadow: 0px 0px 10px var(--shadow-color);
+        border: 1px solid var(--secondary);
+        &_header{
+          width: 100%;
+          height: 80px;
+          display: flex;
+          padding: 20px;
+          background-color: var(--secondary);
+          justify-content: space-between;
+          align-items: center;
+        }
+        &_content{
+          h3{
+            margin-top: 15px;
+            margin-left: 15px;
+          }
+          ul{
+            list-style: none;
+            margin-bottom: 15px;
+            li{
+              padding-left: 25px;
+              font-size: 0.9rem;
+              &::before{
+                content: "- ";
+              }
+            }
+          }
+        }
+        &_close-btn{
+          cursor: pointer;
+          width: 30px;
+          height: 30px;
+          transform: rotate(45deg);
+          .close-btn_line-one{
+            background-color: var(--text);
+            width: 30px;
+            height: 3px;
+            transform: translateY(6px);
+          }
+          .close-btn_line-two{
+            background-color: var(--text);
+            width: 30px;
+            transform: rotate(-90deg) translateX(-3px);
+            height: 3px;
+          }
+        }
+      }        
       .error-message{
           color: red;
       }
@@ -850,6 +918,7 @@ body{
   align-items: center;
   background-color: var(--navbar-color);
   transform: rotate(-90deg);
+  transition: transform 100ms linear;
   z-index: 20;
   cursor: pointer;
   svg{
@@ -1046,14 +1115,6 @@ body{
     align-items: center;
     .logo{
       display: none;
-      // position: absolute;
-      // width: 100%;
-      // // top: calc(-100vh + 60px);
-      // top: -80%;
-      // height: 50px;
-      // background-color: var(--navbar-color);
-      // padding-bottom: 80px;
-      // padding-left: 10px;
     }
 
     .nav-items{
@@ -1207,17 +1268,6 @@ body{
         text-decoration: none;
         font-size: 1.3rem;
         position: relative;
-        // &::before{
-        //   content: "";
-        //   position: absolute;
-        //   width: 80%;
-        //   left: -20px;
-        //   height: 2px;    
-        //   background-color: var(--accent-color);
-        //   transform: scaleX(0);
-        //   transform-origin: left;
-        //   transition: 200ms all ease-in-out;
-        // }
         &::before{
           content: "";
           position: absolute;

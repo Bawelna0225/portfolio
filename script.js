@@ -70,7 +70,7 @@ const scrollToTop = () => {
 
 
 
-const message = ['Hello, my name is Pawel, and this is my website.']
+const message = ['Hello, my name is Paweł, and this is my website.']
 let textPosition = 0
 const speed = 100
 
@@ -374,7 +374,16 @@ const messageInput = document.getElementById('message-input')
 const submit = document.getElementById('submit')
 const errorMessage = document.querySelectorAll('.error-message')
 const contactForm = document.querySelector('form')
+const moreInfo = document.querySelector('.info')
+const infoModal = document.querySelector('.info-modal')
+const infoModalCloseBtn = document.querySelector('.info-modal_close-btn')
 
+moreInfo.onclick = () => {
+  infoModal.style.display = 'block'
+}
+infoModalCloseBtn.onclick = () => {
+  infoModal.style.display = 'none'
+}
 const validateForm = () =>{
     let errorFlag = false
     if (nameInput.value.length < 1){
