@@ -463,6 +463,24 @@ toggleSocialIconsBtn.onclick = () => {
 }
 
 
+const mailSocialIconToggle = document.getElementById('mail-social-icon')
+const gmailInfoBox = document.querySelector('.gmail-info-box')
+const copyToClipboardBtn = document.querySelector('.copy-to-clipboard-btn')
+const snackbar = document.querySelector('.snackbar')
+
+mailSocialIconToggle.onclick = () => {
+  gmailInfoBox.classList.toggle('active')
+  
+}
+copyToClipboardBtn.onclick = () => {
+  snackbar.classList.add('active')
+  navigator.clipboard.writeText('pawelczarnecki0225@gmail.com');
+
+  setTimeout(() =>{
+    snackbar.classList.remove('active')
+  },3000); 
+}
+
 
 /////////////////////////////////////////////////////// Scroll To Sectopm
 let scrollLocation
