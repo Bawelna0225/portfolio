@@ -462,7 +462,7 @@ toggleSocialIconsBtn.onclick = () => {
   toggleSocialIconsBtn.style.transform = `rotate(${deg}deg)`
 }
 
-
+////////////////////////////////////////////// Gmail info box /////////////////////////////
 const mailSocialIconToggle = document.getElementById('mail-social-icon')
 const gmailInfoBox = document.querySelector('.gmail-info-box')
 const copyToClipboardBtn = document.querySelector('.copy-to-clipboard-btn')
@@ -475,10 +475,10 @@ mailSocialIconToggle.onclick = () => {
 copyToClipboardBtn.onclick = () => {
   snackbar.classList.add('active')
   navigator.clipboard.writeText('pawelczarnecki0225@gmail.com');
-
+  
   setTimeout(() =>{
     snackbar.classList.remove('active')
-  },3000); 
+  },2000); 
 }
 
 

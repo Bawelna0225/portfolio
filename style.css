@@ -924,13 +924,15 @@ body {
 .social li .social-icon-elem:hover {
   border: 1px solid var(--accent-color);
   box-shadow: 0px 0px 4px 0 var(--accent-color);
+  cursor: pointer;
 }
 .social li .social-icon-elem .gmail-info-box {
   position: absolute;
-  width: 150px;
+  width: 140px;
   height: 50px;
-  left: -250px;
-  transition: 200ms all linear;
+  left: -240px;
+  transform-origin: left;
+  transition: 300ms all ease-in-out;
   padding: 5px;
   border-radius: 8px;
   background-color: var(--navbar-color);
@@ -941,11 +943,14 @@ body {
   gap: 5px;
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
+  pointer-events: none;
 }
 .social li .social-icon-elem .gmail-info-box.active {
   left: 70px;
+  pointer-events: all;
+  transition: 300ms all ease-in-out;
 }
-.social li .social-icon-elem .gmail-info-box .goto-btn {
+.social li .social-icon-elem .gmail-info-box .gmail-info-btn {
   border: 1px solid var(--text);
   width: 40px;
   height: 40px;
@@ -954,56 +959,46 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.social li .social-icon-elem .gmail-info-box .gmail-info-btn::before {
+  left: -10px;
+  position: absolute;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  border-radius: 8px;
+  padding: 5px;
+  height: 30px;
+  top: -50px;
+  background-color: var(--navbar-color);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  box-shadow: 0px 0px 4px 0 var(--shadow-color);
+  opacity: 0;
+}
+.social li .social-icon-elem .gmail-info-box .gmail-info-btn:hover::before {
+  opacity: 1;
+  transition: 200ms opacity ease-in-out;
+}
+.social li .social-icon-elem .gmail-info-box .gmail-info-btn:hover {
+  cursor: pointer;
+  color: var(--text);
+}
+.social li .social-icon-elem .gmail-info-box .gmail-info-btn svg line {
+  stroke: var(--text);
+}
+.social li .social-icon-elem .gmail-info-box .gmail-info-btn svg path {
+  fill: var(--text);
 }
 .social li .social-icon-elem .gmail-info-box .goto-btn::before {
   content: "Go to Gmail";
-  position: absolute;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  border-radius: 8px;
-  padding: 5px;
-  height: 30px;
-  top: -50px;
-  background-color: var(--navbar-color);
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
-  box-shadow: 0px 0px 4px 0 var(--shadow-color);
-  opacity: 0;
 }
-.social li .social-icon-elem .gmail-info-box .goto-btn:hover::before {
-  opacity: 1;
-  transition: 200ms opacity ease-in-out;
-}
-.social li .social-icon-elem .gmail-info-box .copy-to-clipboard-btn {
-  position: relative;
-  border: 1px solid var(--text);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.social li .social-icon-elem .gmail-info-box .goto-form-btn::before {
+  content: "Go to Form";
 }
 .social li .social-icon-elem .gmail-info-box .copy-to-clipboard-btn::before {
+  left: -30px;
   content: "Copy to Clipboard";
-  position: absolute;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  border-radius: 8px;
-  padding: 5px;
-  height: 30px;
-  top: -50px;
-  background-color: var(--navbar-color);
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
-  box-shadow: 0px 0px 4px 0 var(--shadow-color);
-  opacity: 0;
-}
-.social li .social-icon-elem .gmail-info-box .copy-to-clipboard-btn:hover::before {
-  opacity: 1;
-  transition: 200ms opacity ease-in-out;
 }
 
 .snackbar {
@@ -1014,7 +1009,7 @@ body {
   width: 300px;
   height: 50px;
   border-radius: 8px;
-  bottom: -80px;
+  bottom: -20px;
   opacity: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -1023,9 +1018,11 @@ body {
   justify-content: center;
   align-items: center;
   transition: 300ms all ease-in-out;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
 }
 .snackbar.active {
-  bottom: 80px;
+  bottom: 85px;
   opacity: 1;
   transition: 300ms all ease-in-out;
 }
