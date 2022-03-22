@@ -900,8 +900,8 @@ body{
   }
 }
 .social-icons-container{
-  top: 50%;
-  transform: translateY(-50%);
+  top: calc(50vh - 120px);
+  // transform: translateY(50%);
   position: fixed;
   z-index: 20;
   width: min(70px, 12vw);
@@ -1079,14 +1079,12 @@ body{
   background-color: var(--secondary);
   display: flex;
   justify-content: center;
-  // align-items: flex-end;
   align-items: center;
   flex-direction: column;
   hr{
     position: absolute;
     width: 80%;
     left: 10%;
-    // bottom: 50px;
     background-color: var(--text);
   }
   .footer-top{
@@ -1109,6 +1107,7 @@ body{
         list-style-type: none;
         li{
           line-height: 0.9rem;
+          padding: 2px;
           a{
             font-size: 1rem;
             color: var(--text);
@@ -1150,14 +1149,15 @@ body{
 
   p{
     color: var(--text);
+    position: relative;
     &::before{
-      width: 80%;
-      height: 1px;
-      left: 50%;
-      transform: translateX(-50%);
-      content: "";
-      position: absolute;
       background-color: var(--text);
+      content: "";
+      width: 300%;
+      height: 1px;
+      position: absolute;
+      top: -10px;
+      left: -100%;
     }
   }
 }
