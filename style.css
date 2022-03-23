@@ -377,39 +377,45 @@ body {
   padding-top: 5px;
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(1) {
-  background: linear-gradient(to right bottom, #1a1a1a 50%, #0000db 50%);
+  background: linear-gradient(to right bottom, #1a1a1a 50%, #e0e0e0 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(2) {
-  background: linear-gradient(to right bottom, #e0e0e0 50%, #0000db 50%);
+  background: linear-gradient(to right bottom, #e0e0e0 50%, #1a1a1a 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(3) {
-  background: linear-gradient(to right bottom, #1a1a1a 50%, #df0909 50%);
+  background: linear-gradient(to right bottom, #1a1a1a 50%, #0000db 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(4) {
-  background: linear-gradient(to right bottom, #e0e0e0 50%, #df0909 50%);
+  background: linear-gradient(to right bottom, #e0e0e0 50%, #0000db 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(5) {
-  background: linear-gradient(to right bottom, #1a1a1a 50%, #dfd109 50%);
+  background: linear-gradient(to right bottom, #1a1a1a 50%, #df0909 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(6) {
-  background: linear-gradient(to right bottom, #e0e0e0 50%, #dfd109 50%);
+  background: linear-gradient(to right bottom, #e0e0e0 50%, #df0909 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(7) {
-  background: linear-gradient(to right bottom, #1a1a1a 50%, #46df09 50%);
+  background: linear-gradient(to right bottom, #1a1a1a 50%, #dfd109 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(8) {
-  background: linear-gradient(to right bottom, #e0e0e0 50%, #46df09 50%);
+  background: linear-gradient(to right bottom, #e0e0e0 50%, #dfd109 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(9) {
-  background: linear-gradient(to right bottom, #1a1a1a 50%, #8909df 50%);
+  background: linear-gradient(to right bottom, #1a1a1a 50%, #46df09 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(10) {
-  background: linear-gradient(to right bottom, #e0e0e0 50%, #8909df 50%);
+  background: linear-gradient(to right bottom, #e0e0e0 50%, #46df09 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(11) {
-  background: linear-gradient(to right bottom, #1a1a1a 50%, #df7009 50%);
+  background: linear-gradient(to right bottom, #1a1a1a 50%, #8909df 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(12) {
+  background: linear-gradient(to right bottom, #e0e0e0 50%, #8909df 50%);
+}
+.dropdown-content .dropdown-items .dropdown-item:nth-child(13) {
+  background: linear-gradient(to right bottom, #1a1a1a 50%, #df7009 50%);
+}
+.dropdown-content .dropdown-items .dropdown-item:nth-child(14) {
   background: linear-gradient(to right bottom, #e0e0e0 50%, #df7009 50%);
 }
 .dropdown-content p {

@@ -360,39 +360,45 @@ body{
               padding-top: 5px;
           }
           &:nth-child(1){
-              background: linear-gradient(to right bottom, rgb(26, 26, 26) 50% , rgb(0, 0, 219) 50%);
+              background: linear-gradient(to right bottom, rgb(26, 26, 26) 50% , rgb(224, 224, 224) 50%);
           }
           &:nth-child(2){
-              background: linear-gradient(to right bottom, rgb(224, 224, 224) 50% , rgb(0, 0, 219) 50%);
+              background: linear-gradient(to right bottom, rgb(224, 224, 224) 50% , rgb(26, 26, 26) 50%);
           }
           &:nth-child(3){
-              background: linear-gradient(to right bottom, rgb(26, 26, 26) 50% , rgb(223, 9, 9) 50%);
+              background: linear-gradient(to right bottom, rgb(26, 26, 26) 50% , rgb(0, 0, 219) 50%);
           }
           &:nth-child(4){
-              background: linear-gradient(to right bottom, rgb(224, 224, 224) 50% , rgb(223, 9, 9) 50%);
+              background: linear-gradient(to right bottom, rgb(224, 224, 224) 50% , rgb(0, 0, 219) 50%);
           }
           &:nth-child(5){
-              background: linear-gradient(to right bottom, rgb(26, 26, 26) 50% , rgb(223, 209, 9) 50%);
+              background: linear-gradient(to right bottom, rgb(26, 26, 26) 50% , rgb(223, 9, 9) 50%);
           }
           &:nth-child(6){
-              background: linear-gradient(to right bottom, rgb(224, 224, 224) 50% , rgb(223, 209, 9) 50%);
+              background: linear-gradient(to right bottom, rgb(224, 224, 224) 50% , rgb(223, 9, 9) 50%);
           }
           &:nth-child(7){
-              background: linear-gradient(to right bottom, rgb(26, 26, 26) 50% , rgb(70, 223, 9) 50%);
+              background: linear-gradient(to right bottom, rgb(26, 26, 26) 50% , rgb(223, 209, 9) 50%);
           }
           &:nth-child(8){
-              background: linear-gradient(to right bottom, rgb(224, 224, 224) 50% , rgb(70, 223, 9) 50%);
+              background: linear-gradient(to right bottom, rgb(224, 224, 224) 50% , rgb(223, 209, 9) 50%);
           }
           &:nth-child(9){
-              background: linear-gradient(to right bottom, rgb(26, 26, 26) 50% , rgb(137, 9, 223) 50%);
+              background: linear-gradient(to right bottom, rgb(26, 26, 26) 50% , rgb(70, 223, 9) 50%);
           }
           &:nth-child(10){
-              background: linear-gradient(to right bottom, rgb(224, 224, 224) 50% , rgb(137, 9, 223) 50%);
+              background: linear-gradient(to right bottom, rgb(224, 224, 224) 50% , rgb(70, 223, 9) 50%);
           }
           &:nth-child(11){
-              background: linear-gradient(to right bottom, rgb(26, 26, 26) 50% , rgb(223, 112, 9) 50%);
+              background: linear-gradient(to right bottom, rgb(26, 26, 26) 50% , rgb(137, 9, 223) 50%);
           }
           &:nth-child(12){
+              background: linear-gradient(to right bottom, rgb(224, 224, 224) 50% , rgb(137, 9, 223) 50%);
+          }
+          &:nth-child(13){
+              background: linear-gradient(to right bottom, rgb(26, 26, 26) 50% , rgb(223, 112, 9) 50%);
+          }
+          &:nth-child(14){
               background: linear-gradient(to right bottom, rgb(224, 224, 224) 50% , rgb(223, 112, 9) 50%);
           }
       }

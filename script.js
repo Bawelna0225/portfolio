@@ -93,6 +93,38 @@ window.onload = setTimeout(typeWriter, 2200);
 let root = document.documentElement;
 const themes = `[
   {
+    "id": "dark",
+    "name": "Dark Theme",
+    "colors": {
+        "primary": "#2e2e2e",
+        "secondary": "#252525",
+        "navbarColor": "rgba(30, 30, 30, 0.9)",
+        "text": "#b8b8b8",
+        "accentColor": "#ddd",
+        "shadowColor": "rgba(24, 24, 24, 0.719)",
+        "scrollbarColor": "#222222",
+        "scrollBarColorHover": "#1f1f1f",
+        "scrollBarTrackColor": "#292929"
+    }
+},
+
+{
+  "id": "light",
+  "name": "Light Theme",
+  "colors": {
+      "primary": "rgb(238, 238, 238)",
+      "secondary": "#e9e9e9",
+      "navbarColor": "rgba(246, 246, 246, 0.9)",
+      "text": "#181818",
+      "accentColor": "#333",
+      "shadowColor": "rgba(170, 170, 170, 0.719)",
+      "scrollbarColor": "#bebebe",
+      "scrollBarColorHover": "#aaaaaa",
+      "scrollBarTrackColor": "#d4d4d4"
+  }
+},
+
+  {
       "id": "dark-blue",
       "name": "Dark Blue Theme",
       "colors": {
