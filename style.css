@@ -1868,13 +1868,13 @@ body {
   }
 }
 .wrapper {
-  width: 380px;
+  width: 350px;
   padding: 25px 30px;
   overflow: hidden;
   position: relative;
   border-radius: 15px;
-  background: var(--secondary);
-  box-shadow: 0px 6px 15px var(--shadow-color);
+  background: var(--primary);
+  box-shadow: 0px 0px 15px var(--shadow-color);
 }
 .wrapper.minimalized {
   height: 80px;
@@ -1950,7 +1950,7 @@ body {
 }
 .wrapper.minimalized.active {
   transition: all 300ms linear;
-  width: 380px;
+  width: 350px;
   opacity: 1;
 }
 .wrapper.minimalized.active .song-details {
