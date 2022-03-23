@@ -8,6 +8,8 @@ window.addEventListener('load', () => {
 
 
 
+
+
 const dropdown = () => {
     document.getElementById("dropdown").classList.toggle("show");
 }
@@ -323,6 +325,8 @@ const setTheme = (theme) => {
   })
 }
 
+
+
 //////////////////// Slide In //////////////////////
 
 let listItems = [...document.querySelectorAll('.slide-in')]
@@ -351,6 +355,8 @@ listItems.forEach(item => {
 
 
 
+
+
 /////////////////////////////////////////// Skills Horizontal Slider //////////////////////////////////
 
 
@@ -365,6 +371,8 @@ listItems.forEach(item => {
   document.getElementById('scroll-horizontally').scrollLeft -= 350;
   };
 // };
+
+
 
 //////////////////////////////////////////// Contact Me Form ////////////////////////////////////////////////
 const nameInput = document.getElementById('name')
@@ -449,6 +457,7 @@ const emailIsValid = (emailInput) =>{
 }
 
 
+
 //////////////////////////////////////////// Toggle Social Icons //////////////////////////////
 
 
@@ -461,6 +470,7 @@ toggleSocialIconsBtn.onclick = () => {
   deg >= 270 ? deg = -90 : deg
   toggleSocialIconsBtn.style.transform = `rotate(${deg}deg)`
 }
+
 
 ////////////////////////////////////////////// Gmail info box /////////////////////////////
 const mailSocialIconToggle = document.getElementById('mail-social-icon')
@@ -482,7 +492,7 @@ copyToClipboardBtn.onclick = () => {
 }
 
 
-/////////////////////////////////////////////////////// Scroll To Sectopm
+/////////////////////////////////////////////////////// Scroll To Section
 let scrollLocation
 const scrollToSection = (section) =>{
   switch (section) {
@@ -505,5 +515,4 @@ const scrollToSection = (section) =>{
     default:
       break;
   }
-
 }

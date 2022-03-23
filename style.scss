@@ -113,12 +113,10 @@ body{
 .navbar{
     width: 100%;
     height: 80px;
-    // top: 0;
     bottom: calc(100% - 80px);
     box-shadow: 0px 0px 10px var(--shadow-color);
     position: fixed;
     z-index: 10;
-    //background-color: rgba(30, 30, 30, 0.9);
     background-color: var(--navbar-color);
     display: flex;
     justify-content: space-between;
@@ -129,7 +127,6 @@ body{
     color: var(--text);
     .logo{
         display: flex;
-        // filter: drop-shadow(0px 0px 40px var(--accent-color));
         transition: 200ms all linear;
         top: 0;
         svg{
@@ -143,7 +140,6 @@ body{
         }
         &:hover{
             filter: drop-shadow(0px 0px 40px var(--accent-color));
-            // transition: 200ms all cubic-bezier(0.42, 0, 1, 4.35);;
             animation: flicker-3 2.5s linear infinite both;
         }
     }
@@ -171,12 +167,10 @@ body{
                 width: 100%;
                 height: 0px;
                 position: absolute;
-                //background-color: rgb(200, 45, 45);
                 background-color: var(--accent-color);
                 left: 0;
                 top: -15%;
                 transform: scaleX(0);
-               // transform-origin: center;
                 transition: all 300ms ease-in;
             }
             &:hover{
@@ -199,7 +193,6 @@ body{
             }
         }
         .last{
-            // overflow: hidden;
             transition: all 300ms ease-in;
             position: relative;
             width: 50px;
@@ -217,7 +210,6 @@ body{
             }
         }
         .last:hover{
-            // background-color: rgba(66, 66, 66, 0.1);
             user-select: none;
             transition: all 300ms ease-in;
             box-shadow: 0px 0px 10px var(--accent-color);
@@ -235,10 +227,7 @@ body{
     .wrapper-menu {
       width: 35px;
       height: 35px;
-      // display: flex;
       display: none;
-
-      // opacity: 0;
       &:hover{
         .line-menu {
           background-color: var(--accent-color);
@@ -282,7 +271,6 @@ body{
     }
 }
 .backToTop{
-    // width: 50px;
     width: min(2.5em, 50px);
     height: min(2.5em, 50px);
     background-color: var(--navbar-color);
@@ -291,7 +279,6 @@ body{
     right: 2rem;
     border-radius: 8px;
     z-index: 20;
-    // display: none;
     opacity: 0;
     bottom: -30px;
     pointer-events: none;
@@ -300,15 +287,12 @@ body{
     align-items: center;
     justify-content: center;
     box-shadow: 0px 0px 10px var(--shadow-color);
-    // border: 1px solid var(--text);
     flex-direction: column;
 
     &:hover{
         color: var(--accent-color);
         border: 1px solid var(--accent-color);
         box-shadow: 0px 0px 10px var(--accent-color);
-        // animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-        // animation: vibrate-1 0.3s linear infinite both;
         animation: jello-vertical 0.9s infinite both;
         cursor: pointer;
         path{
@@ -331,9 +315,7 @@ body{
   background-color: var(--navbar-color);
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(20, 20, 20, 0.7);
-  // visibility: hidden;
   overflow-y: scroll;
-  // right: -550px;
   transition: 300ms right linear;
   right: -550px;
   z-index: 100;
@@ -346,7 +328,6 @@ body{
   .dropdown-items{
       display: grid;
       grid-template-columns: 150px 150px;
-      //gap: 10px;
       column-gap: 10px;
       row-gap: 5px;
       justify-content: center;
@@ -366,8 +347,6 @@ body{
               outline: 1px solid var(--accent-color);
               box-shadow: 0px 0px 10px var(--accent-color);
               transition: 300ms all linear;
-              // animation: vibrate-1 0.3s linear infinite both;
-              // animation: jello-vertical 0.9s;
           }
           cursor: pointer;
           .theme-descr{
@@ -424,7 +403,6 @@ body{
       padding: 20px 20px 10px 20px;
       font-size: 1.1rem;
       span{
-          //color: rgb(200, 45, 45);
           font-weight: 700;
           font-size: 1.3rem;
           color: var(--accent-color);
@@ -437,14 +415,11 @@ body{
   
 }
 .show {
-  // visibility: visible;
   transition: 400ms right cubic-bezier(0.42, 0, 0.11, 1.32);
-  //transition: 50ms opacity linear;
   right: 10px;
   z-index: 10;
 }
 .showScroll{
-    // display: flex;
     opacity: 1;
     pointer-events: all;
     bottom: 2rem;
@@ -457,7 +432,6 @@ body{
     
 }
 .homeclass{
-    // width: 1200px;
     width: MIN(100% - 2rem, 70rem);
     margin: 0 auto;
     display: flex;
@@ -469,7 +443,6 @@ body{
     border-radius: 12px;
     color: var(--text);
     box-shadow: 0px 0px 10px var(--shadow-color);
-    // animation: slide-in-blurred-right 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
     .left{
       width: 50%;
       display: flex;
@@ -504,7 +477,6 @@ body{
     }
     h2{
       font-size: clamp(0.8rem, 5vw, 1.2rem);
-        // line-height: 100px;
         margin: 30px 0px;
         color: var(--accent-color);
     }
@@ -522,15 +494,12 @@ body{
   overflow: hidden;
   margin-top: 3rem;
   padding-bottom: 90px;
-  // height: max-content;
   .slide-in{
     position: relative;
     z-index: 1;
       .slide{
-      // width: 1200px;
       width: MIN(100% - 2rem, 70rem);
       margin: 0 auto;
-      // margin-top: 100px;
       margin-top: 3rem;
       height: max-content;
       background-color: var(--secondary);
@@ -539,8 +508,6 @@ body{
       color: var(--text);
       box-shadow: 0px 0px 10px var(--shadow-color);
       animation: slide-out-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-      // z-index: -1;
-      // animation: slide-in-blurred-right 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
       span {
           color: var(--accent-color);
           font-size: 1em;
@@ -555,7 +522,6 @@ body{
       }
       h2{
         font-size: clamp(0.8rem, 5vw, 1.2rem);
-          // line-height: 100px;
           margin: 30px 0px;
           color: var(--accent-color);
       }
@@ -564,9 +530,6 @@ body{
       }
     }
     .active{
-      // transform: translateX(0%);
-      // background-color: red;
-      // transition: 300ms ease-in-out;
       animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
   }
@@ -603,7 +566,6 @@ body{
         left: 0px;
     }
     #slideRight{
-        // top: 100px;
         right: -35px;
     }
     &::before{
@@ -612,7 +574,6 @@ body{
         height: 95%;
         z-index: 10;
         width: 150px;
-        // background-image: linear-gradient(to right ,rgba(0, 0, 0, 0.363), transparent);
         left: 20px;
         pointer-events: none;
     }
@@ -622,7 +583,6 @@ body{
         height: 95%;
         z-index: 10;
         width: 150px;
-        // background-image: linear-gradient(to left ,rgba(0, 0, 0, 0.363), transparent);
         right: 0;
         top: 0;
         pointer-events: none;
@@ -636,7 +596,6 @@ body{
   scroll-snap-align: start;
 }
 .horizontal-scroller{
-    // width: 1200px;
     margin: 0 auto;
     margin-left: 20px;
     display: grid;
@@ -653,27 +612,20 @@ body{
         gap: 15px;
         margin-top: 15px;
         padding: 15px;
-        // grid-template-rows: max-content;
         border-radius: 8px;
         box-shadow: 0px 0px 10px var(--shadow-color);
         -webkit-filter: grayscale(100%);
-        // width: 350px;
-        // height: 450px;
         background-color: var(--primary);
         position: relative;
         overflow: hidden;
-        // font-size: 1.5rem;
         transition: 250ms linear;
         img{
             height: 300px;
             margin: 0 auto;
             inline-size: 100%;
-            // aspect-ratio: 1 / 1;
             object-fit: contain;
-            // margin-bottom: 100px;
         }
         .description{
-            // font-size: 22px;
             padding-top: 30px;
             width: 100%;
             height: 100px;
@@ -708,7 +660,6 @@ body{
 }
 .contact-section{
   width: 100%;
-  // height: 100vh;
   font-size: 18px;
   display: flex;
   justify-content: center;
@@ -754,7 +705,6 @@ body{
           margin-top: 30px;
           width: 90%;
           max-width: 200px;
-          // background-color: var(--accent-color);
           background-color: transparent;
           border: 1px solid var(--accent-color);
           display: flex;
@@ -890,23 +840,17 @@ body{
               color: white;
               display: inline-block;
               content: "\2713";
-              // height: 50px;
-              // width: 50px;
               position: absolute;
-              // background-color: red;
           }
-          // animation: bounce .5s ease-in infinite;
       }
   }
 }
 .social-icons-container{
   top: calc(50vh - 120px);
-  // transform: translateY(50%);
   position: fixed;
   z-index: 20;
   width: min(70px, 12vw);
   height: min(120px, 30vw);
-  // height: 200px;
 }
 #toggle-social{
   position: fixed;
@@ -935,7 +879,6 @@ body{
 }
 .social{
   position: fixed;
-  // width: 100%;
   height: 100%;
   padding-left: min(20px, 1vw);
   font-size: 30px;
@@ -943,8 +886,6 @@ body{
   transition: 0.2s linear;
   z-index: 10;
     li{
-      // padding: 1px;
-      // position: relative;
       list-style-type: none;
       .social-icon-elem{
         display: flex;
@@ -1011,6 +952,7 @@ body{
               backdrop-filter: blur(8px);
               box-shadow: 0px 0px 4px 0 var(--shadow-color);
               opacity: 0;
+              pointer-events: none;
             }
             &:hover::before{
               opacity: 1;
@@ -1222,34 +1164,23 @@ body{
     }
 
     .nav-items{
-      // overflow-x: auto;
       padding: 10px;
       .last{
         padding: 22px;
       }
       .nav-item{
-        // width: 3rem;
         a{
-          // width: 17vw;
-          // 
           .text{
             display: none;
           }
           .icon{
-            // display: block;
             display: flex;
             svg{
 
               fill: var(--text);
               width: 28px;
               height: 28px;
-              // width: 100%;
-              // height: 100%;
-              // padding: 0;
-              // margin: 0;
-              margin: auto;
-              // width: 50%;
-              
+              margin: auto; 
               path{
                 fill: var(--text);
               }
@@ -1264,21 +1195,18 @@ body{
               }
             }
             .skill-bar{
-              // fill: var(--secondary);
               fill: var(--text);
               .rect{
                 fill: var(--secondary);
               }
               &:hover{
                 .rect{
-                  // fill: var(--accent-color);
                 }
                 
               }
             }
           }
           &:hover{
-            // background-color: rgba(66, 66, 66, 0.1);
             user-select: none;
             transition: all 300ms ease-in;
             svg{
@@ -1299,8 +1227,6 @@ body{
     }
   }
   .dropdown-content{
-    // width: calc(100% - 3em);
-    // width: 500px;
     margin: 0 auto;
     top: 2000px;
     height: 500px;
@@ -1310,11 +1236,7 @@ body{
     transition: 800ms all linear;
   }
   .show {
-    // visibility: visible;
     transition: 600ms top cubic-bezier(0.42, 0, 0.11, 1.32);
-    //transition: 50ms opacity linear;
-    // right: 10px;
-    // top: -500px;
     top: calc(100% - 580px);
     z-index: 1000;
   }
@@ -1325,7 +1247,6 @@ body{
 
   }
   .horizontal-scroller{
-    // width: 1200px;
     margin: 0 auto;
     margin-left: 20px;
     display: grid;
@@ -1389,9 +1310,7 @@ body{
           color: var(--accent-color);
           cursor: pointer;
           &::before{
-            // transform: scaleY(1);
             transition: 200ms all ease-in-out;
-            // box-shadow: 0px 0px 10px var(--accent-color);
             animation: transform-and-glow 300ms linear forwards;
           }
         }
@@ -1403,7 +1322,6 @@ body{
 
 }
 .hide{
-  // display: none;
   right: -400px;
   opacity: 0;
   transition: 400ms all linear;
@@ -1411,7 +1329,6 @@ body{
 
 @media(min-width: 693px) and (max-width: 1152px){
   .horizontal-scroller{
-    // width: 1200px;
     margin: 0 auto;
     margin-left: 20px;
     display: grid;
@@ -1431,7 +1348,6 @@ body{
       justify-content: center;
       align-items: center;
       padding: 10px;
-      // display: none;
       .last{
         padding: 22px;
         display: block !important;
@@ -1493,7 +1409,6 @@ body{
     .dropdown-items{
       display: grid;
       grid-template-columns: 150px 150px;
-      //gap: 10px;
       column-gap: 10px;
       row-gap: 5px;
       justify-content: center;
@@ -1517,8 +1432,6 @@ body{
   .navbar{
     overflow-x: visible;
     overflow-y: hidden;
-    // max-height: 50px;
-
     .nav-items{
       padding-left: 200px;
       .nav-item:first-child{
