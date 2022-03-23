@@ -1103,6 +1103,8 @@ body {
 }
 .footer .footer-bottom {
   width: 100%;
+  margin-top: 20px;
+  border-top: 1px solid var(--accent-color);
   height: 30%;
   display: flex;
   justify-content: center;
@@ -1111,15 +1113,6 @@ body {
 .footer p {
   color: var(--text);
   position: relative;
-}
-.footer p::before {
-  background-color: var(--text);
-  content: "";
-  width: 300%;
-  height: 1px;
-  position: absolute;
-  top: -10px;
-  left: -100%;
 }
 
 @media screen and (max-width: 692px) {
