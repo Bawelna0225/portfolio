@@ -77,7 +77,7 @@ let textPosition = 0
 const speed = 100
 
 const typeWriter = () => {
-  document.querySelector('#message').innerHTML = message[0].substring(0, textPosition) + ' <span></span>'
+  document.querySelector('#message').innerHTML = message[0].substring(0, textPosition) + ' <span class="caret"></span>'
 
   if(textPosition++ != message[0].length){
     setTimeout(typeWriter, speed)
