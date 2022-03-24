@@ -1931,20 +1931,24 @@ body {
 .wrapper.minimalized .song-details {
   opacity: 0;
   position: absolute;
-  width: 180px;
   height: 50px;
-  top: -10px;
+  top: -5px;
+  color: #929292;
   left: 90px;
-  overflow: hidden;
   text-align: left;
 }
 .wrapper.minimalized .song-details .name {
   font-size: 14px;
+  position: relative;
   width: 100%;
   height: 30px;
-  line-height: 0.9;
+  line-height: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .wrapper.minimalized .song-details .artist {
+  margin-top: -10px;
   font-size: 12px;
   line-height: normal;
 }
@@ -1955,6 +1959,7 @@ body {
 }
 .wrapper.minimalized.active .song-details {
   opacity: 1;
+  width: 150px;
 }
 .wrapper.minimalized.active .minimalize {
   opacity: 1;
@@ -2097,7 +2102,7 @@ body {
 }
 
 .controls {
-  margin: 40px 0 5px 0;
+  margin: 20px 0 -10px 0;
 }
 .controls i {
   font-size: 28px;

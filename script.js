@@ -100,7 +100,7 @@ const themes = `[
         "secondary": "#252525",
         "navbarColor": "rgba(30, 30, 30, 0.9)",
         "text": "#b8b8b8",
-        "accentColor": "#ddd",
+        "accentColor": "rgb(146, 146, 146)",
         "shadowColor": "rgba(24, 24, 24, 0.719)",
         "scrollbarColor": "#222222",
         "scrollBarColorHover": "#1f1f1f",
