@@ -1,6 +1,9 @@
 window.addEventListener('load', () => {
   setTimeout(() => {
     document.querySelector('.preload').classList.add('preload-finished')
+    setTimeout(() => {
+      typeWriter()
+    }, 200)
   }, 2000);
 });
 
@@ -83,7 +86,6 @@ const typeWriter = () => {
     setTimeout(typeWriter, speed)
   }
 }
-window.onload = setTimeout(typeWriter, 2200);
 
 
 
