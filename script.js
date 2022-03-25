@@ -523,7 +523,6 @@ copyToClipboardBtn.onclick = () => {
   },2000); 
 }
 
-
 /////////////////////////////////////////////////////// Scroll To Section
 let scrollLocation
 const scrollToSection = (section) =>{

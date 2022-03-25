@@ -666,8 +666,8 @@ body{
     margin-right: 100px;
     // align-items: flex-start;
     .work-btns{
-      position: absolute;
-      top: -30px;
+      // position: absolute;
+      // top: -30px;
       display: flex;
       justify-content: flex-end;
       margin: 10px 25px;
@@ -706,6 +706,7 @@ body{
       }
     }
     &_card-container.grid{
+      margin-top: 25px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -714,7 +715,7 @@ body{
       overflow: auto;
       gap: 10px;
       .my-work_card{
-        width: 250px;
+        width: 280px;
         height: 320px;
         background-color: var(--navbar-color);
         border-radius: 8px;
@@ -761,9 +762,14 @@ body{
 
 .contact{
   // display: flex;
-  h1{
-    margin: clamp(1em, 5vw, 3em);
-    margin-bottom: 10px;
+  .background-text{
+    position: absolute;
+    font-size: 10rem;
+    line-height: 0.9;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    opacity: 0.4;
+    color: var(--accent-color);
   }
   padding: 20px 0 !important;
 }
@@ -1217,8 +1223,20 @@ body{
   *{
     scroll-margin-top: 80px;
   }
+  .contact-section{
+    margin-top: 100px;
+  }
+  .background-text{
+    // font-size: 8vw !important;
+    font-size: 2.2rem !important;
+    transform: rotate(-90deg);
+    opacity: 1 !important;
+    position: relative;
+    margin-left: 120px;
+    margin-top: -60px;
+  }
   .work-container{
-    flex-direction: column;
+    flex-direction: column-reverse;
     .my-work{
       margin-right: 0;
       margin-top: 30px;
@@ -1369,6 +1387,7 @@ body{
     position: relative;
   }
 }
+
 .nav{
   width: 320px;
   height: 100vh;
@@ -1449,6 +1468,9 @@ body{
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     position: relative;
+  }
+  .background-text{
+    font-size: 8vw !important;
   }
   .navbar{
     border-radius: 0px;
@@ -1556,7 +1578,14 @@ body{
   }
 
 }
-
+@media (max-width: 845px){
+  .my-work{
+    margin: 0 auto;
+  }
+  .work-container{
+    flex-direction: column-reverse !important;
+  }
+}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////// Animations ////////////////////////////////////////////////////////
