@@ -548,3 +548,27 @@ const scrollToSection = (section) =>{
       break;
   }
 }
+
+
+
+
+
+//////////////////////////// Grid/List View //////////////////////////
+const gridViewBtn = document.querySelector('.grid-view-btn')
+const listViewBtn = document.querySelector('.list-view-btn')
+const workCardContainer = document.querySelector('.my-work_card-container')
+
+gridViewBtn.onclick = () => {
+  workCardContainer.classList.remove('list')
+  workCardContainer.classList.add('grid')
+  listViewBtn.classList.remove('checked')
+  gridViewBtn.classList.add('checked')  
+
+}
+
+listViewBtn.onclick = () => {
+  workCardContainer.classList.remove('grid')
+  workCardContainer.classList.add('list')
+  gridViewBtn.classList.remove('checked')
+  listViewBtn.classList.add('checked')  
+}

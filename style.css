@@ -679,6 +679,82 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+}
+.work-container .my-work {
+  width: 100%;
+  margin-right: 100px;
+}
+.work-container .my-work .work-btns {
+  position: absolute;
+  top: -30px;
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 25px;
+}
+.work-container .my-work .list-view-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: 1px solid var(--text);
+  border-radius: 8px;
+}
+.work-container .my-work .list-view-btn:hover {
+  cursor: pointer;
+  border-color: var(--accent-color);
+}
+.work-container .my-work .list-view-btn.checked {
+  background-color: var(--primary);
+  box-shadow: 0 0 10px var(--shadow-color);
+}
+.work-container .my-work .grid-view-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  border: 1px solid var(--text);
+  border-radius: 8px;
+}
+.work-container .my-work .grid-view-btn:hover {
+  cursor: pointer;
+  border-color: var(--accent-color);
+}
+.work-container .my-work .grid-view-btn.checked {
+  background-color: var(--primary);
+  box-shadow: 0 0 19px var(--shadow-color);
+}
+.work-container .my-work_card-container.grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-height: 600px;
+  overflow: auto;
+  gap: 10px;
+}
+.work-container .my-work_card-container.grid .my-work_card {
+  width: 250px;
+  height: 320px;
+  background-color: var(--navbar-color);
+  border-radius: 8px;
+}
+.work-container .my-work_card-container.list {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-height: 600px;
+  overflow: auto;
+  gap: 10px;
+}
+.work-container .my-work_card-container.list .my-work_card {
+  width: 90%;
+  height: 80px;
+  background-color: var(--navbar-color);
+  border-radius: 8px;
 }
 .work-container .recent-work {
   width: 50%;
@@ -1136,6 +1212,10 @@ body {
 
   .work-container {
     flex-direction: column;
+  }
+  .work-container .my-work {
+    margin-right: 0;
+    margin-top: 30px;
   }
 
   .homeclass {
