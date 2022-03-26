@@ -380,28 +380,22 @@ const setTheme = (theme) => {
 
 //////////////////// Slide In //////////////////////
 
-let listItems = [...document.querySelectorAll('.slide-in')]
+let pageSections = [...document.querySelectorAll('.slide-in')]
 
-let options = {
-    rootMargin: '0%',
-    threshold: 0.1
-}
-
-let observer = new IntersectionObserver(showItem, options)
-
-function showItem(entries){
+const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.children[0].classList.add('active')
-        }
-        else{
-            entry.target.children[0].classList.remove('active')
-        }
+          entry.target.children[0].classList.toggle('active', entry.isIntersecting)
+          // if(entry.isIntersecting) observer.unobserve(entry.target) //prevent from sliding out
     })
-}
+  },
+  {
+      rootMargin: '0%',
+      threshold: 0.1,
+  }
+)
 
-listItems.forEach(item => {
-    observer.observe(item)
+pageSections.forEach(section => {
+    observer.observe(section)
 })
 
 

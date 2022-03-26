@@ -713,13 +713,23 @@ body{
           &:hover{
             cursor: pointer;
           }
+          .flip-card-front {
+            overflow: hidden;
+          }
           .flip-card-back {
             color: var(--text);
             background-color: var(--elem-color);
             transform: rotateY(180deg);
+            overflow: hidden;
             .card{
               &_header{
-                
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--navbar-color);
+                margin-top: 0;
+                height: 80px;
+                top: 0;
               }
               &_body{
                 text-align: left;
@@ -773,9 +783,6 @@ body{
               height: 100%;
               -webkit-backface-visibility: hidden;
               backface-visibility: hidden;
-            }
-            .flip-card-front {
-              overflow: hidden;
             }
           }
         } 

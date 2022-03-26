@@ -734,10 +734,23 @@ body {
 .work-container .my-work_card-container.grid .my-work_card .flip-card-grid:hover {
   cursor: pointer;
 }
+.work-container .my-work_card-container.grid .my-work_card .flip-card-grid .flip-card-front {
+  overflow: hidden;
+}
 .work-container .my-work_card-container.grid .my-work_card .flip-card-grid .flip-card-back {
   color: var(--text);
   background-color: var(--elem-color);
   transform: rotateY(180deg);
+  overflow: hidden;
+}
+.work-container .my-work_card-container.grid .my-work_card .flip-card-grid .flip-card-back .card_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--navbar-color);
+  margin-top: 0;
+  height: 80px;
+  top: 0;
 }
 .work-container .my-work_card-container.grid .my-work_card .flip-card-grid .flip-card-back .card_body {
   text-align: left;
@@ -781,9 +794,6 @@ body {
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-}
-.work-container .my-work_card-container.grid .my-work_card.flipped .flip-card-grid .flip-card-front {
-  overflow: hidden;
 }
 .work-container .my-work_card-container.list {
   margin-top: 25px;
