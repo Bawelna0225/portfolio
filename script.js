@@ -100,6 +100,7 @@ const themes = `[
     "colors": {
         "primary": "#2e2e2e",
         "secondary": "#252525",
+        "elemColor": "#1b1b1b",
         "navbarColor": "rgba(30, 30, 30, 0.9)",
         "text": "#b8b8b8",
         "accentColor": "rgb(146, 146, 146)",
@@ -116,6 +117,7 @@ const themes = `[
   "colors": {
       "primary": "rgb(238, 238, 238)",
       "secondary": "#e9e9e9",
+      "elemColor": "#f6f6f6",
       "navbarColor": "rgba(246, 246, 246, 0.9)",
       "text": "#181818",
       "accentColor": "#333",
@@ -132,6 +134,7 @@ const themes = `[
       "colors": {
           "primary": "#2e2e2e",
           "secondary": "#252525",
+          "elemColor": "#1b1b1b",
           "navbarColor": "rgba(30, 30, 30, 0.9)",
           "text": "#b8b8b8",
           "accentColor": "rgb(45, 104, 200)",
@@ -148,6 +151,7 @@ const themes = `[
     "colors": {
         "primary": "rgb(238, 238, 238)",
         "secondary": "#e9e9e9",
+        "elemColor": "#f6f6f6",
         "navbarColor": "rgba(246, 246, 246, 0.9)",
         "text": "#181818",
         "accentColor": "rgb(45, 104, 200)",
@@ -163,6 +167,7 @@ const themes = `[
     "colors": {
       "primary": "#2e2e2e",
       "secondary": "#252525",
+      "elemColor": "#1b1b1b",
       "navbarColor": "rgba(30, 30, 30, 0.9)",
       "text": "#b8b8b8",
       "accentColor": "#c82d2d",
@@ -179,6 +184,7 @@ const themes = `[
     "colors": {
       "primary": "rgb(238, 238, 238)",
       "secondary": "#e9e9e9",
+      "elemColor": "#f6f6f6",
       "navbarColor": "rgba(246, 246, 246, 0.9)",
       "text": "#181818",
       "accentColor": "#c82d2d",
@@ -194,6 +200,7 @@ const themes = `[
     "colors": {
       "primary": "#2e2e2e",
       "secondary": "#252525",
+      "elemColor": "#1b1b1b",
       "navbarColor": "rgba(30, 30, 30, 0.9)",
       "text": "#b8b8b8",
       "accentColor": "#cece42",
@@ -210,6 +217,7 @@ const themes = `[
     "colors": {
       "primary": "rgb(238, 238, 238)",
       "secondary": "#e9e9e9",
+      "elemColor": "#f6f6f6",
       "navbarColor": "rgba(246, 246, 246, 0.9)",
       "text": "#181818",
       "accentColor": "#cece42",
@@ -227,6 +235,7 @@ const themes = `[
     "colors": {
       "primary": "#2e2e2e",
       "secondary": "#252525",
+      "elemColor": "#1b1b1b",
       "navbarColor": "rgba(30, 30, 30, 0.9)",
       "text": "#b8b8b8",
       "accentColor": "#1ad11a",
@@ -243,6 +252,7 @@ const themes = `[
     "colors": {
       "primary": "rgb(238, 238, 238)",
       "secondary": "#e9e9e9",
+      "elemColor": "#f6f6f6",
       "navbarColor": "rgba(246, 246, 246, 0.9)",
       "text": "#181818",
       "accentColor": "#1ad11a",
@@ -259,6 +269,7 @@ const themes = `[
     "colors": {
       "primary": "#2e2e2e",
       "secondary": "#252525",
+      "elemColor": "#1b1b1b",
       "navbarColor": "rgba(30, 30, 30, 0.9)",
       "text": "#b8b8b8",
       "accentColor": "#b91bb9",
@@ -275,6 +286,7 @@ const themes = `[
     "colors": {
       "primary": "rgb(238, 238, 238)",
       "secondary": "#e9e9e9",
+      "elemColor": "#f6f6f6",
       "navbarColor": "rgba(246, 246, 246, 0.9)",
       "text": "#181818",
       "accentColor": "#880188",
@@ -291,6 +303,7 @@ const themes = `[
     "colors": {
       "primary": "#2e2e2e",
       "secondary": "#252525",
+      "elemColor": "#1b1b1b",
       "navbarColor": "rgba(30, 30, 30, 0.9)",
       "text": "#b8b8b8",
       "accentColor": "#ffa600",
@@ -307,6 +320,7 @@ const themes = `[
     "colors": {
       "primary": "rgb(238, 238, 238)",
       "secondary": "#e9e9e9",
+      "elemColor": "#f6f6f6",
       "navbarColor": "rgba(246, 246, 246, 0.9)",
       "text": "#181818",
       "accentColor": "#ffa600",
@@ -321,6 +335,7 @@ const obj = JSON.parse(themes);
 
 root.style.setProperty('--primary', localStorage.getItem('primary'))
 root.style.setProperty('--secondary', localStorage.getItem('secondary'));
+root.style.setProperty('--elem-color', localStorage.getItem('elem-color'));
 root.style.setProperty('--navbar-color', localStorage.getItem('navbar-color') );
 root.style.setProperty('--accent-color', localStorage.getItem('accent-color'));
 root.style.setProperty('--text', localStorage.getItem('text'));
@@ -337,6 +352,7 @@ const setTheme = (theme) => {
 
       root.style.setProperty('--primary', val.colors.primary);
       root.style.setProperty('--secondary', val.colors.secondary);
+      root.style.setProperty('--elem-color', val.colors.elemColor);
       root.style.setProperty('--navbar-color', val.colors.navbarColor);
       root.style.setProperty('--accent-color', val.colors.accentColor);
       root.style.setProperty('--text', val.colors.text);
@@ -347,6 +363,7 @@ const setTheme = (theme) => {
 
       localStorage.setItem('primary', val.colors.primary)
       localStorage.setItem('secondary', val.colors.secondary)
+      localStorage.setItem('elem-color', val.colors.elemColor)
       localStorage.setItem('navbar-color', val.colors.navbarColor)
       localStorage.setItem('accent-color', val.colors.accentColor)
       localStorage.setItem('text', val.colors.text)
