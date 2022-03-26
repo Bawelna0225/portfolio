@@ -51,57 +51,59 @@ body {
   position: fixed;
   font-size: 10rem;
 }
-.preload .lds-ellipsis {
-  display: inline-block;
-  position: relative;
-  width: 160px;
-  height: 160px;
-}
-.preload .lds-ellipsis div {
-  position: absolute;
-  top: 65px;
-  width: 26px;
-  height: 26px;
+.preload .circle__one {
+  width: 200px;
+  height: 200px;
+  border: 4px solid var(--accent-color);
   border-radius: 50%;
-  background-color: var(--secondary);
-  box-shadow: 0px 0px 10px var(--accent-color);
-  -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);
-          animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  border-color: var(--accent-color) var(--accent-color) var(--accent-color) transparent;
+  position: absolute;
+  -webkit-animation: 1.2s spin linear infinite;
+          animation: 1.2s spin linear infinite;
+  filter: drop-shadow(0px 0px 5px var(--accent-color));
 }
-.preload .lds-ellipsis div:nth-child(1) {
-  left: 16px;
-  -webkit-animation: lds-ellipsis1 0.6s infinite;
-          animation: lds-ellipsis1 0.6s infinite;
+.preload .circle__two {
+  width: 150px;
+  height: 150px;
+  border: 4px solid var(--accent-color);
+  border-radius: 50%;
+  border-color: transparent transparent var(--accent-color) var(--accent-color);
+  position: absolute;
+  -webkit-animation: 1s spin linear infinite;
+          animation: 1s spin linear infinite;
+  filter: drop-shadow(0px 0px 5px var(--accent-color));
 }
-.preload .lds-ellipsis div:nth-child(2) {
-  left: 16px;
-  -webkit-animation: lds-ellipsis2 0.6s infinite;
-          animation: lds-ellipsis2 0.6s infinite;
-}
-.preload .lds-ellipsis div:nth-child(3) {
-  left: 64px;
-  -webkit-animation: lds-ellipsis2 0.6s infinite;
-          animation: lds-ellipsis2 0.6s infinite;
-}
-.preload .lds-ellipsis div:nth-child(4) {
-  left: 112px;
-  -webkit-animation: lds-ellipsis3 0.6s infinite;
-          animation: lds-ellipsis3 0.6s infinite;
+.preload .circle__three {
+  width: 100px;
+  height: 100px;
+  border: 4px solid var(--accent-color);
+  border-radius: 50%;
+  border-color: var(--accent-color) transparent transparent var(--accent-color);
+  position: absolute;
+  -webkit-animation: 0.8s spin linear infinite;
+          animation: 0.8s spin linear infinite;
+  filter: drop-shadow(0px 0px 5px var(--accent-color));
 }
 .preload .loading-text {
-  opacity: 0.2;
+  opacity: 0.1;
   font-weight: 700;
   font-size: 22vw;
   letter-spacing: 1vw;
   position: absolute;
   color: var(--text);
+  -webkit-animation: 1.5s blink ease-in-out infinite;
+          animation: 1.5s blink ease-in-out infinite;
 }
 
 .preload-finished {
-  top: -30vh;
-  opacity: 0;
-  transition: 500ms linear;
+  transform: translateY(-100%);
+  opacity: 0.4;
+  transition: 500ms linear 200ms;
   pointer-events: none;
+}
+.preload-finished .circle__one, .preload-finished .circle__two, .preload-finished .circle__three {
+  opacity: 0;
+  transition: 300ms linear;
 }
 
 ::-webkit-scrollbar {
@@ -701,8 +703,10 @@ body {
   border-radius: 8px;
 }
 .work-container .my-work .list-view-btn:hover, .work-container .my-work .grid-view-btn:hover {
+  transition: 300ms ease-in-out;
   cursor: pointer;
   border-color: var(--accent-color);
+  color: var(--accent-color);
 }
 .work-container .my-work .list-view-btn.checked, .work-container .my-work .grid-view-btn.checked {
   background-color: var(--elem-color);
@@ -742,15 +746,16 @@ body {
   background-color: var(--elem-color);
   transform: rotateY(180deg);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .work-container .my-work_card-container.grid .my-work_card .flip-card-grid .flip-card-back .card_header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--navbar-color);
-  margin-top: 0;
-  height: 80px;
-  top: 0;
+  height: 70px;
+  border-bottom: 1px solid var(--accent-color);
 }
 .work-container .my-work_card-container.grid .my-work_card .flip-card-grid .flip-card-back .card_body {
   text-align: left;
@@ -768,6 +773,7 @@ body {
   align-items: flex-start;
 }
 .work-container .my-work_card-container.grid .my-work_card .flip-card-grid .flip-card-back .card_footer {
+  border-top: 1px solid var(--accent-color);
   display: flex;
   flex-direction: column;
 }
@@ -2061,6 +2067,44 @@ body {
 @keyframes rotate {
   0% {
     transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.1;
   }
 }
 @keyframes rotate {
