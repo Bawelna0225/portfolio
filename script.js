@@ -3,7 +3,7 @@ window.addEventListener('load', () => {
     document.querySelector('.preload').classList.add('preload-finished')
     setTimeout(() => {
       typeWriter()
-    }, 400)
+    }, 1000)
   }, 2000);
 });
 

@@ -39,9 +39,29 @@ body{
   height: 100vh;
   z-index: 200;
   top: 0;
-  background-color: var(--secondary);
+  // background-color: var(--secondary);
   position: fixed;
   font-size: 10rem;
+  .doors{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+     .left-side{
+       background-color: var(--elem-color);
+      // background-image: linear-gradient(90deg, var(--secondary) , var(--elem-color)) ;
+      height: 100%;
+      width: 50%;
+       border-top: 1px solid var(--accent-color);
+    }
+     .right-side{
+       background-color: var(--elem-color);
+      // background-image: linear-gradient(90deg, var(--elem-color) , var(--secondary)) ;
+      height: 100%;
+      width: 50%;
+      border-top: 1px solid var(--accent-color);
+    }
+  }
   .circle{
     &__one{
       width: 200px;
@@ -81,15 +101,36 @@ body{
     letter-spacing: 1vw;
     position: absolute;
     color: var(--text);
-    animation: 1.5s blink ease-in-out infinite;
+    // transition: 500ms linear;
+    // animation: 1.5s blink ease-in-out infinite;
   }
 }
 .preload-finished{
   // top: -130vh;
-  transform: translateY(-100%);
-  opacity: 0.4;
-  transition: 500ms linear 200ms;
+  // transform: translateY(-100%);
+  // opacity: 0.4;
+  transition: 1000ms linear 500ms;
   pointer-events: none;
+  .loading-text{
+    opacity: 0;
+    transition: 500ms linear;
+  }
+  .doors{
+    .left-side{
+      transform: translateX(-100%);
+      // transform: perspective(1000px) translateZ(0px) translateX(-100%) translateY(0px) rotateY(45deg);
+      transition: 1000ms ease-in-out 500ms;
+      animation: 1ms disappear linear forwards;
+      animation-delay: 1.5s;
+   }
+    .right-side{
+      transform: translateX(100%);   
+      // transform: perspective(1000px) translateZ(0px) translateX(100%) translateY(0px) rotateY(-45deg);
+      transition: 1000ms ease-in-out 500ms;
+      animation: 1ms disappear linear forwards;
+      animation-delay: 1.5s;
+   }
+  }
   .circle{
     &__one, &__two, &__three{
       opacity: 0;
@@ -459,6 +500,7 @@ body{
     box-shadow: 0px 0px 10px var(--shadow-color);
     .left{
       width: 50%;
+      min-height: 70px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -1937,11 +1979,6 @@ body{
       transform: translate(48px, 0);
     }
   }
-  @keyframes rotate {
-    0% {
-    transform: rotate(360deg);
-    }
-  }
   
 @keyframes spin{
   from {
@@ -1960,6 +1997,11 @@ body{
   }
   100%{
     opacity: 0.1;
+  }
+}
+@keyframes disappear{
+  100%{
+    opacity: 0;
   }
 }
   /////////////////////////////////////
@@ -1998,10 +2040,10 @@ body{
 
 
   @keyframes rotate{
-    0%{
+    from{
       transform: rotate(0deg);
     }
-    100%{
+    to{
       transform: rotate(360deg);
     }
   }
@@ -2022,7 +2064,8 @@ body{
       transition: all 300ms linear;
       &.paused{
         .img-area{
-          animation: rotate 2s infinite linear;
+          animation: rotate 2s linear infinite;
+          animation-play-state: paused;
         }
       }
       .top-bar{
@@ -2049,6 +2092,7 @@ body{
         position: absolute;
         border-radius: 50%;
         border: 1px solid var(--accent-color);
+        animation-play-state: running;
 
         .dot{
           border: 2px solid var(--accent-color);
@@ -2107,6 +2151,7 @@ body{
         }
         .img-area{
           left: 5%;
+          animation-play-state: running;
         }
         .controls{
           display: flex;
