@@ -569,7 +569,7 @@ const scrollToSection = (section) =>{
 const gridViewBtn = document.querySelector('.grid-view-btn')
 const listViewBtn = document.querySelector('.list-view-btn')
 const workCardContainer = document.querySelector('.my-work_card-container')
-const workCard = document.querySelectorAll('.my-work_card')
+const workCards = document.querySelectorAll('.my-work_card')
 
 // toggle card view
 gridViewBtn.onclick = () => {
@@ -587,7 +587,7 @@ listViewBtn.onclick = () => {
   listViewBtn.classList.add('checked')  
 }
 // flip card
-workCard.forEach(card =>{
+workCards.forEach(card =>{
   card.onclick = () =>{
     card.classList.toggle('flipped')
   }

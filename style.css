@@ -2234,6 +2234,7 @@ body {
 }
 .wrapper.minimalized .img-area .dot {
   border: 2px solid var(--accent-color);
+  background-color: var(--elem-color);
   width: 15px;
   height: 15px;
   position: absolute;
