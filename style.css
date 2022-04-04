@@ -481,7 +481,6 @@ body {
 }
 
 #about {
-  z-index: -10;
   position: relative;
   -webkit-animation: slide-in-right 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
           animation: slide-in-right 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -592,6 +591,26 @@ body {
 .page .slide-in .active {
   -webkit-animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
           animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+#about .slide-in .slide .download {
+  margin: 50px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 150px;
+  text-decoration: none;
+  gap: 10px;
+  color: var(--text);
+  border: 1px solid var(--text);
+  background-color: var(--navbar-color);
+  border-radius: 8px;
+}
+#about .slide-in .slide .download:hover {
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  cursor: pointer;
 }
 
 .skills-section {
@@ -756,6 +775,9 @@ body {
   overflow: auto;
   gap: 10px;
 }
+.work-container .my-work_card-container.grid .list-item {
+  display: none;
+}
 .work-container .my-work_card-container.grid .my-work_card {
   width: 280px;
   height: 320px;
@@ -844,6 +866,29 @@ body {
   max-height: 600px;
   overflow: auto;
   gap: 10px;
+}
+.work-container .my-work_card-container.list .list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 15px;
+}
+.work-container .my-work_card-container.list .list-item h2 {
+  font-size: min(4vw, 20px);
+}
+.work-container .my-work_card-container.list .list-item p {
+  font-size: min(3vw, 18px);
+}
+.work-container .my-work_card-container.list .list-item ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+}
+.work-container .my-work_card-container.list .list-item ul li a svg {
+  fill: var(--text);
+}
+.work-container .my-work_card-container.list .list-item ul li a:hover svg {
+  fill: var(--accent-color);
 }
 .work-container .my-work_card-container.list .my-work_card {
   width: 90%;
@@ -1098,6 +1143,9 @@ body {
   z-index: 20;
   width: min(70px, 12vw);
   height: min(120px, 30vw);
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 
 #toggle-social {
@@ -1127,7 +1175,6 @@ body {
 
 .social {
   position: fixed;
-  height: 100%;
   padding-left: min(20px, 1vw);
   font-size: 30px;
   margin-top: 25px;
@@ -1408,6 +1455,7 @@ body {
   body .navbar {
     bottom: 0;
     border-radius: 0;
+    z-index: 100 !important;
     margin: 0;
     padding: 0;
     width: 100vw;
@@ -1418,15 +1466,27 @@ body {
   }
   body .navbar .logo {
     display: none;
-  }
-  body .navbar .nav-items {
-    padding: 10px;
+    pointer-events: none;
   }
   body .navbar .nav-items .last {
     padding: 22px;
   }
+  body .navbar .nav-items .nav-item {
+    z-index: 10000 !important;
+  }
+  body .navbar .nav-items .nav-item a {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+  }
   body .navbar .nav-items .nav-item a .text {
-    display: none;
+    display: block;
+    font-size: 0.5rem;
+    position: absolute;
+    transform: translateY(150%);
+    text-align: center;
   }
   body .navbar .nav-items .nav-item a .icon {
     display: flex;
@@ -1456,10 +1516,6 @@ body {
     fill: var(--secondary);
   }
   body .navbar .nav-items .nav-item a:hover {
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
     transition: all 300ms ease-in;
   }
   body .navbar .nav-items .nav-item a:hover svg path {
@@ -1609,7 +1665,7 @@ body {
     display: none;
   }
   .navbar .nav-items .nav-item a .text {
-    display: none;
+    display: block;
   }
   .navbar .nav-items .nav-item a:hover {
     -webkit-user-select: none;
@@ -1631,6 +1687,32 @@ body {
     position: absolute;
     right: 8rem;
     top: 6px;
+  }
+
+  .list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px;
+  }
+  .list-item h2 {
+    margin-top: 5px !important;
+    font-size: 1vw;
+  }
+  .list-item p {
+    font-size: 12px !important;
+    text-align: right;
+  }
+  .list-item ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .list-item ul li a svg {
+    fill: var(--text);
+  }
+  .list-item ul li a:hover svg {
+    fill: var(--accent-color);
   }
 }
 @media screen and (max-height: 420px) and (min-width: 750px) {
