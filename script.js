@@ -569,6 +569,7 @@ const scrollToSection = (section) =>{
 const gridViewBtn = document.querySelector('.grid-view-btn')
 const listViewBtn = document.querySelector('.list-view-btn')
 const workCardContainer = document.querySelector('.my-work_card-container')
+const cardsContainer = document.querySelector('.cards')
 const workCards = document.querySelectorAll('.card')
 
 // toggle card view
@@ -577,6 +578,8 @@ gridViewBtn.onclick = () => {
   workCardContainer.classList.add('grid')
   listViewBtn.classList.remove('checked')
   gridViewBtn.classList.add('checked')  
+  cardsContainer.classList.remove('list-view')
+  cardsContainer.classList.add('grid-view')
 
 }
 // toggle list view
@@ -584,7 +587,9 @@ listViewBtn.onclick = () => {
   workCardContainer.classList.remove('grid')
   workCardContainer.classList.add('list')
   gridViewBtn.classList.remove('checked')
-  listViewBtn.classList.add('checked')  
+  listViewBtn.classList.add('checked') 
+  cardsContainer.classList.remove('grid-view')
+  cardsContainer.classList.add('list-view') 
 }
 // flip card
 workCards.forEach(card =>{
@@ -593,14 +598,10 @@ workCards.forEach(card =>{
   }
 })
 
-const cardsContainer = document.querySelector('.cards')
 
-listViewBtn.onclick = () => {
-  cardsContainer.classList.remove('grid-view')
-  cardsContainer.classList.add('list-view')
-}
+// listViewBtn.onclick = () => {
 
-gridViewBtn.onclick = () => {
-  cardsContainer.classList.remove('list-view')
-  cardsContainer.classList.add('grid-view')
-}
+// }
+
+// gridViewBtn.onclick = () => {
+
