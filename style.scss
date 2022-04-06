@@ -740,51 +740,91 @@ body{
   justify-content: space-between;
   align-items: center;
   position: relative;
-  .my-work{
-    width: 100%;
-    margin-right: 100px;
-    // align-items: flex-start;
-    .work-btns{
-      // position: absolute;
-      // top: -30px;
-      display: flex;
-      justify-content: flex-end;
-      margin: 10px 25px;
+  .cards{
+    display: flex;
+    margin-right: 80px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-height: 600px;
+    overflow-y: auto;
+    .card{
     }
-    .list-view-btn,.grid-view-btn{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-right: 5px;
-      padding: 5px 10px;
-      border: 1px solid var(--text);
-      border-radius: 8px;
-      &:hover{
-        transition: 300ms ease-in-out;
-        cursor: pointer;
-        border-color: var(--accent-color);
-        color: var(--accent-color);
-      }
-      &.checked{
-        background-color: var(--elem-color);
-        box-shadow: 0 0 10px var(--shadow-color);
-      }
-    }
-    &_card-container.grid{
-      margin-top: 25px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      max-height: 600px;
-      overflow: auto;
-      gap: 10px;
+    &.grid-view{
       .list-item{
         display: none;
       }
-      .my-work_card{
-        width: 280px;
-        height: 320px;
+
+    }
+    &.list-view{
+      .flip-card-grid{
+        display: none;
+      }
+      .card{
+        width: 100%;
+        background-color: var(--elem-color);
+        .list-item{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0px 15px;
+          h2{
+            font-size: min(4vw, 20px);
+          }
+          p{
+            font-size: min(3vw, 18px);
+          }
+          ul{
+            list-style-type: none;
+            display: flex;
+            justify-content: flex-end;
+            li{
+              a{
+                svg{
+                  fill: var(--text);
+                }
+                &:hover{
+                  svg{
+                    fill: var(--accent-color);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+      .card{
+        &:nth-child(1){
+          .flip-card-front{
+            .img{
+              background-image: url(./random-quote-generator.PNG);
+            }
+          }
+        }
+        &:nth-child(2){
+          .flip-card-front{
+            .img{
+              background-image: url(https://picsum.photos/201);
+            }
+          }
+        }
+        &:nth-child(3){
+          .flip-card-front{
+            .img{
+              background-image: url(https://picsum.photos/202);
+            }
+          }
+        }
+        &:nth-child(4){
+          .flip-card-front{
+            .img{
+              background-image: url(https://picsum.photos/300);
+            }
+          }
+        }
+
         .flip-card-grid {
           position: relative;
           width: 100%;
@@ -793,11 +833,42 @@ body{
           transition: transform 0.6s;
           transform-style: preserve-3d;
           box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
           &:hover{
             cursor: pointer;
           }
           .flip-card-front {
             overflow: hidden;
+            .img{
+              width: 100%;
+              height: 100%;
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-position: center;
+              position: relative;
+            }
+            &:hover{
+              // transition: 300ms ease-in-out;
+              cursor: pointer;
+            }
+            &::before{
+              content: "Click to flip card";
+              position: absolute;
+              z-index: 3;
+              width: 200px;
+              height: 30px;
+              padding: 10px;
+              left: 0;
+              top: 0;
+              background-color: var(--navbar-color);
+              color: var(--text);
+              transform: translateX(-100%);
+              border-radius: 0px 0px 8px 0px;
+              transition: 300ms ease-in-out;
+            }
+            &:hover::before{
+              transform: translateX(0);
+            }
           }
           .flip-card-back {
             color: var(--text);
@@ -806,7 +877,7 @@ body{
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: space-between; 
             .card{
               &_header{
                 display: flex;
@@ -835,7 +906,7 @@ body{
               &_footer{
                 // background-color: var(--primary);
                 border-top: 1px solid var(--accent-color);
-                display: flex;
+                display: flex;             
                 flex-direction: column;
                 ul{
                   list-style-type: none;
@@ -863,6 +934,9 @@ body{
         &.flipped{
           .flip-card-grid {
             transform: rotateY(180deg);
+            .flip-card-front{
+              pointer-events: none;
+            }
             .flip-card-front, .flip-card-back {
               border-radius: 8px;
               position: absolute;
@@ -872,19 +946,50 @@ body{
               backface-visibility: hidden;
             }
           }
-        } 
+        }
+      }
+    &.grid-view{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      .card{
+        height: 400px;
       }
     }
+  }
+  .my-work{
+    width: 100%;
+    // margin-right: 100px;
+    .work-btns{
+      display: flex;
+      justify-content: flex-end;
+      margin: 10px 25px;
+    margin-right: 80px;
 
-    &_card-container.list{
-      margin-top: 25px;
+    }
+    .list-view-btn,.grid-view-btn{
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-wrap: wrap;
-      max-height: 600px;
-      overflow: auto;
-      gap: 10px;
+      margin-right: 5px;
+      padding: 5px 10px;
+      border: 1px solid var(--text);
+      border-radius: 8px;
+      &:hover{
+        transition: 300ms ease-in-out;
+        cursor: pointer;
+        border-color: var(--accent-color);
+        color: var(--accent-color);
+      }
+      &.checked{
+        background-color: var(--elem-color);
+        box-shadow: 0 0 10px var(--shadow-color);
+      }
+    }
+
+
+    &_card-container.list{
+
       .list-item{
         display: flex;
         justify-content: space-between;
@@ -926,7 +1031,7 @@ body{
     }
   }
   .recent-work{
-    width: 50%;
+    width: 30%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1458,8 +1563,10 @@ body{
   }
   .work-container{
     flex-direction: column-reverse;
+    .cards{
+      margin: 0;
+    }
     .my-work{
-      margin-right: 0;
       margin-top: 30px;
     }
   }
