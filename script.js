@@ -3,8 +3,8 @@ window.addEventListener('load', () => {
     document.querySelector('.preload').classList.add('preload-finished')
     setTimeout(() => {
       typeWriter()
-    }, 1000)
-  }, 2000);
+    }, 1100)
+  }, 1000);
 });
 
 /////////////// Theme Dropdown //////////////////////

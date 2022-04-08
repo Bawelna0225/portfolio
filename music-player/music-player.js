@@ -256,7 +256,13 @@ function playingSong(){
     //if the li tag index is equal to the musicIndex then add playing class in it
     if(allLiTag[j].getAttribute("li-index") == musicIndex){
       allLiTag[j].classList.add("playing");
-      audioTag.innerText = "Playing";
+      audioTag.innerHTML = 
+      `<div class='playing-anim'>
+        <div class='bar__1'></div>
+        <div class='bar__2'></div>
+        <div class='bar__3'></div>
+        <div class='bar__4'></div>
+      </div>`;                   // Playing text
     }
 
     allLiTag[j].setAttribute("onclick", "clicked(this)");

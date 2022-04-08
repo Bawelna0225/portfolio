@@ -2233,6 +2233,10 @@ body{
     transform: translateY(0);
   }
 }
+@keyframes volume {
+  0%{height:5px;}
+  100%{height:25px;}
+}
   /////////////////////////////////////
 
 
@@ -2579,7 +2583,7 @@ body{
     box-shadow: 0px -5px 10px var(--shadow-color);
     transition: all 0.15s ease-out;
     &.show{
-      top: 40%;
+      bottom: 0%;
       opacity: 1;
       pointer-events: auto;
     }
@@ -2640,5 +2644,48 @@ body{
         }
       }
     }
+    
   } 
-  
+  .wrapper{
+    .playing-anim{
+      width: 25px;
+      height: 1px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: flex-end;
+      gap: 2px;
+      @for $i from 1 to 5{
+        .bar__#{$i}{
+          width: calc(20px / 4);
+          height: 100%;
+          background-color: var(--accent-color);
+        }
+      }
+    }
+  }
+
+  .wrapper.paused{
+    .playing-anim{
+      @for $i from 1 to 5{
+        .bar__#{$i}{
+          width: calc(20px / 4);
+          height: 100%;
+          animation: volume 0.3s linear infinite alternate;
+        }
+      }
+      .bar{
+        &__1{
+          animation-delay:0.4s;
+        }
+        &__2{
+          animation-delay:0.2s;
+        }
+        &__3{
+          animation-delay:0.9s;
+        }
+        &__4{
+          animation-delay:0.6s;
+        }
+      }
+    }
+  }
