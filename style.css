@@ -1480,7 +1480,7 @@ body {
     flex-direction: column-reverse;
   }
   .work-container .cards {
-    margin: 0;
+    margin: 0 auto;
   }
   .work-container .my-work {
     margin-top: 30px;

@@ -597,11 +597,3 @@ workCards.forEach(card =>{
     card.classList.toggle('flipped')
   }
 })
-
-
-// listViewBtn.onclick = () => {
-
-// }
-
-// gridViewBtn.onclick = () => {
-
