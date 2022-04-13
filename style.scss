@@ -735,6 +735,9 @@ body{
 ///////////////////////////////// My Work /////////////////////////////////////
 
 .work-container{
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -749,8 +752,6 @@ body{
     flex-wrap: wrap;
     max-height: 600px;
     overflow-y: auto;
-    .card{
-    }
     &.grid-view{
       .list-item{
         display: none;
@@ -848,7 +849,6 @@ body{
               position: relative;
             }
             &:hover{
-              // transition: 300ms ease-in-out;
               cursor: pointer;
             }
             &::before{
@@ -959,12 +959,17 @@ body{
   }
   .my-work{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     // margin-right: 100px;
+
     .work-btns{
       display: flex;
       justify-content: flex-end;
       margin: 10px 25px;
     margin-right: 80px;
+ 
 
     }
     .list-view-btn,.grid-view-btn{
@@ -1568,6 +1573,9 @@ body{
     }
     .my-work{
       margin-top: 30px;
+      .work-btns{
+        margin-right: 0px;
+      }
     }
   }
   .homeclass{
@@ -1813,6 +1821,19 @@ body{
   .background-text{
     font-size: 8vw !important;
   }
+  .work-container{
+    flex-direction: column-reverse;
+
+    .cards{
+      margin-right: 0;
+    }
+    .my-work{
+      .work-btns{
+        margin-right: 0px;
+      }
+    }
+  }
+
   .navbar{
     border-radius: 0px;
     .nav-items{
@@ -2574,7 +2595,7 @@ body{
     width: 100%;
     // height: 300px;
     left: 0;
-    bottom: -55%;
+    top: 100%;
     opacity: 0;
     pointer-events: none;
     z-index: 5;
@@ -2583,7 +2604,7 @@ body{
     box-shadow: 0px -5px 10px var(--shadow-color);
     transition: all 0.15s ease-out;
     &.show{
-      bottom: 0%;
+      top: 45%;
       opacity: 1;
       pointer-events: auto;
     }

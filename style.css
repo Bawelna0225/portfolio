@@ -737,6 +737,9 @@ body {
   align-items: center;
   position: relative;
 }
+.work-container ::-webkit-scrollbar {
+  width: 8px;
+}
 .work-container .cards {
   display: flex;
   margin-right: 80px;
@@ -909,6 +912,9 @@ body {
 }
 .work-container .my-work {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .work-container .my-work .work-btns {
   display: flex;
@@ -1485,6 +1491,9 @@ body {
   .work-container .my-work {
     margin-top: 30px;
   }
+  .work-container .my-work .work-btns {
+    margin-right: 0px;
+  }
 
   .homeclass {
     flex-direction: column;
@@ -1716,6 +1725,16 @@ body {
 
   .background-text {
     font-size: 8vw !important;
+  }
+
+  .work-container {
+    flex-direction: column-reverse;
+  }
+  .work-container .cards {
+    margin-right: 0;
+  }
+  .work-container .my-work .work-btns {
+    margin-right: 0px;
   }
 
   .navbar {
@@ -2648,7 +2667,7 @@ body {
           backdrop-filter: blur(5px);
   width: 100%;
   left: 0;
-  bottom: -55%;
+  top: 100%;
   opacity: 0;
   pointer-events: none;
   z-index: 5;
@@ -2658,7 +2677,7 @@ body {
   transition: all 0.15s ease-out;
 }
 .music-list.show {
-  bottom: 0%;
+  top: 45%;
   opacity: 1;
   pointer-events: auto;
 }
