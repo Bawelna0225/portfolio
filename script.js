@@ -481,7 +481,6 @@ const validateForm = () =>{
 
 
     if(!errorFlag){
-        // console.log('success')
         submit.classList.add('pending')
         setTimeout(() =>{
             submit.classList.remove('pending') 
@@ -541,7 +540,6 @@ let scrollLocation
 const scrollToSection = (section) =>{
   switch (section) {
     case home:
-      // scrollLocation = document.getElementById('home').scrollIntoView();
       scrollToTop()
       break;
     case about:

@@ -265,6 +265,9 @@ body {
 .navbar .nav-items .last svg path {
   fill: var(--text);
 }
+.navbar .nav-items .last svg line, .navbar .nav-items .last svg rect {
+  stroke: var(--text);
+}
 .navbar .nav-items .last:hover {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -275,6 +278,9 @@ body {
 }
 .navbar .nav-items .last:hover path {
   fill: var(--accent-color);
+}
+.navbar .nav-items .last:hover line, .navbar .nav-items .last:hover rect {
+  stroke: var(--accent-color);
 }
 .navbar .logo {
   color: var(--text);
@@ -485,6 +491,10 @@ body {
   -webkit-animation: slide-in-right 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
           animation: slide-in-right 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
+#about p {
+  font-size: 1rem;
+  padding: 10px 0px;
+}
 
 .homeclass {
   width: min(100% - 2rem, 70rem);
@@ -554,6 +564,7 @@ body {
 }
 .page .slide-in .slide {
   width: min(100% - 2rem, 70rem);
+  opacity: 0;
   margin: 0 auto;
   margin-top: 3rem;
   height: -webkit-max-content;
@@ -864,11 +875,19 @@ body {
   padding: 10px 20px;
 }
 .work-container .cards .card .flip-card-grid .flip-card-back .card_body ul {
+  padding-top: 10px;
+  display: flex;
   list-style-type: none;
+  flex-direction: column;
+  gap: 5px;
 }
 .work-container .cards .card .flip-card-grid .flip-card-back .card_body ul li {
   display: flex;
+  width: 28px;
   align-items: flex-start;
+}
+.work-container .cards .card .flip-card-grid .flip-card-back .card_body ul li svg {
+  fill: var(--text);
 }
 .work-container .cards .card .flip-card-grid .flip-card-back .card_footer {
   border-top: 1px solid var(--accent-color);
@@ -1851,14 +1870,14 @@ body {
 }
 @media screen and (max-width: 350px) {
   .navbar {
-    overflow-x: visible;
+    overflow-x: auto;
     overflow-y: hidden;
   }
-  .navbar .nav-items {
-    padding-left: 200px;
+  .navbar::-webkit-scrollbar {
+    height: 5px;
   }
   .navbar .nav-items .nav-item:first-child {
-    padding-left: 10rem;
+    padding-left: 5rem;
   }
   .navbar .dropdown-content {
     position: fixed;
@@ -1878,8 +1897,6 @@ body {
     flex-direction: column-reverse !important;
   }
 }
-@-webkit-keyframes preload {}
-@keyframes preload {}
 @-webkit-keyframes transform-and-glow {
   0% {
     transform: scaleY(0);
@@ -2182,7 +2199,7 @@ body {
 }
 @-webkit-keyframes slide-in-right {
   0% {
-    transform: translateX(100%);
+    transform: translateX(20%);
     opacity: 0;
   }
   100% {
@@ -2192,7 +2209,7 @@ body {
 }
 @keyframes slide-in-right {
   0% {
-    transform: translateX(100%);
+    transform: translateX(20%);
     opacity: 0;
   }
   100% {
@@ -2205,7 +2222,7 @@ body {
     transform: translateX(0px);
   }
   100% {
-    transform: translateX(200vw);
+    transform: translateX(20%);
   }
 }
 @keyframes slide-out-right {
@@ -2213,7 +2230,7 @@ body {
     transform: translateX(0px);
   }
   100% {
-    transform: translateX(200vw);
+    transform: translateX(20%);
   }
 }
 @-webkit-keyframes lds-ellipsis1 {
@@ -2387,6 +2404,9 @@ body {
   overflow: visible;
   border-radius: 8px;
   transition: all 300ms linear;
+}
+.wrapper.minimalized .music-list {
+  display: none;
 }
 .wrapper.minimalized.paused .img-area {
   -webkit-animation: rotate 2s linear infinite;

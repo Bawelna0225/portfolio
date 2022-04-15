@@ -257,6 +257,9 @@ body{
                 path{
                     fill: var(--text);
                 }
+                line, rect{
+                  stroke: var(--text);
+                }
             }
         }
         .last:hover{
@@ -265,6 +268,9 @@ body{
             box-shadow: 0px 0px 10px var(--accent-color);
             path{
                 fill: var(--accent-color);
+            }
+            line, rect{
+              stroke: var(--accent-color);
             }
         }
     }
@@ -488,6 +494,10 @@ body{
     // z-index: -10;
     position: relative;
     animation: slide-in-right 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    p{
+      font-size: 1rem;
+      padding: 10px 0px;
+    }
     
 }
 .homeclass{
@@ -559,6 +569,7 @@ body{
     z-index: 1;
       .slide{
       width: MIN(100% - 2rem, 70rem);
+      opacity: 0;
       margin: 0 auto;
       margin-top: 3rem;
       height: max-content;
@@ -895,11 +906,18 @@ body{
                 align-items: flex-start;
                 padding: 10px 20px;
                 ul{
+                  padding-top: 10px;
+                  display: flex;
                   list-style-type: none;
+                  flex-direction: column;
+                  gap: 5px;
                   li{
                     display: flex;
-                    // justify-content: center;
+                    width: 28px;
                     align-items: flex-start;
+                    svg{
+                      fill: var(--text);
+                    }
                   }
                 }
               }
@@ -1614,7 +1632,6 @@ body{
   }
   .navbar{
     bottom: 0;
-    // margin-left: 100px !important;
     border-radius: 0;
     z-index: 100 !important;
     margin: 0;
@@ -1629,7 +1646,6 @@ body{
       pointer-events: none;
     }
     .nav-items{
-      // padding: 10px;
       .last{
         padding: 22px;
       }
@@ -1640,7 +1656,6 @@ body{
           flex-direction: column-reverse;
           justify-content: center;
           align-items: center;
-          // outline: 1px solid red;
           padding: 1px;
           .text{
             display: block;
@@ -1675,15 +1690,9 @@ body{
               .rect{
                 fill: var(--secondary);
               }
-              &:hover{
-                .rect{
-                }
-                
-              }
             }
           }
           &:hover{
-            // user-select: none;
             transition: all 300ms ease-in;
             svg{
               path{
@@ -1720,7 +1729,6 @@ body{
       bottom: 90px;
       right: 0.6rem;
     }
-
   }
   .horizontal-scroller{
     margin: 0 auto;
@@ -1879,8 +1887,6 @@ body{
     align-items: center;
     padding: 0px 15px;
     h2{
-      // background-color: red;
-      // padding: 0;
       margin-top: 5px !important;
       font-size: 1vw;
     }
@@ -1956,12 +1962,14 @@ body{
 }
 @media screen and (max-width: 350px){
   .navbar{
-    overflow-x: visible;
+    overflow-x: auto;
     overflow-y: hidden;
+    &::-webkit-scrollbar{
+      height: 5px;
+    }
     .nav-items{
-      padding-left: 200px;
       .nav-item:first-child{
-        padding-left: 10rem;
+        padding-left: 5rem;
       }
     }
     .dropdown-content{
@@ -1988,9 +1996,6 @@ body{
 
 
 
-@keyframes preload {
-
-}
 @keyframes transform-and-glow {
   0%{
     transform: scaleY(0);
@@ -2169,8 +2174,8 @@ body{
   }
   @keyframes slide-in-right {
     0% {
-      -webkit-transform: translateX(100%);
-              transform: translateX(100%);
+      -webkit-transform: translateX(20%);
+              transform: translateX(20%);
       opacity: 0;
     }
     100% {
@@ -2181,14 +2186,12 @@ body{
   }
   @keyframes slide-out-right {
     0% {
-      -webkit-transform: translateX(200vw);
+      -webkit-transform: translateX(20%);
               transform: translateX(0px);
-      // opacity: 1;
     }
     100% {
       -webkit-transform: translateX(0);
-              transform: translateX(200vw);
-      // opacity: 0;
+              transform: translateX(20%);
     }
   }
   @keyframes lds-ellipsis1 {
@@ -2258,40 +2261,9 @@ body{
   0%{height:5px;}
   100%{height:25px;}
 }
-  /////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////// MUSIC PLAYER //////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
 
   @keyframes rotate{
     from{
@@ -2316,6 +2288,9 @@ body{
       overflow: visible;
       border-radius: 8px;
       transition: all 300ms linear;
+      .music-list{
+        display: none;
+      }
       &.paused{
         .img-area{
           animation: rotate 2s linear infinite;
@@ -2323,7 +2298,6 @@ body{
         }
       }
       .top-bar{
-        // display: none;
         position: absolute;
         top: 0;
         .material-icons, span{
@@ -2340,7 +2314,6 @@ body{
         height: 50px;
         width: 50px;
         left: 20%;
-        // transform: translateX(-50%);
         top: 0;
         margin-top: 15px;
         position: absolute;
@@ -2370,7 +2343,6 @@ body{
       .song-details{
         opacity: 0;
         position: absolute;
-        // width: 180px;
         height: 50px;
         top: -5px;
         color: rgb(146, 146, 146);
@@ -2428,7 +2400,6 @@ body{
       .controls{
         position: absolute;
         right: 25px;
-        // padding: 5px;
         width: 20%;
         margin-left: 0px;
         margin-top: 15px;
@@ -2593,7 +2564,6 @@ body{
     background: var(--navbar-color);
     backdrop-filter: blur(5px);
     width: 100%;
-    // height: 300px;
     left: 0;
     top: 100%;
     opacity: 0;
