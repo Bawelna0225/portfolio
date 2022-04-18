@@ -21,7 +21,6 @@
     font-size: 18px;
     font-family: 'Poppins', sans-serif;
     scroll-margin-top: 140px;
-    // outline: 1px solid red;
 }
 body{
     height: 200vh;
@@ -40,7 +39,6 @@ body{
   height: 100vh;
   z-index: 200;
   top: 0;
-  // background-color: var(--secondary);
   position: fixed;
   font-size: 10rem;
   .doors{
@@ -50,14 +48,12 @@ body{
     flex-direction: row;
      .left-side{
        background-color: var(--elem-color);
-      // background-image: linear-gradient(90deg, var(--secondary) , var(--elem-color)) ;
       height: 100%;
       width: 50%;
        border-top: 1px solid var(--accent-color);
     }
      .right-side{
        background-color: var(--elem-color);
-      // background-image: linear-gradient(90deg, var(--elem-color) , var(--secondary)) ;
       height: 100%;
       width: 50%;
       border-top: 1px solid var(--accent-color);
@@ -102,14 +98,9 @@ body{
     letter-spacing: 1vw;
     position: absolute;
     color: var(--text);
-    // transition: 500ms linear;
-    // animation: 1.5s blink ease-in-out infinite;
   }
 }
 .preload-finished{
-  // top: -130vh;
-  // transform: translateY(-100%);
-  // opacity: 0.4;
   transition: 1000ms linear 500ms;
   pointer-events: none;
   .loading-text{
@@ -119,14 +110,12 @@ body{
   .doors{
     .left-side{
       transform: translateX(-100%);
-      // transform: perspective(1000px) translateZ(0px) translateX(-100%) translateY(0px) rotateY(45deg);
       transition: 1000ms ease-in-out 500ms;
       animation: 1ms disappear linear forwards;
       animation-delay: 1.5s;
    }
     .right-side{
       transform: translateX(100%);   
-      // transform: perspective(1000px) translateZ(0px) translateX(100%) translateY(0px) rotateY(-45deg);
       transition: 1000ms ease-in-out 500ms;
       animation: 1ms disappear linear forwards;
       animation-delay: 1.5s;
@@ -344,12 +333,10 @@ body{
     justify-content: center;
     box-shadow: 0px 0px 10px var(--shadow-color);
     flex-direction: column;
-
     &:hover{
         color: var(--accent-color);
         border: 1px solid var(--accent-color);
         box-shadow: 0px 0px 10px var(--accent-color);
-        // animation: jello-vertical 0.9s infinite both;
         animation: jump 0.5s ease-in-out infinite both;
         cursor: pointer;
         path{
@@ -365,7 +352,6 @@ body{
         }
     }
 }
-
 .dropdown-content{
   width: 350px;
   height: 500px;
@@ -491,7 +477,6 @@ body{
 }
 
 #about{
-    // z-index: -10;
     position: relative;
     animation: slide-in-right 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     p{
@@ -894,7 +879,6 @@ body{
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                // background-color: var(--primary);
                 height: 70px;
                 border-bottom: 1px solid var(--accent-color);
               }
@@ -922,7 +906,6 @@ body{
                 }
               }
               &_footer{
-                // background-color: var(--primary);
                 border-top: 1px solid var(--accent-color);
                 display: flex;             
                 flex-direction: column;
@@ -980,15 +963,11 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    // margin-right: 100px;
-
     .work-btns{
       display: flex;
       justify-content: flex-end;
       margin: 10px 25px;
-    margin-right: 80px;
- 
-
+      margin-right: 80px;
     }
     .list-view-btn,.grid-view-btn{
       display: flex;
@@ -1094,22 +1073,11 @@ body{
   color: white;
   transform: rotateY(180deg);
 }
-/////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
 
 ////////////////////////////////// Contact //////////////////////////////////
 
 
 .contact{
-  // display: flex;
   .background-text{
     position: absolute;
     font-size: 10rem;
@@ -1343,7 +1311,6 @@ body{
 }
 .social{
   position: fixed;
-  // height: 100%;
   padding-left: min(20px, 1vw);
   font-size: 30px;
   margin-top: 25px;
@@ -1576,7 +1543,6 @@ body{
     margin-top: 100px;
   }
   .background-text{
-    // font-size: 8vw !important;
     font-size: 2.2rem !important;
     transform: rotate(-90deg);
     opacity: 1 !important;
@@ -1616,7 +1582,6 @@ body{
     .footer-bottom{
       margin-bottom: 70px;
     }
-  
     p{
       font-size: 0.7rem;
     }
@@ -1744,7 +1709,6 @@ body{
     position: relative;
   }
 }
-
 .nav{
   width: 320px;
   height: 100vh;
@@ -1802,9 +1766,6 @@ body{
       }
     }
   }
-
-
-
 }
 .hide{
   right: -400px;
@@ -2422,7 +2383,6 @@ body{
     i{
       cursor: pointer;
     }
-  
   }
    
   .top-bar, .progress-area .song-timer, 

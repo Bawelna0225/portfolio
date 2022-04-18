@@ -345,7 +345,6 @@ root.style.setProperty('--scrollbar-color-hover', localStorage.getItem('scrollba
 root.style.setProperty('--scrollbar-track-color', localStorage.getItem('scrollbar-track-color'));
 
 const setTheme = (theme) => {
-  // console.log(`Chosen theme is ${theme}`)
 
   let chosenTheme = obj.filter(function(val) {
     if(val.id === theme){
@@ -405,7 +404,6 @@ pageSections.forEach(section => {
 /////////////////////////////////////////// Skills Horizontal Slider //////////////////////////////////
 
 
-// window.onload = function(){ 
   const buttonRight = document.getElementById('slideRight');
   const buttonLeft = document.getElementById('slideLeft');
 
@@ -415,7 +413,6 @@ pageSections.forEach(section => {
   buttonLeft.onclick = function () {
   document.getElementById('scroll-horizontally').scrollLeft -= 350;
   };
-// };
 
 
 
