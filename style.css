@@ -21,11 +21,13 @@
   font-size: 18px;
   font-family: "Poppins", sans-serif;
   scroll-margin-top: 140px;
+  transition: 200ms ease-in-out;
 }
 
 body {
   height: 200vh;
   background-color: var(--primary);
+  transition: 200ms linear;
 }
 
 ::-moz-selection {

@@ -21,10 +21,12 @@
     font-size: 18px;
     font-family: 'Poppins', sans-serif;
     scroll-margin-top: 140px;
+    transition: 200ms ease-in-out;
 }
 body{
     height: 200vh;
    background-color: var(--primary);
+   transition: 200ms linear;
 }
 ::selection {
   color: var(--primary);
@@ -546,7 +548,7 @@ body{
   .slide-in{
     position: relative;
     z-index: 1;
-      .slide{
+    .slide{
       width: MIN(100% - 2rem, 70rem);
       opacity: 0;
       margin: 0 auto;
