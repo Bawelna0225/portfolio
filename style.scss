@@ -131,20 +131,14 @@ body{
 ::-webkit-scrollbar {
     width: 12px;
   }
-  
-  /* Track */
   ::-webkit-scrollbar-track {
     background-color: var(--scrollbar-track-color);
   }
-   
-  /* Handle */
   ::-webkit-scrollbar-thumb {
     background-color: var(--scrollbar-color); 
     border-radius: 4px;
     transition: 200ms all linear;
   }
-  
-  /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background-color: var(--scrollbar-color-hover); 
     transition: 200ms all linear;
@@ -729,7 +723,6 @@ body{
 
 }
 ///////////////////////////////// My Work /////////////////////////////////////
-
 .work-container{
   ::-webkit-scrollbar {
     width: 8px;
@@ -988,10 +981,7 @@ body{
         box-shadow: 0 0 10px var(--shadow-color);
       }
     }
-
-
     &_card-container.list{
-
       .list-item{
         display: flex;
         justify-content: space-between;
@@ -1050,11 +1040,9 @@ body{
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
-
 .my-work_card.flipped .flip-card-inner {
   transform: rotateY(180deg);
 }
-
 .flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
@@ -1062,21 +1050,16 @@ body{
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-
 .flip-card-front {
   background-color: #bbb;
   color: black;
 }
-
 .flip-card-back {
   background-color: #2980b9;
   color: white;
   transform: rotateY(180deg);
 }
-
 ////////////////////////////////// Contact //////////////////////////////////
-
-
 .contact{
   .background-text{
     position: absolute;
@@ -1233,8 +1216,6 @@ body{
       .error-border{
           border-bottom: 1px solid red;
       }
-
-      
       .pending {
           font-size: 0;
           color: transparent;
@@ -1252,9 +1233,7 @@ body{
             outline: none;
 
           }
-      }
-     
-      
+      }   
       .success {
           position: relative;
           border: none;
@@ -1528,13 +1507,9 @@ body{
     position: relative;
   }
 }
-
 ////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////// Media Screens ////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
-
-
-
 @media screen and (max-width: 692px) {
   *{
     scroll-margin-top: 80px;
@@ -1632,7 +1607,6 @@ body{
           .icon{
             display: flex;
             svg{
-
               fill: var(--text);
               width: 28px;
               height: 28px;
@@ -1669,9 +1643,8 @@ body{
               line{
                 stroke: var(--accent-color);
               }
-            }
-            
-        }
+            }   
+          }
         }
       }
     }
@@ -1725,7 +1698,6 @@ body{
   padding-bottom: 50px;
   transition: 400ms all linear;
   overscroll-behavior: contain;
-
   ul{
     list-style: none;
     width: 320px;
@@ -1772,7 +1744,6 @@ body{
   opacity: 0;
   transition: 400ms all linear;
 }
-
 @media(min-width: 693px) and (max-width: 1152px){
   .horizontal-scroller{
     margin: 0 auto;
@@ -1802,7 +1773,6 @@ body{
       }
     }
   }
-
   .navbar{
     border-radius: 0px;
     .nav-items{
@@ -1906,7 +1876,6 @@ body{
       row-gap: 5px;
       justify-content: center;
       align-items: center;
-
       .dropdown-item{
           margin: 0 auto;
           width: 100%;
@@ -1950,13 +1919,9 @@ body{
     flex-direction: column-reverse !important;
   }
 }
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////// Animations ////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 @keyframes transform-and-glow {
   0%{
     transform: scaleY(0);
@@ -2297,7 +2262,7 @@ body{
         img{
           width: 100%;
           height: 100%;
-          object-fit: cover;
+          object-fit: scale-down;
         }
       }
       .song-details{
@@ -2414,7 +2379,6 @@ body{
     img{
       width: 100%;
       height: 100%;
-      // object-fit: fill;
       object-fit: scale-down;
     }
   } 
