@@ -548,7 +548,7 @@ body{
     position: relative;
     z-index: 1;
     *{
-      transition: 300ms ease-in-out;
+      transition: background-color 300ms ease-in-out;
     }
     .slide{
       width: MIN(100% - 2rem, 70rem);

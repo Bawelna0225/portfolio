@@ -561,7 +561,7 @@ body {
   z-index: 1;
 }
 .page .slide-in * {
-  transition: 300ms ease-in-out;
+  transition: background-color 300ms ease-in-out;
 }
 .page .slide-in .slide {
   width: min(100% - 2rem, 70rem);
