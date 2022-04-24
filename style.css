@@ -1158,6 +1158,9 @@ body {
   margin-top: 15px;
   margin-left: 15px;
 }
+.contact-section form .info-modal_content p {
+  margin-left: 15px;
+}
 .contact-section form .info-modal_content ul {
   list-style: none;
   margin-bottom: 15px;
