@@ -1,30 +1,27 @@
 window.addEventListener('load', () => {
-  setTimeout(() => {
+  setTimeout(() => {  // remove preload after 1 second 
     document.querySelector('.preload').classList.add('preload-finished')
-    setTimeout(() => {
+    setTimeout(() => {  // start typewriter animation 1,1 s after preload is being removed
       typeWriter()
     }, 1100)
   }, 1000);
 });
 
+
+
 /////////////// Theme Dropdown //////////////////////
-
-
-
-
-
 const dropdown = () => {
     document.getElementById("dropdown").classList.toggle("show");
 }
 window.addEventListener('click', function(e){
-  if (!document.getElementById('dropdown').contains(e.target) && (!document.getElementById('dropbtn').contains(e.target))) {
+  if (!document.getElementById('dropdown').contains(e.target) && (!document.getElementById('dropbtn').contains(e.target))) {      // if user clicks outside themebox content close themebox 
    document.getElementById('dropdown').classList.remove('show');
 } 
 
 
 
   ///////////// Side nav ///////////////////////
-  if (!document.getElementById('toggle-menu').contains(e.target) && (!document.getElementById('side-nav').contains(e.target))) {
+  if (!document.getElementById('toggle-menu').contains(e.target) && (!document.getElementById('side-nav').contains(e.target))) {      // if user clicks outside sidenav content close sidenav 
     document.getElementById('side-nav').classList.add('hide');
   } 
   let hide = document.querySelector('.hide')
@@ -55,14 +52,13 @@ window.onscroll = function() {
 }
 
 const scrollFunction = () => {
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {    // if user scrolls more than 300 show back to top button
     document.getElementById("myBtn").classList.add('showScroll');
-    // console.log('scrolling')
   } else {
     document.getElementById("myBtn").classList.remove('showScroll');
   }
 }
-const scrollToTop = () => {
+const scrollToTop = () => {   // onlick set scroll to 0, go back to top
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
@@ -75,7 +71,7 @@ const scrollToTop = () => {
 
 
 
-const message = ['Hello, my name is Paweł, and this is my website.']
+const message = ['Hello, my name is Paweł, and this is my website.'] // here's message you want to write
 let textPosition = 0
 const speed = 100
 
@@ -333,7 +329,7 @@ const themes = `[
 ]`
 const obj = JSON.parse(themes);
 
-root.style.setProperty('--primary', localStorage.getItem('primary'))
+root.style.setProperty('--primary', localStorage.getItem('primary'))      // set property values to that saved in local storage
 root.style.setProperty('--secondary', localStorage.getItem('secondary'));
 root.style.setProperty('--elem-color', localStorage.getItem('elem-color'));
 root.style.setProperty('--navbar-color', localStorage.getItem('navbar-color') );
@@ -347,9 +343,8 @@ root.style.setProperty('--scrollbar-track-color', localStorage.getItem('scrollba
 const setTheme = (theme) => {
 
   let chosenTheme = obj.filter(function(val) {
-    if(val.id === theme){
-
-      root.style.setProperty('--primary', val.colors.primary);
+    if(val.id === theme){           // if theme id is equal to user selection set this theme
+      root.style.setProperty('--primary', val.colors.primary);    // change property values to that of chosen theme 
       root.style.setProperty('--secondary', val.colors.secondary);
       root.style.setProperty('--elem-color', val.colors.elemColor);
       root.style.setProperty('--navbar-color', val.colors.navbarColor);
@@ -360,7 +355,7 @@ const setTheme = (theme) => {
       root.style.setProperty('--scrollbar-color-hover', val.colors.scrollBarColorHover);
       root.style.setProperty('--scrollbar-track-color', val.colors.scrollBarTrackColor);
 
-      localStorage.setItem('primary', val.colors.primary)
+      localStorage.setItem('primary', val.colors.primary)          // save theme colors to localStorage
       localStorage.setItem('secondary', val.colors.secondary)
       localStorage.setItem('elem-color', val.colors.elemColor)
       localStorage.setItem('navbar-color', val.colors.navbarColor)
@@ -411,7 +406,7 @@ pageSections.forEach(section => {
   document.getElementById('scroll-horizontally').scrollLeft += 250;
   };
   buttonLeft.onclick = function () {
-  document.getElementById('scroll-horizontally').scrollLeft -= 350;
+  document.getElementById('scroll-horizontally').scrollLeft -= 250;
   };
 
 
@@ -436,7 +431,8 @@ infoModalCloseBtn.onclick = () => {
 }
 const validateForm = () =>{
     let errorFlag = false
-    if (nameInput.value.length < 1){
+    console.log()
+    if (nameInput.value.length < 1 || nameInput.value.split(' ').join('') == ''){ // if name is blank or flied with only spaces throw error
         errorMessage[0].innerText = "Name cannot be blank"
         nameInput.classList.add("error-border")
         errorFlag = true
@@ -446,12 +442,12 @@ const validateForm = () =>{
         emailInput.classList.add("error-border")
         errorFlag = true
     }
-    if (subjectInput.value.length < 1){
+    if (subjectInput.value.length < 1 || subjectInput.value.split(' ').join('') == ''){
         errorMessage[2].innerText = "Subject cannot be blank"
         subjectInput.classList.add("error-border")
         errorFlag = true
     }
-    if (messageInput.value.length < 1){
+    if (messageInput.value.length < 1 || messageInput.value.split(' ').join('') == ''){
         errorMessage[3].innerText = "Message cannot be blank"
         messageInput.classList.add("error-border")
         errorFlag = true
@@ -491,7 +487,7 @@ const validateForm = () =>{
     }
 }
 
-
+// email validation
 const emailIsValid = (emailInput) =>{
     let pattern = /\S+@\S+\.\S+/;
     return pattern.test(emailInput)
@@ -523,11 +519,11 @@ mailSocialIconToggle.onclick = () => {
   gmailInfoBox.classList.toggle('active')
   
 }
-copyToClipboardBtn.onclick = () => {
+copyToClipboardBtn.onclick = () => {    //show snackbar and copy email to clipboard
   snackbar.classList.add('active')
   navigator.clipboard.writeText('pawelczarnecki0225@gmail.com');
   
-  setTimeout(() =>{
+  setTimeout(() =>{                 //remove snackbar after 2 seconds
     snackbar.classList.remove('active')
   },2000); 
 }
