@@ -339,7 +339,7 @@ body{
 .dropdown-content{          // themes content
   width: 350px;
   height: 500px;
-  top: 78px;
+  bottom: calc(100% - 580px);
   position: fixed;
   background-color: var(--navbar-color);
   border-radius: 8px;
@@ -1646,7 +1646,7 @@ body{
   }
   .dropdown-content{
     margin: 0 auto;
-    top: 100%;
+    bottom: -100vh;
     height: 500px;
     z-index: 100;
     right: 1em;
@@ -1654,8 +1654,8 @@ body{
     transition: 300ms all ease-in-out;
   }
   .show {
-    transition: 500ms top cubic-bezier(0.42, 0, 0.11, 1.32);
-    top: calc(100% - 580px);
+    transition: 500ms bottom cubic-bezier(0.42, 0, 0.11, 1.32);
+    bottom: 78px;
     z-index: 1000;
   }
     .backToTop{
