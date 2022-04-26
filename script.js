@@ -394,8 +394,6 @@ pageSections.forEach(section => {
 
 
 
-
-
 /////////////////////////////////////////// Skills Horizontal Slider //////////////////////////////////
 
 
@@ -409,6 +407,33 @@ pageSections.forEach(section => {
   document.getElementById('scroll-horizontally').scrollLeft -= 250;
   };
 
+  /////////////////////////////////////// Skills Lazy Load ////////////////////////////////////
+  
+const consoleLogLoad = () => {
+  return true
+}
+
+let skillsImages = [...document.querySelectorAll('.skill')]
+
+const lazyImages = new IntersectionObserver(pics => {
+    pics.forEach(pic => {
+      if(pic.isIntersecting && consoleLogLoad()){
+        setTimeout(() => {
+          pic.target.classList.remove('loading')
+          lazyImages.unobserve(pic.target)
+        }, 500)
+      }
+    }) 
+  },
+  {
+      rootMargin: '100%',
+      threshold: 0,
+  }
+)
+
+skillsImages.forEach(pic => {
+    lazyImages.observe(pic)
+})
 
 
 //////////////////////////////////////////// Contact Me Form ////////////////////////////////////////////////
