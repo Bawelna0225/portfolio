@@ -1524,6 +1524,15 @@ img, .material-icons, .navbar {
   .contact-section {
     margin-top: 100px;
   }
+  .contact-section form input {
+    height: 40px;
+  }
+  .contact-section form label {
+    margin: 10px 0px 0px 0px;
+  }
+  .contact-section form textarea {
+    height: 150px;
+  }
 
   .background-text {
     font-size: 2.2rem !important;
