@@ -824,7 +824,7 @@ img, .material-icons, .navbar {
   background-image: url(./random-quote-generator.PNG);
 }
 .work-container .cards .card:nth-child(2) .flip-card-front .img {
-  background-image: url(https://picsum.photos/201);
+  background-image: url(./video_project.PNG);
 }
 .work-container .cards .card:nth-child(3) .flip-card-front .img {
   background-image: url(https://picsum.photos/202);
