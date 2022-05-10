@@ -831,6 +831,13 @@ img, .material-icons, .navbar{
             }
           }
         }
+        &:nth-child(5){
+          .flip-card-front{
+            .img{
+              background-image: url(./react-portfolio.PNG);
+            }
+          }
+        }
 
         .flip-card-grid {
           position: relative;
