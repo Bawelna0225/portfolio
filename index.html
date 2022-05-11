@@ -785,7 +785,7 @@
                 <span class="background-text">Contact Me</span>
                 <div class="contact-section">
                     <!-- Contact Me Form -->
-                    <form method="POST" action="mail.php"  novalidate autocomplete="off" data-netlify="true" netlify>
+                    <form method="POST" onsubmit="event.preventDefault(); validateForm()" novalidate autocomplete="off" data-netlify="true" netlify>
             
                         <label for="name">Name: </label>
                         <input type="text" name="name" id="name">
