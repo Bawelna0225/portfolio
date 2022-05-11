@@ -496,31 +496,12 @@ const validateForm = () =>{
         errorMessage[3].innerText = ""
     })
 
-    // const name = document.getElementById('name').value,
-    // email = document.getElementById('email').value,
-    // subject = document.getElementById('subject').value,
-    // message = document.getElementById('message').value
-
-    function sendEmail() {
-      Email.send({
-      Host: "smtp.elasticemail.com",
-      Username : 'czajnikelektryczny0225@gmail.com',
-      Password : "58279222343A3F9D27AB6D4A0A4FE9EA47D1",
-      To : 'czajnikelektryczny0225@gmail.com',
-      From : emailInput.value,
-      Subject : subjectInput.value,
-      Body : messageInput.value,
-      }).then(
-        message => console.log(`name: ${nameInput.value}, email: ${emailInput.value}, subject: ${subjectInput.value}, message: ${messageInput.value}`)
-      );
-    }
-
     if(!errorFlag){
         submit.classList.add('pending')
-        sendEmail()
         setTimeout(() =>{
-            submit.classList.remove('pending') 
-            submit.classList.add('success')
+          submit.classList.remove('pending') 
+          document.getElementById("myForm").submit.click();
+          submit.classList.add('success')
 
 
             setTimeout(() =>{

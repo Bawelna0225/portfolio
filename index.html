@@ -785,7 +785,7 @@
                 <span class="background-text">Contact Me</span>
                 <div class="contact-section">
                     <!-- Contact Me Form -->
-                    <form method="POST" onsubmit="event.preventDefault(); validateForm()" novalidate autocomplete="off" data-netlify="true" netlify>
+                    <form id="myForm" method="POST" onsubmit="event.preventDefault(); validateForm()" novalidate autocomplete="off" data-netlify="true">
             
                         <label for="name">Name: </label>
                         <input type="text" name="name" id="name">
@@ -891,7 +891,6 @@
       Copied to Clipboard
   </div>  
       <script src="./script.js"></script>
-      <script src="https://smtpjs.com/v3/smtp.js"></script>
       <script src="./music-player/music-player.js"></script>
   </body>
   </html>
