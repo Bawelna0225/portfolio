@@ -785,7 +785,12 @@
                 <span class="background-text">Contact Me</span>
                 <div class="contact-section">
                     <!-- Contact Me Form -->
-                    <form id="myForm" method="POST" onsubmit="event.preventDefault(); validateForm()" novalidate autocomplete="off" data-netlify="true">
+                    <form id="myForm" method="POST" 
+                    novalidate 
+                    autocomplete="off" 
+                    data-netlify="true">
+                    <!-- onsubmit="event.preventDefault(); validateForm()"  -->
+                    
             
                         <label for="name">Name: </label>
                         <input type="text" name="name" id="name">

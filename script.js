@@ -498,9 +498,9 @@ const validateForm = () =>{
 
     if(!errorFlag){
         submit.classList.add('pending')
+        document.getElementById("myForm").submit.click()
         setTimeout(() =>{
           submit.classList.remove('pending') 
-          document.getElementById("myForm").submit.click();
           submit.classList.add('success')
 
 
