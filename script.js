@@ -504,12 +504,12 @@ const validateForm = () =>{
     function sendEmail() {
       Email.send({
       Host: "smtp.elasticemail.com",
-      Username : `${emailInput.value}`,
+      Username : 'czajnikelektryczny0225@gmail.com',
       Password : "58279222343A3F9D27AB6D4A0A4FE9EA47D1",
       To : 'czajnikelektryczny0225@gmail.com',
-      From : `${emailInput.value}`,
-      Subject : `${subjectInput.value}`,
-      Body : `${messageInput.value}`,
+      From : emailInput.value,
+      Subject : subjectInput.value,
+      Body : messageInput.value,
       }).then(
         message => console.log(`name: ${nameInput.value}, email: ${emailInput.value}, subject: ${subjectInput.value}, message: ${messageInput.value}`)
       );
@@ -517,10 +517,10 @@ const validateForm = () =>{
 
     if(!errorFlag){
         submit.classList.add('pending')
+        sendEmail()
         setTimeout(() =>{
             submit.classList.remove('pending') 
             submit.classList.add('success')
-            sendEmail()
 
 
             setTimeout(() =>{
