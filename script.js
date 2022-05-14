@@ -454,7 +454,7 @@ moreInfo.onclick = () => {
 infoModalCloseBtn.onclick = () => {
   infoModal.style.display = 'none'
 }
-const validateForm = () =>{
+const validateForm = (event) =>{
     let errorFlag = false
     console.log()
     if (nameInput.value.length < 1 || nameInput.value.split(' ').join('') == ''){ // if name is blank or flied with only spaces throw error
@@ -497,6 +497,28 @@ const validateForm = () =>{
     })
 
     if(!errorFlag){
+
+
+      // $.ajax(
+      //   {
+      //      url: 'sendmail.php',
+      //      type: 'post',
+      //      data: $("#uDF").serialize(),
+      //      success: function(response) {
+      //        console.log(response);
+      //      }
+      //   });
+
+      // https://code-boxx.com/call-php-file-from-javascript/
+      var data = new FormData(document.getElementById("myForm"));
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "sendmail.php");
+      xhr.onload = function () {
+        console.log(this.response);
+      };
+      xhr.send(data);
+
+
         submit.classList.add('pending')
         document.getElementById("myForm").submit.click()
         setTimeout(() =>{
@@ -517,7 +539,6 @@ const emailIsValid = (emailInput) =>{
     let pattern = /\S+@\S+\.\S+/;
     return pattern.test(emailInput)
 }
-
 
 
 //////////////////////////////////////////// Toggle Social Icons //////////////////////////////
