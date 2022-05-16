@@ -424,46 +424,46 @@ img, .material-icons, .navbar {
   padding-top: 5px;
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(1) {
-  background: linear-gradient(to right bottom, #1a1a1a 50%, #e0e0e0 50%);
+  background: linear-gradient(to right bottom, rgb(26, 26, 26) 50%, rgb(224, 224, 224) 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(2) {
-  background: linear-gradient(to right bottom, #e0e0e0 50%, #1a1a1a 50%);
+  background: linear-gradient(to right bottom, rgb(224, 224, 224) 50%, rgb(26, 26, 26) 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(3) {
-  background: linear-gradient(to right bottom, #1a1a1a 50%, #0000db 50%);
+  background: linear-gradient(to right bottom, rgb(26, 26, 26) 50%, rgb(0, 0, 219) 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(4) {
-  background: linear-gradient(to right bottom, #e0e0e0 50%, #0000db 50%);
+  background: linear-gradient(to right bottom, rgb(224, 224, 224) 50%, rgb(0, 0, 219) 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(5) {
-  background: linear-gradient(to right bottom, #1a1a1a 50%, #df0909 50%);
+  background: linear-gradient(to right bottom, rgb(26, 26, 26) 50%, rgb(223, 9, 9) 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(6) {
-  background: linear-gradient(to right bottom, #e0e0e0 50%, #df0909 50%);
+  background: linear-gradient(to right bottom, rgb(224, 224, 224) 50%, rgb(223, 9, 9) 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(7) {
-  background: linear-gradient(to right bottom, #1a1a1a 50%, #dfd109 50%);
+  background: linear-gradient(to right bottom, rgb(26, 26, 26) 50%, rgb(223, 209, 9) 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(8) {
-  background: linear-gradient(to right bottom, #e0e0e0 50%, #dfd109 50%);
+  background: linear-gradient(to right bottom, rgb(224, 224, 224) 50%, rgb(223, 209, 9) 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(9) {
-  background: linear-gradient(to right bottom, #1a1a1a 50%, #46df09 50%);
+  background: linear-gradient(to right bottom, rgb(26, 26, 26) 50%, rgb(70, 223, 9) 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(10) {
-  background: linear-gradient(to right bottom, #e0e0e0 50%, #46df09 50%);
+  background: linear-gradient(to right bottom, rgb(224, 224, 224) 50%, rgb(70, 223, 9) 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(11) {
-  background: linear-gradient(to right bottom, #1a1a1a 50%, #8909df 50%);
+  background: linear-gradient(to right bottom, rgb(26, 26, 26) 50%, rgb(137, 9, 223) 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(12) {
-  background: linear-gradient(to right bottom, #e0e0e0 50%, #8909df 50%);
+  background: linear-gradient(to right bottom, rgb(224, 224, 224) 50%, rgb(137, 9, 223) 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(13) {
-  background: linear-gradient(to right bottom, #1a1a1a 50%, #df7009 50%);
+  background: linear-gradient(to right bottom, rgb(26, 26, 26) 50%, rgb(223, 112, 9) 50%);
 }
 .dropdown-content .dropdown-items .dropdown-item:nth-child(14) {
-  background: linear-gradient(to right bottom, #e0e0e0 50%, #df7009 50%);
+  background: linear-gradient(to right bottom, rgb(224, 224, 224) 50%, rgb(223, 112, 9) 50%);
 }
 .dropdown-content p {
   color: var(--text);
@@ -827,12 +827,15 @@ img, .material-icons, .navbar {
   background-image: url(./video_project.PNG);
 }
 .work-container .cards .card:nth-child(3) .flip-card-front .img {
-  background-image: url(./shoping-cart.PNG);
+  background-image: url(./Slider.PNG);
 }
 .work-container .cards .card:nth-child(4) .flip-card-front .img {
-  background-image: url(./react-portfolio.PNG);
+  background-image: url(./shoping-cart.PNG);
 }
 .work-container .cards .card:nth-child(5) .flip-card-front .img {
+  background-image: url(./react-portfolio.PNG);
+}
+.work-container .cards .card:nth-child(6) .flip-card-front .img {
   background-image: url(./react-dashboard.PNG);
 }
 .work-container .cards .card .flip-card-grid {
@@ -1071,8 +1074,7 @@ img, .material-icons, .navbar {
   line-height: 0.9;
   -ms-writing-mode: tb-rl;
       writing-mode: vertical-rl;
-  -webkit-text-orientation: mixed;
-          text-orientation: mixed;
+  text-orientation: mixed;
   opacity: 0.4;
   color: var(--accent-color);
   -webkit-user-select: none;
@@ -2510,7 +2512,7 @@ img, .material-icons, .navbar {
   position: absolute;
   height: 50px;
   top: -5px;
-  color: #929292;
+  color: rgb(146, 146, 146);
   left: 90px;
   text-align: left;
 }
@@ -2643,7 +2645,7 @@ img, .material-icons, .navbar {
   height: 6px;
   width: 100%;
   border-radius: 50px;
-  background: #d4d4d4;
+  background: rgb(212, 212, 212);
   cursor: pointer;
 }
 .progress-area .progress-bar {
@@ -2869,5 +2871,4 @@ img, .material-icons, .navbar {
 .wrapper.paused .playing-anim .bar__4 {
   -webkit-animation-delay: 0.6s;
           animation-delay: 0.6s;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
