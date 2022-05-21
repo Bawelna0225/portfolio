@@ -1,91 +1,86 @@
-window.addEventListener('load', () => {
-  setTimeout(() => {  // remove preload after 1 second 
-    document.querySelector('.preload').classList.add('preload-finished')
-    setTimeout(() => {  // start typewriter animation 1,1 s after preload is being removed
-      typeWriter()
-    }, 1100)
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    // remove preload after 1 second
+    document.querySelector(".preload").classList.add("preload-finished");
+    setTimeout(() => {
+      // start typewriter animation 1,1 s after preload is being removed
+      typeWriter();
+    }, 1100);
   }, 1000);
 });
 
-
-
 /////////////// Theme Dropdown //////////////////////
 const dropdown = () => {
-    document.getElementById("dropdown").classList.toggle("show");
-}
-window.addEventListener('click', function(e){
-  if (!document.getElementById('dropdown').contains(e.target) && (!document.getElementById('dropbtn').contains(e.target))) {      // if user clicks outside themebox content close themebox 
-   document.getElementById('dropdown').classList.remove('show');
-} 
-
-
+  document.getElementById("dropdown").classList.toggle("show");
+};
+window.addEventListener("click", function (e) {
+  if (
+    !document.getElementById("dropdown").contains(e.target) &&
+    !document.getElementById("dropbtn").contains(e.target)
+  ) {
+    // if user clicks outside themebox content close themebox
+    document.getElementById("dropdown").classList.remove("show");
+  }
 
   ///////////// Side nav ///////////////////////
-  if (!document.getElementById('toggle-menu').contains(e.target) && (!document.getElementById('side-nav').contains(e.target))) {      // if user clicks outside sidenav content close sidenav 
-    document.getElementById('side-nav').classList.add('hide');
-  } 
-  let hide = document.querySelector('.hide')
-  let wrapperMenu = document.querySelector('.wrapper-menu');
-  
+  if (
+    !document.getElementById("toggle-menu").contains(e.target) &&
+    !document.getElementById("side-nav").contains(e.target)
+  ) {
+    // if user clicks outside sidenav content close sidenav
+    document.getElementById("side-nav").classList.add("hide");
+  }
+  let hide = document.querySelector(".hide");
+  let wrapperMenu = document.querySelector(".wrapper-menu");
 
-  if(document.getElementById('side-nav').contains(hide)){
-    wrapperMenu.classList.remove('open');
+  if (document.getElementById("side-nav").contains(hide)) {
+    wrapperMenu.classList.remove("open");
+  } else {
+    wrapperMenu.classList.add("open");
   }
-  else{
-    wrapperMenu.classList.add('open');
-  }
-})
+});
 
 toggleSideMenu = () => {
-  document.querySelector('.nav').classList.toggle('hide');
-}
-
-
-
-
+  document.querySelector(".nav").classList.toggle("hide");
+};
 
 ///////////////////  Back to Top Button //////////////////
 
-
-window.onscroll = function() {
-  scrollFunction()
-}
+window.onscroll = function () {
+  scrollFunction();
+};
 
 const scrollFunction = () => {
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {    // if user scrolls more than 300 show back to top button
-    document.getElementById("myBtn").classList.add('showScroll');
+  if (
+    document.body.scrollTop > 300 ||
+    document.documentElement.scrollTop > 300
+  ) {
+    // if user scrolls more than 300 show back to top button
+    document.getElementById("myBtn").classList.add("showScroll");
   } else {
-    document.getElementById("myBtn").classList.remove('showScroll');
+    document.getElementById("myBtn").classList.remove("showScroll");
   }
-}
-const scrollToTop = () => {   // onlick set scroll to 0, go back to top
+};
+const scrollToTop = () => {
+  // onlick set scroll to 0, go back to top
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
-}
-
-
-
-
+};
 
 /////////////////////////////// Type Writer ///////////////////
 
-
-
-const message = ['Hello, my name is Paweł, and this is my website.'] // here's message you want to write
-let textPosition = 0
-const speed = 100
+const message = ["Hello, my name is Paweł, and this is my website."]; // here's message you want to write
+let textPosition = 0;
+const speed = 100;
 
 const typeWriter = () => {
-  document.querySelector('#message').innerHTML = message[0].substring(0, textPosition) + ' <span class="caret"></span>'
+  document.querySelector("#message").innerHTML =
+    message[0].substring(0, textPosition) + ' <span class="caret"></span>';
 
-  if(textPosition++ != message[0].length){
-    setTimeout(typeWriter, speed)
+  if (textPosition++ != message[0].length) {
+    setTimeout(typeWriter, speed);
   }
-}
-
-
-
-
+};
 
 ///////////////  Theme Switcher //////////////////
 let root = document.documentElement;
@@ -326,311 +321,319 @@ const themes = `[
       "scrollBarTrackColor": "#d4d4d4"
   }
 }
-]`
+]`;
 const obj = JSON.parse(themes);
 
-root.style.setProperty('--primary', localStorage.getItem('primary'))      // set property values to that saved in local storage
-root.style.setProperty('--secondary', localStorage.getItem('secondary'));
-root.style.setProperty('--elem-color', localStorage.getItem('elem-color'));
-root.style.setProperty('--navbar-color', localStorage.getItem('navbar-color') );
-root.style.setProperty('--accent-color', localStorage.getItem('accent-color'));
-root.style.setProperty('--text', localStorage.getItem('text'));
-root.style.setProperty('--shadow-color', localStorage.getItem('shadow-color'));
-root.style.setProperty('--scrollbar-color', localStorage.getItem('scrollbar-color'));
-root.style.setProperty('--scrollbar-color-hover', localStorage.getItem('scrollbar-color-hover'));
-root.style.setProperty('--scrollbar-track-color', localStorage.getItem('scrollbar-track-color'));
+root.style.setProperty("--primary", localStorage.getItem("primary")); // set property values to that saved in local storage
+root.style.setProperty("--secondary", localStorage.getItem("secondary"));
+root.style.setProperty("--elem-color", localStorage.getItem("elem-color"));
+root.style.setProperty("--navbar-color", localStorage.getItem("navbar-color"));
+root.style.setProperty("--accent-color", localStorage.getItem("accent-color"));
+root.style.setProperty("--text", localStorage.getItem("text"));
+root.style.setProperty("--shadow-color", localStorage.getItem("shadow-color"));
+root.style.setProperty(
+  "--scrollbar-color",
+  localStorage.getItem("scrollbar-color")
+);
+root.style.setProperty(
+  "--scrollbar-color-hover",
+  localStorage.getItem("scrollbar-color-hover")
+);
+root.style.setProperty(
+  "--scrollbar-track-color",
+  localStorage.getItem("scrollbar-track-color")
+);
 
 const setTheme = (theme) => {
+  let chosenTheme = obj.filter(function (val) {
+    if (val.id === theme) {
+      // if theme id is equal to user selection set this theme
+      root.style.setProperty("--primary", val.colors.primary); // change property values to that of chosen theme
+      root.style.setProperty("--secondary", val.colors.secondary);
+      root.style.setProperty("--elem-color", val.colors.elemColor);
+      root.style.setProperty("--navbar-color", val.colors.navbarColor);
+      root.style.setProperty("--accent-color", val.colors.accentColor);
+      root.style.setProperty("--text", val.colors.text);
+      root.style.setProperty("--shadow-color", val.colors.shadowColor);
+      root.style.setProperty("--scrollbar-color", val.colors.scrollbarColor);
+      root.style.setProperty(
+        "--scrollbar-color-hover",
+        val.colors.scrollBarColorHover
+      );
+      root.style.setProperty(
+        "--scrollbar-track-color",
+        val.colors.scrollBarTrackColor
+      );
 
-  let chosenTheme = obj.filter(function(val) {
-    if(val.id === theme){           // if theme id is equal to user selection set this theme
-      root.style.setProperty('--primary', val.colors.primary);    // change property values to that of chosen theme 
-      root.style.setProperty('--secondary', val.colors.secondary);
-      root.style.setProperty('--elem-color', val.colors.elemColor);
-      root.style.setProperty('--navbar-color', val.colors.navbarColor);
-      root.style.setProperty('--accent-color', val.colors.accentColor);
-      root.style.setProperty('--text', val.colors.text);
-      root.style.setProperty('--shadow-color', val.colors.shadowColor);
-      root.style.setProperty('--scrollbar-color', val.colors.scrollbarColor);
-      root.style.setProperty('--scrollbar-color-hover', val.colors.scrollBarColorHover);
-      root.style.setProperty('--scrollbar-track-color', val.colors.scrollBarTrackColor);
-
-      localStorage.setItem('primary', val.colors.primary)          // save theme colors to localStorage
-      localStorage.setItem('secondary', val.colors.secondary)
-      localStorage.setItem('elem-color', val.colors.elemColor)
-      localStorage.setItem('navbar-color', val.colors.navbarColor)
-      localStorage.setItem('accent-color', val.colors.accentColor)
-      localStorage.setItem('text', val.colors.text)
-      localStorage.setItem('shadow-color', val.colors.shadowColor)
-      localStorage.setItem('scrollbar-color', val.colors.scrollbarColor)
-      localStorage.setItem('scrollbar-color-hover', val.colors.scrollBarColorHover)
-      localStorage.setItem('scrollbar-track-color', val.colors.scrollBarTrackColor)
-      
+      localStorage.setItem("primary", val.colors.primary); // save theme colors to localStorage
+      localStorage.setItem("secondary", val.colors.secondary);
+      localStorage.setItem("elem-color", val.colors.elemColor);
+      localStorage.setItem("navbar-color", val.colors.navbarColor);
+      localStorage.setItem("accent-color", val.colors.accentColor);
+      localStorage.setItem("text", val.colors.text);
+      localStorage.setItem("shadow-color", val.colors.shadowColor);
+      localStorage.setItem("scrollbar-color", val.colors.scrollbarColor);
+      localStorage.setItem(
+        "scrollbar-color-hover",
+        val.colors.scrollBarColorHover
+      );
+      localStorage.setItem(
+        "scrollbar-track-color",
+        val.colors.scrollBarTrackColor
+      );
     }
-  })
-}
-
-
+  });
+};
 
 //////////////////// Slide In //////////////////////
 
-let pageSections = [...document.querySelectorAll('.slide-in')]
+let pageSections = [...document.querySelectorAll(".slide-in")];
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-          entry.target.children[0].classList.toggle('active', entry.isIntersecting)
-          // if(entry.isIntersecting) observer.unobserve(entry.target) //prevent from sliding out
-    })
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      entry.target.children[0].classList.toggle("active", entry.isIntersecting);
+      // if(entry.isIntersecting) observer.unobserve(entry.target) //prevent from sliding out
+    });
   },
   {
-      rootMargin: '0%',
-      threshold: 0.1,
+    rootMargin: "0%",
+    threshold: 0.1,
   }
-)
+);
 
-pageSections.forEach(section => {
-    observer.observe(section)
-})
-
-
+pageSections.forEach((section) => {
+  observer.observe(section);
+});
 
 /////////////////////////////////////////// Skills Horizontal Slider //////////////////////////////////
 
+const buttonRight = document.getElementById("slideRight");
+const buttonLeft = document.getElementById("slideLeft");
 
-  const buttonRight = document.getElementById('slideRight');
-  const buttonLeft = document.getElementById('slideLeft');
+buttonRight.onclick = function () {
+  document.getElementById("scroll-horizontally").scrollLeft += 250;
+};
+buttonLeft.onclick = function () {
+  document.getElementById("scroll-horizontally").scrollLeft -= 250;
+};
 
-  buttonRight.onclick = function () {
-  document.getElementById('scroll-horizontally').scrollLeft += 250;
-  };
-  buttonLeft.onclick = function () {
-  document.getElementById('scroll-horizontally').scrollLeft -= 250;
-  };
+/////////////////////////////////////// Skills Lazy Load ////////////////////////////////////
 
-  /////////////////////////////////////// Skills Lazy Load ////////////////////////////////////
-  
 const consoleLogLoad = () => {
-  return true
-}
+  return true;
+};
 
-let skillsImages = [...document.querySelectorAll('.skill')]
+let skillsImages = [...document.querySelectorAll(".skill")];
 
-const lazyImages = new IntersectionObserver(pics => {
-    pics.forEach(pic => {
-      if(pic.isIntersecting && consoleLogLoad()){
+const lazyImages = new IntersectionObserver(
+  (pics) => {
+    pics.forEach((pic) => {
+      if (pic.isIntersecting && consoleLogLoad()) {
         setTimeout(() => {
-          pic.target.classList.remove('loading')
-          lazyImages.unobserve(pic.target)
-        }, 500)
+          pic.target.classList.remove("loading");
+          lazyImages.unobserve(pic.target);
+        }, 500);
       }
-    }) 
+    });
   },
   {
-      rootMargin: '100%',
-      threshold: 0,
+    rootMargin: "100%",
+    threshold: 0,
   }
-)
+);
 
-skillsImages.forEach(pic => {
-    lazyImages.observe(pic)
-})
-
+skillsImages.forEach((pic) => {
+  lazyImages.observe(pic);
+});
 
 //////////////////////////////////////////// Contact Me Form ////////////////////////////////////////////////
-const nameInput = document.getElementById('name')
-const emailInput = document.getElementById('email')
-const subjectInput = document.getElementById('subject')
-const messageInput = document.getElementById('message-input')
-const submit = document.getElementById('submit')
-const errorMessage = document.querySelectorAll('.error-message')
-const contactForm = document.querySelector('form')
-const moreInfo = document.querySelector('.info')
-const infoModal = document.querySelector('.info-modal')
-const infoModalCloseBtn = document.querySelector('.info-modal_close-btn')
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const subjectInput = document.getElementById("subject");
+const messageInput = document.getElementById("message-input");
+const submit = document.getElementById("submit");
+const errorMessage = document.querySelectorAll(".error-message");
+const contactForm = document.querySelector("form");
+const moreInfo = document.querySelector(".info");
+const infoModal = document.querySelector(".info-modal");
+const infoModalCloseBtn = document.querySelector(".info-modal_close-btn");
 
 moreInfo.onclick = () => {
-  infoModal.style.display = 'block'
-}
+  infoModal.style.display = "block";
+};
 infoModalCloseBtn.onclick = () => {
-  infoModal.style.display = 'none'
-}
-const validateForm = (event) =>{
-    let errorFlag = false
-    console.log()
-    if (nameInput.value.length < 1 || nameInput.value.split(' ').join('') == ''){ // if name is blank or flied with only spaces throw error
-        errorMessage[0].innerText = "Name cannot be blank"
-        nameInput.classList.add("error-border")
-        errorFlag = true
-    }
-    if (!emailIsValid(emailInput.value)){
-        errorMessage[1].innerText = "Email is NOT Valid"
-        emailInput.classList.add("error-border")
-        errorFlag = true
-    }
-    if (subjectInput.value.length < 1 || subjectInput.value.split(' ').join('') == ''){
-        errorMessage[2].innerText = "Subject cannot be blank"
-        subjectInput.classList.add("error-border")
-        errorFlag = true
-    }
-    if (messageInput.value.length < 1 || messageInput.value.split(' ').join('') == ''){
-        errorMessage[3].innerText = "Message cannot be blank"
-        messageInput.classList.add("error-border")
-        errorFlag = true
-    }
-    
+  infoModal.style.display = "none";
+};
+const validateForm = (event) => {
+  let errorFlag = false;
+  console.log();
+  if (nameInput.value.length < 1 || nameInput.value.split(" ").join("") == "") {
+    // if name is blank or flied with only spaces throw error
+    errorMessage[0].innerText = "Name cannot be blank";
+    nameInput.classList.add("error-border");
+    errorFlag = true;
+  }
+  if (!emailIsValid(emailInput.value)) {
+    errorMessage[1].innerText = "Email is NOT Valid";
+    emailInput.classList.add("error-border");
+    errorFlag = true;
+  }
+  if (
+    subjectInput.value.length < 1 ||
+    subjectInput.value.split(" ").join("") == ""
+  ) {
+    errorMessage[2].innerText = "Subject cannot be blank";
+    subjectInput.classList.add("error-border");
+    errorFlag = true;
+  }
+  if (
+    messageInput.value.length < 1 ||
+    messageInput.value.split(" ").join("") == ""
+  ) {
+    errorMessage[3].innerText = "Message cannot be blank";
+    messageInput.classList.add("error-border");
+    errorFlag = true;
+  }
 
-    nameInput.addEventListener("input", () =>{
-        nameInput.classList.remove("error-border")
-        errorMessage[0].innerText = ""
-    })
-    emailInput.addEventListener("input", () =>{
-        emailInput.classList.remove("error-border")
-        errorMessage[1].innerText = ""
-    })
-    subjectInput.addEventListener("input", () =>{
-        subjectInput.classList.remove("error-border")
-        errorMessage[2].innerText = ""
-    })
-    messageInput.addEventListener("input", () =>{
-        messageInput.classList.remove("error-border")
-        errorMessage[3].innerText = ""
-    })
+  nameInput.addEventListener("input", () => {
+    nameInput.classList.remove("error-border");
+    errorMessage[0].innerText = "";
+  });
+  emailInput.addEventListener("input", () => {
+    emailInput.classList.remove("error-border");
+    errorMessage[1].innerText = "";
+  });
+  subjectInput.addEventListener("input", () => {
+    subjectInput.classList.remove("error-border");
+    errorMessage[2].innerText = "";
+  });
+  messageInput.addEventListener("input", () => {
+    messageInput.classList.remove("error-border");
+    errorMessage[3].innerText = "";
+  });
 
-    if(!errorFlag){
+  if (!errorFlag) {
+    var data = new FormData(document.getElementById("myForm"));
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "sendmail.php");
+    xhr.onload = function () {
+      console.log(this.response);
+    };
+    xhr.send(data);
 
+    submit.classList.add("pending");
+    document.getElementById("myForm").submit.click();
+    setTimeout(() => {
+      submit.classList.remove("pending");
+      submit.classList.add("success");
 
-      // $.ajax(
-      //   {
-      //      url: 'sendmail.php',
-      //      type: 'post',
-      //      data: $("#uDF").serialize(),
-      //      success: function(response) {
-      //        console.log(response);
-      //      }
-      //   });
-
-      // https://code-boxx.com/call-php-file-from-javascript/
-      var data = new FormData(document.getElementById("myForm"));
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", "sendmail.php");
-      xhr.onload = function () {
-        console.log(this.response);
-      };
-      xhr.send(data);
-
-
-        submit.classList.add('pending')
-        document.getElementById("myForm").submit.click()
-        setTimeout(() =>{
-          submit.classList.remove('pending') 
-          submit.classList.add('success')
-
-
-            setTimeout(() =>{
-                submit.classList.remove('success')
-                contactForm.reset()
-            }, 2000)
-        }, 2000)
-    }
-}
+      setTimeout(() => {
+        submit.classList.remove("success");
+        contactForm.reset();
+      }, 2000);
+    }, 2000);
+  }
+};
 
 // email validation
-const emailIsValid = (emailInput) =>{
-    let pattern = /\S+@\S+\.\S+/;
-    return pattern.test(emailInput)
-}
-
+const emailIsValid = (emailInput) => {
+  let pattern = /\S+@\S+\.\S+/;
+  return pattern.test(emailInput);
+};
 
 //////////////////////////////////////////// Toggle Social Icons //////////////////////////////
 
-
-let toggleSocialIconsBtn = document.getElementById('toggle-social')
-const socialIcons = document.querySelector('.social')
-let deg = -90
+let toggleSocialIconsBtn = document.getElementById("toggle-social");
+const socialIcons = document.querySelector(".social");
+let deg = -90;
 toggleSocialIconsBtn.onclick = () => {
-  socialIcons.classList.toggle('hidesocial')
-  deg += 180
-  deg >= 270 ? deg = -90 : deg
-  toggleSocialIconsBtn.style.transform = `rotate(${deg}deg)`
-}
-
+  socialIcons.classList.toggle("hidesocial");
+  deg += 180;
+  deg >= 270 ? (deg = -90) : deg;
+  toggleSocialIconsBtn.style.transform = `rotate(${deg}deg)`;
+};
 
 ////////////////////////////////////////////// Gmail info box /////////////////////////////
-const mailSocialIconToggle = document.getElementById('mail-social-icon')
-const gmailInfoBox = document.querySelector('.gmail-info-box')
-const copyToClipboardBtn = document.querySelector('.copy-to-clipboard-btn')
-const snackbar = document.querySelector('.snackbar')
+const mailSocialIconToggle = document.getElementById("mail-social-icon");
+const gmailInfoBox = document.querySelector(".gmail-info-box");
+const copyToClipboardBtn = document.querySelector(".copy-to-clipboard-btn");
+const snackbar = document.querySelector(".snackbar");
 
 mailSocialIconToggle.onclick = () => {
-  gmailInfoBox.classList.toggle('active')
-  
-}
-copyToClipboardBtn.onclick = () => {    //show snackbar and copy email to clipboard
-  snackbar.classList.add('active')
-  navigator.clipboard.writeText('pawelczarnecki0225@gmail.com');
-  
-  setTimeout(() =>{                 //remove snackbar after 2 seconds
-    snackbar.classList.remove('active')
-  },2000); 
-}
+  gmailInfoBox.classList.toggle("active");
+};
+
+const copyMail = () => {
+  navigator.clipboard
+    .writeText("pawelczarnecki0225@gmail.com")
+    .then(() => {
+      snackbar.classList.add("active");
+      setTimeout(() => {
+        //remove snackbar after 2 seconds
+        snackbar.classList.remove("active");
+      }, 2000);
+    })
+    .catch(() => console.log("error"));
+};
+
+copyToClipboardBtn.onclick = () => {
+  //show snackbar and copy email to clipboard
+  copyMail();
+};
 
 /////////////////////////////////////////////////////// Scroll To Section
-let scrollLocation
-const scrollToSection = (section) =>{
+let scrollLocation;
+const scrollToSection = (section) => {
   switch (section) {
     case home:
-      scrollToTop()
+      scrollToTop();
       break;
     case about:
-      scrollLocation = document.getElementById('about').scrollIntoView();
-    break;
+      scrollLocation = document.getElementById("about").scrollIntoView();
+      break;
     case skills:
-      scrollLocation = document.getElementById('skills').scrollIntoView();
-    break;
+      scrollLocation = document.getElementById("skills").scrollIntoView();
+      break;
     case work:
-      scrollLocation = document.getElementById('work').scrollIntoView() - 200;
-    break;
+      scrollLocation = document.getElementById("work").scrollIntoView() - 200;
+      break;
     case contact:
-      scrollLocation = document.getElementById('contact').scrollIntoView();
-    break;
+      scrollLocation = document.getElementById("contact").scrollIntoView();
+      break;
     default:
       break;
   }
-}
-
-
-
-
+};
 
 //////////////////////////// Grid/List View //////////////////////////
-const gridViewBtn = document.querySelector('.grid-view-btn')
-const listViewBtn = document.querySelector('.list-view-btn')
-const workCardContainer = document.querySelector('.my-work_card-container')
-const cardsContainer = document.querySelector('.cards')
-const workCards = document.querySelectorAll('.card')
+const gridViewBtn = document.querySelector(".grid-view-btn");
+const listViewBtn = document.querySelector(".list-view-btn");
+const workCardContainer = document.querySelector(".my-work_card-container");
+const cardsContainer = document.querySelector(".cards");
+const workCards = document.querySelectorAll(".card");
 
 // toggle card view
 gridViewBtn.onclick = () => {
-  workCardContainer.classList.remove('list')
-  workCardContainer.classList.add('grid')
-  listViewBtn.classList.remove('checked')
-  gridViewBtn.classList.add('checked')  
-  cardsContainer.classList.remove('list-view')
-  cardsContainer.classList.add('grid-view')
-
-}
+  workCardContainer.classList.remove("list");
+  workCardContainer.classList.add("grid");
+  listViewBtn.classList.remove("checked");
+  gridViewBtn.classList.add("checked");
+  cardsContainer.classList.remove("list-view");
+  cardsContainer.classList.add("grid-view");
+};
 // toggle list view
 listViewBtn.onclick = () => {
-  workCardContainer.classList.remove('grid')
-  workCardContainer.classList.add('list')
-  gridViewBtn.classList.remove('checked')
-  listViewBtn.classList.add('checked') 
-  cardsContainer.classList.remove('grid-view')
-  cardsContainer.classList.add('list-view') 
-}
+  workCardContainer.classList.remove("grid");
+  workCardContainer.classList.add("list");
+  gridViewBtn.classList.remove("checked");
+  listViewBtn.classList.add("checked");
+  cardsContainer.classList.remove("grid-view");
+  cardsContainer.classList.add("list-view");
+};
 // flip card
-workCards.forEach(card =>{
-  card.onclick = () =>{
-    card.classList.toggle('flipped')
-  }
-})
+workCards.forEach((card) => {
+  card.onclick = () => {
+    card.classList.toggle("flipped");
+  };
+});

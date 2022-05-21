@@ -8,7 +8,7 @@
 
     $to = 'czajnikelektryczny0225@gmail.com';
 
-    // mail($to, $subject, $message, $mailheader);
+    mail($to, $subject, $message, $mailheader);
     
     echo "New Mail Recived! $mailheader Subject: $subject\n\r Message: $message\n\r Destined for $to ";
 
