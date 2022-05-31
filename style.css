@@ -29,7 +29,9 @@ body {
   transition: 200ms linear;
 }
 
-img, .material-icons, .navbar {
+img,
+.material-icons,
+.navbar {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -270,7 +272,8 @@ img, .material-icons, .navbar {
 .navbar .nav-items .last svg path {
   fill: var(--text);
 }
-.navbar .nav-items .last svg line, .navbar .nav-items .last svg rect {
+.navbar .nav-items .last svg line,
+.navbar .nav-items .last svg rect {
   stroke: var(--text);
 }
 .navbar .nav-items .last:hover {
@@ -284,7 +287,8 @@ img, .material-icons, .navbar {
 .navbar .nav-items .last:hover path {
   fill: var(--accent-color);
 }
-.navbar .nav-items .last:hover line, .navbar .nav-items .last:hover rect {
+.navbar .nav-items .last:hover line,
+.navbar .nav-items .last:hover rect {
   stroke: var(--accent-color);
 }
 .navbar .logo {
@@ -827,15 +831,18 @@ img, .material-icons, .navbar {
   background-image: url(./video_project.PNG);
 }
 .work-container .cards .card:nth-child(3) .flip-card-front .img {
-  background-image: url(./Slider.PNG);
+  background-image: url(./weather-app.PNG);
 }
 .work-container .cards .card:nth-child(4) .flip-card-front .img {
-  background-image: url(./shoping-cart.PNG);
+  background-image: url(./Slider.PNG);
 }
 .work-container .cards .card:nth-child(5) .flip-card-front .img {
-  background-image: url(./react-portfolio.PNG);
+  background-image: url(./shoping-cart.PNG);
 }
 .work-container .cards .card:nth-child(6) .flip-card-front .img {
+  background-image: url(./react-portfolio.PNG);
+}
+.work-container .cards .card:nth-child(7) .flip-card-front .img {
   background-image: url(./react-dashboard.PNG);
 }
 .work-container .cards .card .flip-card-grid {
@@ -945,7 +952,8 @@ img, .material-icons, .navbar {
 .work-container .cards .card.flipped .flip-card-grid .flip-card-front {
   pointer-events: none;
 }
-.work-container .cards .card.flipped .flip-card-grid .flip-card-front, .work-container .cards .card.flipped .flip-card-grid .flip-card-back {
+.work-container .cards .card.flipped .flip-card-grid .flip-card-front,
+.work-container .cards .card.flipped .flip-card-grid .flip-card-back {
   border-radius: 8px;
   position: absolute;
   width: 100%;
@@ -973,7 +981,8 @@ img, .material-icons, .navbar {
   margin: 10px 25px;
   margin-right: 80px;
 }
-.work-container .my-work .list-view-btn, .work-container .my-work .grid-view-btn {
+.work-container .my-work .list-view-btn,
+.work-container .my-work .grid-view-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -982,13 +991,15 @@ img, .material-icons, .navbar {
   border: 1px solid var(--text);
   border-radius: 8px;
 }
-.work-container .my-work .list-view-btn:hover, .work-container .my-work .grid-view-btn:hover {
+.work-container .my-work .list-view-btn:hover,
+.work-container .my-work .grid-view-btn:hover {
   transition: 300ms ease-in-out;
   cursor: pointer;
   border-color: var(--accent-color);
   color: var(--accent-color);
 }
-.work-container .my-work .list-view-btn.checked, .work-container .my-work .grid-view-btn.checked {
+.work-container .my-work .list-view-btn.checked,
+.work-container .my-work .grid-view-btn.checked {
   background-color: var(--elem-color);
   box-shadow: 0 0 10px var(--shadow-color);
 }
@@ -1046,7 +1057,8 @@ img, .material-icons, .navbar {
   transform: rotateY(180deg);
 }
 
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1104,7 +1116,8 @@ img, .material-icons, .navbar {
   display: block;
   margin: 25px 0 5px 0px;
 }
-.contact-section form input, .contact-section form textarea {
+.contact-section form input,
+.contact-section form textarea {
   background-color: var(--secondary);
   color: var(--text);
   width: 100%;
@@ -1116,7 +1129,9 @@ img, .material-icons, .navbar {
   border: none;
   border-bottom: 1px solid var(--secondary);
 }
-.contact-section form input[type=text]:focus, .contact-section form input[type=email]:focus, .contact-section form textarea:focus {
+.contact-section form input[type=text]:focus,
+.contact-section form input[type=email]:focus,
+.contact-section form textarea:focus {
   border-bottom: 1px solid var(--accent-color);
 }
 .contact-section form textarea::-webkit-scrollbar {
@@ -2468,7 +2483,8 @@ img, .material-icons, .navbar {
   position: absolute;
   top: 0;
 }
-.wrapper.minimalized .top-bar .material-icons, .wrapper.minimalized .top-bar span {
+.wrapper.minimalized .top-bar .material-icons,
+.wrapper.minimalized .top-bar span {
   display: none;
 }
 .wrapper.minimalized .top-bar .minimalize {
@@ -2576,7 +2592,8 @@ img, .material-icons, .navbar {
 .wrapper.minimalized .controls i {
   font-size: 24px;
 }
-.wrapper.minimalized .controls #more-music, .wrapper.minimalized .controls #repeat-plist {
+.wrapper.minimalized .controls #more-music,
+.wrapper.minimalized .controls #repeat-plist {
   display: none;
 }
 .wrapper.minimalized .play-pause {
@@ -2590,8 +2607,11 @@ img, .material-icons, .navbar {
   cursor: pointer;
 }
 
-.top-bar, .progress-area .song-timer,
-.controls, .music-list .header, .music-list ul li {
+.top-bar,
+.progress-area .song-timer,
+.controls,
+.music-list .header,
+.music-list ul li {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2696,7 +2716,8 @@ img, .material-icons, .navbar {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.controls i i::nth-child(2), .controls i i::nth-child(4) {
+.controls i i::nth-child(2),
+.controls i i::nth-child(4) {
   font-size: 43px;
 }
 .controls #prev {
