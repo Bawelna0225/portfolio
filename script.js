@@ -2,6 +2,18 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     // remove preload after 1 second
     document.querySelector(".preload").classList.add("preload-finished");
+    if (window.screen.width <= 692) {
+      document.querySelector(".wrapper").classList.add("minimalized");
+      document.querySelector(".minimalize").innerText = "expand_less";
+      document.querySelector(".grid-view-btn").classList.remove("checked");
+      document.querySelector(".list-view-btn").classList.add("checked");
+      document
+        .querySelector(".cards")
+        .classList.replace("grid-view", "list-view");
+      document
+        .querySelector(".my-work_card-container")
+        .classList.replace("grid", "list");
+    }
     setTimeout(() => {
       // start typewriter animation 1,1 s after preload is being removed
       typeWriter();
