@@ -1,19 +1,33 @@
+const allThemes = [...document.querySelectorAll("[data-theme-id]")];
+
 window.addEventListener("load", () => {
+  if (localStorage.getItem("theme-id") === null) {
+    allThemes.filter((theme) => {
+      if (theme.dataset.themeId === "dark-orange") {
+        theme.classList.add("active");
+      }
+    });
+  }
+  allThemes.filter((theme) => {
+    if (theme.dataset.themeId === localStorage.getItem("theme-id")) {
+      theme.classList.add("active");
+    }
+  });
+  if (window.screen.width <= 692) {
+    document.querySelector(".wrapper").classList.add("minimalized");
+    document.querySelector(".minimalize").innerText = "expand_less";
+    document.querySelector(".grid-view-btn").classList.remove("checked");
+    document.querySelector(".list-view-btn").classList.add("checked");
+    document
+      .querySelector(".cards")
+      .classList.replace("grid-view", "list-view");
+    document
+      .querySelector(".my-work_card-container")
+      .classList.replace("grid", "list");
+  }
   setTimeout(() => {
     // remove preload after 1 second
     document.querySelector(".preload").classList.add("preload-finished");
-    if (window.screen.width <= 692) {
-      document.querySelector(".wrapper").classList.add("minimalized");
-      document.querySelector(".minimalize").innerText = "expand_less";
-      document.querySelector(".grid-view-btn").classList.remove("checked");
-      document.querySelector(".list-view-btn").classList.add("checked");
-      document
-        .querySelector(".cards")
-        .classList.replace("grid-view", "list-view");
-      document
-        .querySelector(".my-work_card-container")
-        .classList.replace("grid", "list");
-    }
     setTimeout(() => {
       // start typewriter animation 1,1 s after preload is being removed
       typeWriter();
@@ -357,7 +371,7 @@ root.style.setProperty(
 );
 
 const setTheme = (theme) => {
-  let chosenTheme = obj.filter(function (val) {
+  obj.filter(function (val) {
     if (val.id === theme) {
       // if theme id is equal to user selection set this theme
       root.style.setProperty("--primary", val.colors.primary); // change property values to that of chosen theme
@@ -377,6 +391,7 @@ const setTheme = (theme) => {
         val.colors.scrollBarTrackColor
       );
 
+      localStorage.setItem("theme-id", val.id);
       localStorage.setItem("primary", val.colors.primary); // save theme colors to localStorage
       localStorage.setItem("secondary", val.colors.secondary);
       localStorage.setItem("elem-color", val.colors.elemColor);
@@ -396,6 +411,14 @@ const setTheme = (theme) => {
     }
   });
 };
+allThemes.forEach((theme) => {
+  theme.addEventListener("click", (e) => {
+    allThemes.forEach((theme) => {
+      theme.classList.remove("active");
+    });
+    e.target.classList.add("active");
+  });
+});
 
 //////////////////// Slide In //////////////////////
 
@@ -431,7 +454,12 @@ buttonLeft.onclick = function () {
 };
 
 /////////////////////////////////////// Skills Lazy Load ////////////////////////////////////
-
+const skillCards = [...document.querySelectorAll(".skill")];
+skillCards.forEach((card) => {
+  card.addEventListener("load", () => {
+    consoleLogLoad();
+  });
+});
 const consoleLogLoad = () => {
   return true;
 };
@@ -564,6 +592,9 @@ toggleSocialIconsBtn.onclick = () => {
   deg += 180;
   deg >= 270 ? (deg = -90) : deg;
   toggleSocialIconsBtn.style.transform = `rotate(${deg}deg)`;
+  if (socialIcons.classList.contains("hidesocial")) {
+    gmailInfoBox.classList.remove("active");
+  }
 };
 
 ////////////////////////////////////////////// Gmail info box /////////////////////////////

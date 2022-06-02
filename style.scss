@@ -399,9 +399,14 @@ img,
         box-shadow: 0px 0px 10px var(--accent-color);
         transition: 300ms all linear;
       }
+      &.active {
+        // box-shadow: 0px 0px 20px var(--accent-color);
+        border: 1px solid var(--accent-color);
+      }
       cursor: pointer;
       .theme-descr {
         width: 100%;
+        pointer-events: none;
         background-color: var(--navbar-color);
         height: 35%;
         margin-top: 80%;

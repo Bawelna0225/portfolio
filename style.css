@@ -417,8 +417,12 @@ img,
   box-shadow: 0px 0px 10px var(--accent-color);
   transition: 300ms all linear;
 }
+.dropdown-content .dropdown-items .dropdown-item.active {
+  border: 1px solid var(--accent-color);
+}
 .dropdown-content .dropdown-items .dropdown-item .theme-descr {
   width: 100%;
+  pointer-events: none;
   background-color: var(--navbar-color);
   height: 35%;
   margin-top: 80%;
