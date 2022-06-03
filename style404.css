@@ -16,7 +16,7 @@ body {
 }
 
 :root {
-  --multiplier: 2.8;
+  --multiplier: 2.82;
 }
 
 .content-404 {
@@ -47,6 +47,7 @@ body {
 .content-404 .text-404::before, .content-404 .text-404::after {
   padding: 30px;
   color: white;
+  content: attr(data-text);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -55,13 +56,11 @@ body {
   top: 0;
 }
 .content-404 .text-404::before {
-  content: attr(data-text);
   left: calc(3px * var(--multiplier));
   text-shadow: calc(-2px * var(--multiplier)) 0 red;
   animation: glitch-1 2.5s linear infinite reverse;
 }
 .content-404 .text-404::after {
-  content: attr(data-text);
   left: calc(-3px * var(--multiplier));
   text-shadow: calc(-2px * var(--multiplier)) 0 blue;
   animation: glitch-2 2.5s linear infinite reverse;
@@ -112,7 +111,7 @@ body {
 
 @media (max-width: 692px) {
   :root {
-    --multiplier: 1.3;
+    --multiplier: 1.33;
   }
 }
 @-webkit-keyframes text-flicker-in-glow {
