@@ -1550,6 +1550,10 @@ img,
     height: 40px;
   }
 
+  .gmail-info-box.active {
+    left: 50px !important;
+  }
+
   #side-nav {
     display: none;
   }
