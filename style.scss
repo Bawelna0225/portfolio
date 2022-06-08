@@ -885,39 +885,46 @@ img,
       &:nth-child(2) {
         .flip-card-front {
           .img {
-            background-image: url(./video_project.PNG);
+            background-image: url(./customizable-background.PNG);
           }
         }
       }
       &:nth-child(3) {
         .flip-card-front {
           .img {
-            background-image: url(./weather-app.PNG);
+            background-image: url(./video_project.PNG);
           }
         }
       }
       &:nth-child(4) {
         .flip-card-front {
           .img {
-            background-image: url(./Slider.PNG);
+            background-image: url(./weather-app.PNG);
           }
         }
       }
       &:nth-child(5) {
         .flip-card-front {
           .img {
-            background-image: url(./shoping-cart.PNG);
+            background-image: url(./Slider.PNG);
           }
         }
       }
       &:nth-child(6) {
         .flip-card-front {
           .img {
-            background-image: url(./react-portfolio.PNG);
+            background-image: url(./shoping-cart.PNG);
           }
         }
       }
       &:nth-child(7) {
+        .flip-card-front {
+          .img {
+            background-image: url(./react-portfolio.PNG);
+          }
+        }
+      }
+      &:nth-child(8) {
         .flip-card-front {
           .img {
             background-image: url(./react-dashboard.PNG);
