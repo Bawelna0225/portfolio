@@ -832,24 +832,27 @@ img,
   background-image: url(./random-quote-generator.PNG);
 }
 .work-container .cards .card:nth-child(2) .flip-card-front .img {
-  background-image: url(./customizable-background.PNG);
+  background-image: url(./react-movie-app.PNG);
 }
 .work-container .cards .card:nth-child(3) .flip-card-front .img {
-  background-image: url(./video_project.PNG);
+  background-image: url(./customizable-background.PNG);
 }
 .work-container .cards .card:nth-child(4) .flip-card-front .img {
-  background-image: url(./weather-app.PNG);
+  background-image: url(./video_project.PNG);
 }
 .work-container .cards .card:nth-child(5) .flip-card-front .img {
-  background-image: url(./Slider.PNG);
+  background-image: url(./weather-app.PNG);
 }
 .work-container .cards .card:nth-child(6) .flip-card-front .img {
-  background-image: url(./shoping-cart.PNG);
+  background-image: url(./Slider.PNG);
 }
 .work-container .cards .card:nth-child(7) .flip-card-front .img {
-  background-image: url(./react-portfolio.PNG);
+  background-image: url(./shoping-cart.PNG);
 }
 .work-container .cards .card:nth-child(8) .flip-card-front .img {
+  background-image: url(./react-portfolio.PNG);
+}
+.work-container .cards .card:nth-child(9) .flip-card-front .img {
   background-image: url(./react-dashboard.PNG);
 }
 .work-container .cards .card .flip-card-grid {
