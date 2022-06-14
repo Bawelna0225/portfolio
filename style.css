@@ -537,6 +537,65 @@ img,
   justify-content: center;
   align-items: center;
 }
+.homeclass .right .box {
+  width: min(100% - 2rem, 60rem);
+  aspect-ratio: 1/1;
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  position: relative;
+}
+.homeclass .right .box .icon {
+  opacity: 0.2;
+  width: 20%;
+  position: absolute;
+}
+.homeclass .right .box .icon:hover {
+  opacity: 0.7;
+}
+.homeclass .right .box .icon:hover svg {
+  fill: var(--accent-color);
+  filter: drop-shadow(0px 0px 5px var(--accent-color));
+}
+.homeclass .right .box .icon-js {
+  bottom: 1%;
+  left: 4%;
+  transform: rotate(-27deg);
+}
+.homeclass .right .box .icon-css {
+  bottom: 1%;
+  right: 10%;
+  transform: rotate(27deg);
+}
+.homeclass .right .box .icon-sass {
+  bottom: 24%;
+  left: 48%;
+  transform: rotate(-39deg) scale(1.5);
+}
+.homeclass .right .box .icon-react {
+  top: 4%;
+  left: 4%;
+  transform: rotate(-52deg);
+}
+.homeclass .right .box .icon-code {
+  top: 16%;
+  right: 6%;
+  transform: rotate(40deg) scale(1.5);
+}
+.homeclass .right .box .icon-coding {
+  top: 30%;
+  left: 16%;
+  transform: rotate(41deg);
+}
+.homeclass .right .box .icon-branch {
+  top: 3%;
+  left: 40%;
+  transform: rotate(0deg);
+}
+.homeclass .right .box .icon-cmd {
+  bottom: 29%;
+  left: 4%;
+  transform: rotate(0deg);
+}
 .homeclass .right img {
   outline: 1px solid var(--accent-color);
   padding: 30px;
