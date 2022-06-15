@@ -548,6 +548,7 @@ img,
   opacity: 0.2;
   width: 20%;
   position: absolute;
+  transition: all 200ms ease-in-out;
 }
 .homeclass .right .box .icon:hover {
   opacity: 0.7;
