@@ -8,8 +8,11 @@
 
     $to = 'czajnikelektryczny0225@gmail.com';
 
-    mail($to, $subject, $message, $mailheader);
+    // mail($to, $subject, $message, $mailheader);
     
     echo "New Mail Recived! $mailheader Subject: $subject\n\r Message: $message\n\r Destined for $to ";
 
+    $conn = new mysqli('localhost', 'root', '', 'maile');
+    $query = "INSERT INTO maile VALUES(null, '$name', '$email', '$subject', '$message')";
+    mysqli_query($conn, $query);
 ?>

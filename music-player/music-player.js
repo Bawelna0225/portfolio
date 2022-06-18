@@ -14,40 +14,28 @@ const closeMoreMusic = musicList.querySelector("#close");
 
 let allMusic = [
   {
-    name: "Harley Bird - Home",
-    artist: "Jordan Schor",
+    name: "Ultraviolet",
+    artist: "Infraction",
     img: "music-1",
     src: "music-1",
   },
-  //{
-  //   name: "Ikson Anywhere – Ikson",
-  //   artist: "Audio Library",
-  //   img: "music-2",
-  //   src: "music-2"
-  // },
-  // {
-  //   name: "Beauz & Jvna - Crazy",
-  //   artist: "Beauz & Jvna",
-  //   img: "music-3",
-  //   src: "music-3"
-  // },
   {
-    name: "Hardwind - Want Me",
-    artist: "Mike Archangelo",
+    name: "Open Mind",
+    artist: "Soundroll",
+    img: "music-2",
+    src: "music-2",
+  },
+  {
+    name: "Poem",
+    artist: "Soundroll",
+    img: "music-3",
+    src: "music-3",
+  },
+  {
+    name: "Fly",
+    artist: "All Good Folks",
     img: "music-4",
     src: "music-4",
-  },
-  {
-    name: "Dimple Music - The Gang Song(Bass Boosted)",
-    artist: "Dimple Music",
-    img: "music-5",
-    src: "music-5",
-  },
-  {
-    name: "Lost Sky - Vision NCS",
-    artist: "NCS Release",
-    img: "music-6",
-    src: "music-6",
   },
 ];
 
