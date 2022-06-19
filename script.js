@@ -31,8 +31,8 @@ window.addEventListener("load", () => {
     setTimeout(() => {
       // start typewriter animation 1,1 s after preload is being removed
       typeWriter();
-    }, 1100);
-  }, 1000);
+    }, 1000);
+  }, 200);
 });
 
 /////////////// Theme Dropdown //////////////////////
