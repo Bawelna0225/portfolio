@@ -1367,6 +1367,79 @@ img,
   height: max-content;
 }
 
+.more-social-links-wrapper {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: var(--navbar-color);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 100px;
+  transform: scale(0);
+  opacity: 0;
+  transition: 300ms linear;
+  color: var(--text);
+}
+.more-social-links-wrapper button {
+  padding: 10px 20px;
+  position: absolute;
+  background-color: var(--accent-color);
+  top: 20px;
+  right: 20px;
+  color: var(--secondary);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.more-social-links-wrapper button:hover {
+  filter: brightness(80%);
+  cursor: pointer;
+}
+.more-social-links-wrapper nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: static;
+  width: 100%;
+  margin: 0 auto;
+}
+.more-social-links-wrapper nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 50px;
+}
+.more-social-links-wrapper nav ul li {
+  transition: 200ms linear;
+}
+.more-social-links-wrapper nav ul li:hover {
+  transform: scale(1.3);
+}
+.more-social-links-wrapper nav ul li .social-icon-elem {
+  border-radius: 0px;
+  width: 60px;
+  height: 60px;
+}
+.more-social-links-wrapper nav ul li .social-icon-elem svg {
+  fill: var(--text);
+}
+.more-social-links-wrapper.open {
+  opacity: 1;
+  transform: scale(1);
+}
+
 #toggle-social {
   position: fixed;
   width: 25px;

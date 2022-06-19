@@ -625,6 +625,19 @@ copyToClipboardBtn.onclick = () => {
   copyMail();
 };
 
+/////////////////////////////////////////////////////// Show More Social Icons
+const showMoreSocialLinksBtn = document.querySelector(".more-social-links-btn"),
+  moreSocialLinksWrapper = document.querySelector(".more-social-links-wrapper"),
+  closeMoreSocialLinksWrapper = document.querySelector(
+    ".more-social-links-wrapper .header button"
+  );
+closeMoreSocialLinksWrapper.addEventListener("click", () => {
+  moreSocialLinksWrapper.classList.remove("open");
+});
+showMoreSocialLinksBtn.addEventListener("click", () => {
+  moreSocialLinksWrapper.classList.add("open");
+});
+
 /////////////////////////////////////////////////////// Scroll To Section
 let scrollLocation;
 const scrollToSection = (section) => {
