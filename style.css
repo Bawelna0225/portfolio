@@ -1393,6 +1393,7 @@ img,
   padding: 10px 20px;
   position: absolute;
   background-color: var(--accent-color);
+  border: none;
   top: 20px;
   right: 20px;
   color: var(--secondary);
