@@ -18,7 +18,7 @@
   scroll-behavior: smooth;
   font-size: 18px;
   font-family: "Poppins", sans-serif;
-  scroll-margin-top: 140px;
+  scroll-margin-top: 100px;
 }
 body {
   height: 200vh;
@@ -946,7 +946,7 @@ img,
       &:nth-child(2) {
         .flip-card-front {
           .img {
-            background-image: url(./react-movie-app.PNG);
+            background-image: url(./react-movie-app.png);
           }
         }
       }
@@ -1003,6 +1003,13 @@ img,
         .flip-card-front {
           .img {
             background-image: url(./react-multi-step-form.PNG);
+          }
+        }
+      }
+      &:nth-child(11) {
+        .flip-card-front {
+          .img {
+            background-image: url(./box-shadow-generator.png);
           }
         }
       }
@@ -1825,6 +1832,12 @@ img,
     flex-direction: column-reverse;
     .cards {
       margin: 0 auto;
+    }
+    .recent-work {
+      width: 100%;
+      h2 {
+        width: 100%;
+      }
     }
     .my-work {
       margin-top: 30px;

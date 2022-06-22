@@ -20,7 +20,7 @@
   scroll-behavior: smooth;
   font-size: 18px;
   font-family: "Poppins", sans-serif;
-  scroll-margin-top: 140px;
+  scroll-margin-top: 100px;
 }
 
 body {
@@ -892,7 +892,7 @@ img,
   background-image: url(./random-quote-generator.PNG);
 }
 .work-container .cards .card:nth-child(2) .flip-card-front .img {
-  background-image: url(./react-movie-app.PNG);
+  background-image: url(./react-movie-app.png);
 }
 .work-container .cards .card:nth-child(3) .flip-card-front .img {
   background-image: url(./customizable-background.PNG);
@@ -917,6 +917,9 @@ img,
 }
 .work-container .cards .card:nth-child(10) .flip-card-front .img {
   background-image: url(./react-multi-step-form.PNG);
+}
+.work-container .cards .card:nth-child(11) .flip-card-front .img {
+  background-image: url(./box-shadow-generator.png);
 }
 .work-container .cards .card .flip-card-grid {
   position: relative;
@@ -1728,6 +1731,12 @@ img,
   }
   .work-container .cards {
     margin: 0 auto;
+  }
+  .work-container .recent-work {
+    width: 100%;
+  }
+  .work-container .recent-work h2 {
+    width: 100%;
   }
   .work-container .my-work {
     margin-top: 30px;
