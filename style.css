@@ -889,37 +889,37 @@ img,
   fill: var(--accent-color);
 }
 .work-container .cards .card:nth-child(1) .flip-card-front .img {
-  background-image: url(./random-quote-generator.PNG);
+  background-image: url(./work-images/avif/random-quote-generator.avif);
 }
 .work-container .cards .card:nth-child(2) .flip-card-front .img {
-  background-image: url(./react-movie-app.png);
+  background-image: url(./work-images/avif/react-movie-app.avif);
 }
 .work-container .cards .card:nth-child(3) .flip-card-front .img {
-  background-image: url(./customizable-background.PNG);
+  background-image: url(./work-images/avif/customizable-background.avif);
 }
 .work-container .cards .card:nth-child(4) .flip-card-front .img {
-  background-image: url(./video_project.PNG);
+  background-image: url(./work-images/avif/video_project.avif);
 }
 .work-container .cards .card:nth-child(5) .flip-card-front .img {
-  background-image: url(./weather-app.PNG);
+  background-image: url(./work-images/avif/weather-app.PNG);
 }
 .work-container .cards .card:nth-child(6) .flip-card-front .img {
-  background-image: url(./Slider.PNG);
+  background-image: url(./work-images/avif/Slider.avif);
 }
 .work-container .cards .card:nth-child(7) .flip-card-front .img {
-  background-image: url(./shoping-cart.PNG);
+  background-image: url(./work-images/avif/shoping-cart.avif);
 }
 .work-container .cards .card:nth-child(8) .flip-card-front .img {
-  background-image: url(./react-portfolio.PNG);
+  background-image: url(./work-images/avif/react-portfolio.avif);
 }
 .work-container .cards .card:nth-child(9) .flip-card-front .img {
-  background-image: url(./react-dashboard.PNG);
+  background-image: url(./work-images/avif/react-dashboard.PNG);
 }
 .work-container .cards .card:nth-child(10) .flip-card-front .img {
-  background-image: url(./react-multi-step-form.PNG);
+  background-image: url(./work-images/avif/react-multi-step-form.PNG);
 }
 .work-container .cards .card:nth-child(11) .flip-card-front .img {
-  background-image: url(./box-shadow-generator.png);
+  background-image: url(./work-images/avif/box-shadow-generator.png);
 }
 .work-container .cards .card .flip-card-grid {
   position: relative;
