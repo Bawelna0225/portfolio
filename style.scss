@@ -543,6 +543,16 @@ img,
 #about {
   position: relative;
   animation: slide-in-right 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  overflow: hidden;
+  .bg-text {
+    position: absolute;
+    font-size: 25rem;
+    left: 0;
+    z-index: -1;
+    font-weight: 700;
+    opacity: 0.03;
+    transform: rotate(30deg);
+  }
   p {
     font-size: 1rem;
     padding: 10px 0px;
@@ -560,6 +570,16 @@ img,
   border-radius: 12px;
   color: var(--text);
   box-shadow: 0px 0px 10px var(--shadow-color);
+  .bg-text {
+    position: absolute;
+    font-size: 25rem;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    font-weight: 700;
+    opacity: 0.015;
+    transform: rotate(-10deg);
+  }
   .left {
     width: 50%;
     min-height: 70px;
@@ -689,6 +709,7 @@ img,
       color: var(--text);
       box-shadow: 0px 0px 10px var(--shadow-color);
       animation: slide-out-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      overflow: hidden;
       .caret {
         color: var(--accent-color);
         font-size: 1em;
@@ -743,11 +764,23 @@ img,
 }
 
 ///////////////////////////////// SKILLS //////////////////////////////
+#skills {
+  overflow: hidden;
+  .bg-text {
+    position: absolute;
+    font-size: 25rem;
+    top: 0px;
+    left: 0;
+    z-index: -1;
+    font-weight: 700;
+    opacity: 0.03;
+    transform: rotate(-10deg);
+  }
+}
 .skills-section {
   position: relative;
   width: 100%;
   margin: 0 auto;
-
   .slide-button {
     width: 50px;
     height: 80px;
@@ -873,6 +906,7 @@ img,
   }
 }
 ///////////////////////////////// My Work /////////////////////////////////////
+
 .work-container {
   ::-webkit-scrollbar {
     width: 8px;
@@ -882,6 +916,15 @@ img,
   justify-content: space-between;
   align-items: center;
   position: relative;
+  .bg-text {
+    position: absolute;
+    font-size: 25rem;
+    top: -50%;
+    z-index: -1;
+    font-weight: 700;
+    opacity: 0.03;
+    transform: rotate(10deg);
+  }
   .cards {
     display: flex;
     margin-right: 80px;
@@ -1263,14 +1306,15 @@ img,
 }
 ////////////////////////////////// Contact //////////////////////////////////
 .contact {
-  .background-text {
+  .bg-text {
     position: absolute;
-    font-size: 10rem;
-    line-height: 0.9;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    opacity: 0.4;
-    color: var(--accent-color);
+    font-size: 18rem;
+    left: 0;
+    top: 50px;
+    z-index: -1;
+    font-weight: 700;
+    opacity: 0.03;
+    transform: rotate(30deg);
     user-select: none;
   }
   padding: 20px 0 !important;

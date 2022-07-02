@@ -6,9 +6,9 @@
 
     $mailheader = "From: ".$name." <".$email.">\r\n";
 
-    $to = 'czajnikelektryczny0225@gmail.com';
+    $to = 'pawelczarnecki0225@gmail.com';
 
-    // mail($to, $subject, $message, $mailheader);
+    mail($to, $subject, $message, $mailheader);
     
     echo "New Mail Recived! $mailheader Subject: $subject\n\r Message: $message\n\r Destined for $to ";
 
