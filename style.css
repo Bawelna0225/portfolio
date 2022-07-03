@@ -23,10 +23,13 @@
   scroll-margin-top: 100px;
 }
 
+html {
+  background-color: var(--elem-color);
+}
+
 body {
-  height: 200vh;
-  background-color: var(--primary);
   transition: 200ms linear;
+  background-color: var(--primary);
 }
 
 img,
@@ -36,6 +39,14 @@ img,
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+
+.bg-text {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
 }
 
 ::-moz-selection {
@@ -61,8 +72,9 @@ img,
   font-size: 10rem;
 }
 .preload .doors {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  left: 0;
+  height: 100vh;
   display: flex;
   flex-direction: row;
 }

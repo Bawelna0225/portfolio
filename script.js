@@ -161,7 +161,7 @@ const themes = `[
           "scrollBarTrackColor": "#292929"
       }
   },
-  
+
   {
     "id": "light-blue",
     "name": "Light Blue Theme",
@@ -242,7 +242,7 @@ const themes = `[
       "scrollbarColor": "#bebebe",
       "scrollBarColorHover": "#aaaaaa",
       "scrollBarTrackColor": "#d4d4d4"
-      
+
   }
 },
 
