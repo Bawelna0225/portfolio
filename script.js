@@ -106,6 +106,9 @@ const typeWriter = () => {
   if (textPosition++ != message[0].length) {
     setTimeout(typeWriter, speed);
   }
+  if (textPosition === message[0].length) {
+    document.querySelector(".call-to-action-buttons").classList.add("done");
+  }
 };
 
 ///////////////  Theme Switcher //////////////////
