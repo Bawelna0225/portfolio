@@ -1941,6 +1941,7 @@ img,
   }
   .contact-section {
     flex-direction: column;
+    gap: 30px;
     form {
       input {
         height: 40px;
@@ -1950,6 +1951,11 @@ img,
       }
       textarea {
         height: 150px;
+      }
+    }
+    .contact-info {
+      h1 {
+        padding-bottom: 0px !important;
       }
     }
   }
@@ -1983,6 +1989,11 @@ img,
     flex-direction: column;
     .left {
       width: 100%;
+      padding-inline: 20px;
+      gap: 0;
+      #message {
+        padding-bottom: 0px;
+      }
     }
     .right {
       width: 100%;
