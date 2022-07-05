@@ -1842,7 +1842,6 @@ img,
 
   .contact-section {
     flex-direction: column;
-    margin-top: 100px;
   }
   .contact-section form input {
     height: 40px;
