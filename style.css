@@ -1032,6 +1032,9 @@ img,
 .work-container .cards .card:nth-child(11) .flip-card-front .img {
   background-image: url(./work-images/avif/box-shadow-generator.png);
 }
+.work-container .cards .card:nth-child(12) .flip-card-front .img {
+  background-image: url(./work-images/avif/checkers-game.avif);
+}
 .work-container .cards .card .flip-card-grid {
   position: relative;
   width: 100%;

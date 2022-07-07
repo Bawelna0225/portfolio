@@ -1118,6 +1118,13 @@ img,
           }
         }
       }
+      &:nth-child(12) {
+        .flip-card-front {
+          .img {
+            background-image: url(./work-images/avif/checkers-game.avif);
+          }
+        }
+      }
 
       .flip-card-grid {
         position: relative;
