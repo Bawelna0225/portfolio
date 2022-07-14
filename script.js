@@ -114,16 +114,50 @@ const typeWriter = () => {
 ///////////////  Theme Switcher //////////////////
 let root = document.documentElement;
 const themes = `[
-  {
-    "id": "dark",
-    "name": "Dark Theme",
+{
+  "id": "dark",
+  "name": "Dark Theme",
+  "colors": {
+      "primary": "#2e2e2e",
+      "secondary": "#252525",
+      "elemColor": "#1b1b1b",
+      "navbarColor": "rgba(30, 30, 30, 0.9)",
+      "text": "#b8b8b8",
+      "accentColor": "rgb(146, 146, 146)",
+      "shadowColor": "rgba(24, 24, 24, 0.719)",
+      "scrollbarColor": "#222222",
+      "scrollBarColorHover": "#1f1f1f",
+      "scrollBarTrackColor": "#292929"
+  }
+},
+
+{
+"id": "light",
+"name": "Light Theme",
+"colors": {
+    "primary": "rgb(238, 238, 238)",
+    "secondary": "#e9e9e9",
+    "elemColor": "#f6f6f6",
+    "navbarColor": "rgba(246, 246, 246, 0.9)",
+    "text": "#181818",
+    "accentColor": "#333",
+    "shadowColor": "rgba(170, 170, 170, 0.719)",
+    "scrollbarColor": "#bebebe",
+    "scrollBarColorHover": "#aaaaaa",
+    "scrollBarTrackColor": "#d4d4d4"
+}
+},
+
+{
+    "id": "dark-blue",
+    "name": "Dark Blue Theme",
     "colors": {
         "primary": "#2e2e2e",
         "secondary": "#252525",
         "elemColor": "#1b1b1b",
         "navbarColor": "rgba(30, 30, 30, 0.9)",
         "text": "#b8b8b8",
-        "accentColor": "rgb(146, 146, 146)",
+        "accentColor": "rgb(45, 104, 200)",
         "shadowColor": "rgba(24, 24, 24, 0.719)",
         "scrollbarColor": "#222222",
         "scrollBarColorHover": "#1f1f1f",
@@ -132,223 +166,189 @@ const themes = `[
 },
 
 {
-  "id": "light",
-  "name": "Light Theme",
+  "id": "light-blue",
+  "name": "Light Blue Theme",
   "colors": {
       "primary": "rgb(238, 238, 238)",
       "secondary": "#e9e9e9",
       "elemColor": "#f6f6f6",
       "navbarColor": "rgba(246, 246, 246, 0.9)",
       "text": "#181818",
-      "accentColor": "#333",
+      "accentColor": "rgb(45, 104, 200)",
       "shadowColor": "rgba(170, 170, 170, 0.719)",
       "scrollbarColor": "#bebebe",
       "scrollBarColorHover": "#aaaaaa",
       "scrollBarTrackColor": "#d4d4d4"
   }
 },
-
-  {
-      "id": "dark-blue",
-      "name": "Dark Blue Theme",
-      "colors": {
-          "primary": "#2e2e2e",
-          "secondary": "#252525",
-          "elemColor": "#1b1b1b",
-          "navbarColor": "rgba(30, 30, 30, 0.9)",
-          "text": "#b8b8b8",
-          "accentColor": "rgb(45, 104, 200)",
-          "shadowColor": "rgba(24, 24, 24, 0.719)",
-          "scrollbarColor": "#222222",
-          "scrollBarColorHover": "#1f1f1f",
-          "scrollBarTrackColor": "#292929"
-      }
-  },
-
-  {
-    "id": "light-blue",
-    "name": "Light Blue Theme",
-    "colors": {
-        "primary": "rgb(238, 238, 238)",
-        "secondary": "#e9e9e9",
-        "elemColor": "#f6f6f6",
-        "navbarColor": "rgba(246, 246, 246, 0.9)",
-        "text": "#181818",
-        "accentColor": "rgb(45, 104, 200)",
-        "shadowColor": "rgba(170, 170, 170, 0.719)",
-        "scrollbarColor": "#bebebe",
-        "scrollBarColorHover": "#aaaaaa",
-        "scrollBarTrackColor": "#d4d4d4"
-    }
-  },
-  {
-    "id": "dark-red",
-    "name": "Dark Red Theme",
-    "colors": {
-      "primary": "#2e2e2e",
-      "secondary": "#252525",
-      "elemColor": "#1b1b1b",
-      "navbarColor": "rgba(30, 30, 30, 0.9)",
-      "text": "#b8b8b8",
-      "accentColor": "#c82d2d",
-      "shadowColor": "rgba(24, 24, 24, 0.719)",
-      "scrollbarColor": "#222222",
-      "scrollBarColorHover": "#1f1f1f",
-      "scrollBarTrackColor": "#292929"
-    }
-  },
-
 {
-    "id": "light-red",
-    "name": "Light Red Theme",
-    "colors": {
-      "primary": "rgb(238, 238, 238)",
-      "secondary": "#e9e9e9",
-      "elemColor": "#f6f6f6",
-      "navbarColor": "rgba(246, 246, 246, 0.9)",
-      "text": "#181818",
-      "accentColor": "#c82d2d",
-      "shadowColor": "rgba(170, 170, 170, 0.719)",
-      "scrollbarColor": "#bebebe",
-      "scrollBarColorHover": "#aaaaaa",
-      "scrollBarTrackColor": "#d4d4d4"
-    }
-  },
-  {
-    "id": "dark-yellow",
-    "name": "Dark Yellow Theme",
-    "colors": {
-      "primary": "#2e2e2e",
-      "secondary": "#252525",
-      "elemColor": "#1b1b1b",
-      "navbarColor": "rgba(30, 30, 30, 0.9)",
-      "text": "#b8b8b8",
-      "accentColor": "#cece42",
-      "shadowColor": "rgba(24, 24, 24, 0.719)",
-      "scrollbarColor": "#222222",
-      "scrollBarColorHover": "#1f1f1f",
-      "scrollBarTrackColor": "#292929"
+  "id": "dark-red",
+  "name": "Dark Red Theme",
+  "colors": {
+    "primary": "#2e2e2e",
+    "secondary": "#252525",
+    "elemColor": "#1b1b1b",
+    "navbarColor": "rgba(30, 30, 30, 0.9)",
+    "text": "#b8b8b8",
+    "accentColor": "#c82d2d",
+    "shadowColor": "rgba(24, 24, 24, 0.719)",
+    "scrollbarColor": "#222222",
+    "scrollBarColorHover": "#1f1f1f",
+    "scrollBarTrackColor": "#292929"
   }
 },
 
 {
-    "id": "light-yellow",
-    "name": "Light Yellow Theme",
-    "colors": {
-      "primary": "rgb(238, 238, 238)",
-      "secondary": "#e9e9e9",
-      "elemColor": "#f6f6f6",
-      "navbarColor": "rgba(246, 246, 246, 0.9)",
-      "text": "#181818",
-      "accentColor": "#cece42",
-      "shadowColor": "rgba(170, 170, 170, 0.719)",
-      "scrollbarColor": "#bebebe",
-      "scrollBarColorHover": "#aaaaaa",
-      "scrollBarTrackColor": "#d4d4d4"
-
+  "id": "light-red",
+  "name": "Light Red Theme",
+  "colors": {
+    "primary": "rgb(238, 238, 238)",
+    "secondary": "#e9e9e9",
+    "elemColor": "#f6f6f6",
+    "navbarColor": "rgba(246, 246, 246, 0.9)",
+    "text": "#181818",
+    "accentColor": "#c82d2d",
+    "shadowColor": "rgba(170, 170, 170, 0.719)",
+    "scrollbarColor": "#bebebe",
+    "scrollBarColorHover": "#aaaaaa",
+    "scrollBarTrackColor": "#d4d4d4"
   }
+},
+{
+  "id": "dark-yellow",
+  "name": "Dark Yellow Theme",
+  "colors": {
+    "primary": "#2e2e2e",
+    "secondary": "#252525",
+    "elemColor": "#1b1b1b",
+    "navbarColor": "rgba(30, 30, 30, 0.9)",
+    "text": "#b8b8b8",
+    "accentColor": "#cece42",
+    "shadowColor": "rgba(24, 24, 24, 0.719)",
+    "scrollbarColor": "#222222",
+    "scrollBarColorHover": "#1f1f1f",
+    "scrollBarTrackColor": "#292929"
+}
 },
 
 {
-    "id": "dark-green",
-    "name": "Dark Green Theme",
-    "colors": {
-      "primary": "#2e2e2e",
-      "secondary": "#252525",
-      "elemColor": "#1b1b1b",
-      "navbarColor": "rgba(30, 30, 30, 0.9)",
-      "text": "#b8b8b8",
-      "accentColor": "#1ad11a",
-      "shadowColor": "rgba(24, 24, 24, 0.719)",
-      "scrollbarColor": "#222222",
-      "scrollBarColorHover": "#1f1f1f",
-      "scrollBarTrackColor": "#292929"
-  }
+  "id": "light-yellow",
+  "name": "Light Yellow Theme",
+  "colors": {
+    "primary": "rgb(238, 238, 238)",
+    "secondary": "#e9e9e9",
+    "elemColor": "#f6f6f6",
+    "navbarColor": "rgba(246, 246, 246, 0.9)",
+    "text": "#181818",
+    "accentColor": "#cece42",
+    "shadowColor": "rgba(170, 170, 170, 0.719)",
+    "scrollbarColor": "#bebebe",
+    "scrollBarColorHover": "#aaaaaa",
+    "scrollBarTrackColor": "#d4d4d4"
+
+}
 },
 
 {
-    "id": "light-green",
-    "name": "Light Green Theme",
-    "colors": {
-      "primary": "rgb(238, 238, 238)",
-      "secondary": "#e9e9e9",
-      "elemColor": "#f6f6f6",
-      "navbarColor": "rgba(246, 246, 246, 0.9)",
-      "text": "#181818",
-      "accentColor": "#1ad11a",
-      "shadowColor": "rgba(170, 170, 170, 0.719)",
-      "scrollbarColor": "#bebebe",
-      "scrollBarColorHover": "#aaaaaa",
-      "scrollBarTrackColor": "#d4d4d4"
-  }
+  "id": "dark-green",
+  "name": "Dark Green Theme",
+  "colors": {
+    "primary": "#2e2e2e",
+    "secondary": "#252525",
+    "elemColor": "#1b1b1b",
+    "navbarColor": "rgba(30, 30, 30, 0.9)",
+    "text": "#b8b8b8",
+    "accentColor": "#1ad11a",
+    "shadowColor": "rgba(24, 24, 24, 0.719)",
+    "scrollbarColor": "#222222",
+    "scrollBarColorHover": "#1f1f1f",
+    "scrollBarTrackColor": "#292929"
+}
 },
 
 {
-    "id": "dark-purple",
-    "name": "Dark Purple Theme",
-    "colors": {
-      "primary": "#2e2e2e",
-      "secondary": "#252525",
-      "elemColor": "#1b1b1b",
-      "navbarColor": "rgba(30, 30, 30, 0.9)",
-      "text": "#b8b8b8",
-      "accentColor": "#b91bb9",
-      "shadowColor": "rgba(24, 24, 24, 0.719)",
-      "scrollbarColor": "#222222",
-      "scrollBarColorHover": "#1f1f1f",
-      "scrollBarTrackColor": "#292929"
-  }
+  "id": "light-green",
+  "name": "Light Green Theme",
+  "colors": {
+    "primary": "rgb(238, 238, 238)",
+    "secondary": "#e9e9e9",
+    "elemColor": "#f6f6f6",
+    "navbarColor": "rgba(246, 246, 246, 0.9)",
+    "text": "#181818",
+    "accentColor": "#1ad11a",
+    "shadowColor": "rgba(170, 170, 170, 0.719)",
+    "scrollbarColor": "#bebebe",
+    "scrollBarColorHover": "#aaaaaa",
+    "scrollBarTrackColor": "#d4d4d4"
+}
 },
 
 {
-    "id": "light-purple",
-    "name": "Light Purple Theme",
-    "colors": {
-      "primary": "rgb(238, 238, 238)",
-      "secondary": "#e9e9e9",
-      "elemColor": "#f6f6f6",
-      "navbarColor": "rgba(246, 246, 246, 0.9)",
-      "text": "#181818",
-      "accentColor": "#880188",
-      "shadowColor": "rgba(170, 170, 170, 0.719)",
-      "scrollbarColor": "#bebebe",
-      "scrollBarColorHover": "#aaaaaa",
-      "scrollBarTrackColor": "#d4d4d4"
-  }
+  "id": "dark-purple",
+  "name": "Dark Purple Theme",
+  "colors": {
+    "primary": "#2e2e2e",
+    "secondary": "#252525",
+    "elemColor": "#1b1b1b",
+    "navbarColor": "rgba(30, 30, 30, 0.9)",
+    "text": "#b8b8b8",
+    "accentColor": "#b91bb9",
+    "shadowColor": "rgba(24, 24, 24, 0.719)",
+    "scrollbarColor": "#222222",
+    "scrollBarColorHover": "#1f1f1f",
+    "scrollBarTrackColor": "#292929"
+}
 },
 
 {
-    "id": "dark-orange",
-    "name": "Dark Orange Theme",
-    "colors": {
-      "primary": "#2e2e2e",
-      "secondary": "#252525",
-      "elemColor": "#1b1b1b",
-      "navbarColor": "rgba(30, 30, 30, 0.9)",
-      "text": "#b8b8b8",
-      "accentColor": "#ffa600",
-      "shadowColor": "rgba(24, 24, 24, 0.719)",
-      "scrollbarColor": "#222222",
-      "scrollBarColorHover": "#1f1f1f",
-      "scrollBarTrackColor": "#292929"
-  }
+  "id": "light-purple",
+  "name": "Light Purple Theme",
+  "colors": {
+    "primary": "rgb(238, 238, 238)",
+    "secondary": "#e9e9e9",
+    "elemColor": "#f6f6f6",
+    "navbarColor": "rgba(246, 246, 246, 0.9)",
+    "text": "#181818",
+    "accentColor": "#880188",
+    "shadowColor": "rgba(170, 170, 170, 0.719)",
+    "scrollbarColor": "#bebebe",
+    "scrollBarColorHover": "#aaaaaa",
+    "scrollBarTrackColor": "#d4d4d4"
+}
 },
 
 {
-    "id": "light-orange",
-    "name": "Light Orange Theme",
-    "colors": {
-      "primary": "rgb(238, 238, 238)",
-      "secondary": "#e9e9e9",
-      "elemColor": "#f6f6f6",
-      "navbarColor": "rgba(246, 246, 246, 0.9)",
-      "text": "#181818",
-      "accentColor": "#ffa600",
-      "shadowColor": "rgba(170, 170, 170, 0.719)",
-      "scrollbarColor": "#bebebe",
-      "scrollBarColorHover": "#aaaaaa",
-      "scrollBarTrackColor": "#d4d4d4"
-  }
+  "id": "dark-orange",
+  "name": "Dark Orange Theme",
+  "colors": {
+    "primary": "#2e2e2e",
+    "secondary": "#252525",
+    "elemColor": "#1b1b1b",
+    "navbarColor": "rgba(30, 30, 30, 0.9)",
+    "text": "#b8b8b8",
+    "accentColor": "#ffa600",
+    "shadowColor": "rgba(24, 24, 24, 0.719)",
+    "scrollbarColor": "#222222",
+    "scrollBarColorHover": "#1f1f1f",
+    "scrollBarTrackColor": "#292929"
+}
+},
+
+{
+  "id": "light-orange",
+  "name": "Light Orange Theme",
+  "colors": {
+    "primary": "rgb(238, 238, 238)",
+    "secondary": "#e9e9e9",
+    "elemColor": "#f6f6f6",
+    "navbarColor": "rgba(246, 246, 246, 0.9)",
+    "text": "#181818",
+    "accentColor": "#ffa600",
+    "shadowColor": "rgba(170, 170, 170, 0.719)",
+    "scrollbarColor": "#bebebe",
+    "scrollBarColorHover": "#aaaaaa",
+    "scrollBarTrackColor": "#d4d4d4"
+}
 }
 ]`;
 const obj = JSON.parse(themes);
@@ -696,3 +696,17 @@ workCards.forEach((card) => {
     card.classList.toggle("flipped");
   };
 });
+
+//////////////////////// Page Transition //////////////////////
+
+const anchorToCertificates = document.querySelector('a[href="timeline/"]');
+anchorToCertificates.onclick = (e) => {
+  e.preventDefault();
+  let target = "timeline/";
+
+  document.querySelector(".transition").classList.add("is-active");
+
+  setTimeout(() => {
+    window.location.href = target;
+  }, 1500);
+};
