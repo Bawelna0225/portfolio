@@ -1,6 +1,7 @@
 const allThemes = [...document.querySelectorAll("[data-theme-id]")];
 
 window.addEventListener("load", () => {
+  document.querySelector(".transition").classList.remove("is-active");
   if (localStorage.getItem("theme-id") === null) {
     allThemes.filter((theme) => {
       if (theme.dataset.themeId === "dark-orange") {

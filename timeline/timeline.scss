@@ -32,6 +32,7 @@ body {
 button {
   position: fixed;
   top: 0;
+  bottom: auto;
   right: 0;
   z-index: 10;
   padding: 8px 10px;
@@ -196,7 +197,8 @@ button {
 
 @media screen and (max-width: 470px) {
   button {
-    top: calc(100% - 45px);
+    top: auto;
+    bottom: 0;
     &:hover {
       filter: brightness(0.8);
       cursor: pointer;
