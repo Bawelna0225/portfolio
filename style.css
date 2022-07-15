@@ -30,6 +30,7 @@ html {
 body {
   transition: 200ms linear;
   background-color: var(--primary);
+  min-height: 100vh;
 }
 
 img,
@@ -1762,7 +1763,7 @@ img,
 }
 
 .snackbar {
-  position: fixed;
+  position: fixed !important;
   z-index: 20;
   background-color: var(--navbar-color);
   box-shadow: 0px 0px 4px 0 var(--shadow-color);

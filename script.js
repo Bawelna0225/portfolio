@@ -511,7 +511,6 @@ infoModalCloseBtn.onclick = () => {
 };
 const validateForm = (event) => {
   let errorFlag = false;
-  console.log();
   if (nameInput.value.length < 1 || nameInput.value.split(" ").join("") == "") {
     // if name is blank or flied with only spaces throw error
     errorMessage[0].innerText = "Name cannot be blank";
@@ -612,6 +611,17 @@ mailSocialIconToggle.onclick = () => {
 };
 
 const copyMail = () => {
+  const copyToClipboardInput = document.querySelector(
+    ".copy-to-clipboard-input"
+  );
+  copyToClipboardInput.select();
+  document.execCommand("copy");
+  snackbar.classList.add("active");
+  setTimeout(() => {
+    //remove snackbar after 2 seconds
+    snackbar.classList.remove("active");
+  }, 2000);
+
   navigator.clipboard
     .writeText("pawelczarnecki0225@gmail.com")
     .then(() => {
@@ -621,7 +631,9 @@ const copyMail = () => {
         snackbar.classList.remove("active");
       }, 2000);
     })
-    .catch(() => console.log("error"));
+    .catch(() => {
+      console.log("error");
+    });
 };
 
 copyToClipboardBtn.onclick = () => {
