@@ -73,9 +73,11 @@ img,
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
 }
 .transition.is-active {
-  transition: 300ms linear;
+  opacity: 1;
+  transition: transform 300ms linear;
   transform: translateY(0%);
 }
 .transition.is-active path {
