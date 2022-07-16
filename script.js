@@ -45,7 +45,7 @@ window.addEventListener("click", function (e) {
     !document.getElementById("dropdown").contains(e.target) &&
     !document.getElementById("dropbtn").contains(e.target)
   ) {
-    // if user clicks outside themebox content close themebox
+    // if user clicks outside theme-box content close theme-box
     document.getElementById("dropdown").classList.remove("show");
   }
 
@@ -89,7 +89,7 @@ const scrollFunction = () => {
   }
 };
 const scrollToTop = () => {
-  // onlick set scroll to 0, go back to top
+  // onclick set scroll to 0, go back to top
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 };
