@@ -2087,7 +2087,6 @@ img,
       z-index: 100 !important;
       margin: 0;
       padding: 0;
-      width: 100vw;
       height: 80px;
       display: flex;
       justify-content: center;
@@ -2097,6 +2096,7 @@ img,
         pointer-events: none;
       }
       .nav-items {
+        width: 100%;
         .last {
           padding: 22px;
         }
@@ -2413,11 +2413,6 @@ img,
     overflow-y: hidden;
     &::-webkit-scrollbar {
       height: 5px;
-    }
-    .nav-items {
-      .nav-item:first-child {
-        padding-left: 5rem;
-      }
     }
     .dropdown-content {
       position: fixed;

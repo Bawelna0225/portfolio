@@ -1976,7 +1976,6 @@ img,
     z-index: 100 !important;
     margin: 0;
     padding: 0;
-    width: 100vw;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -1985,6 +1984,9 @@ img,
   body .navbar .logo {
     display: none;
     pointer-events: none;
+  }
+  body .navbar .nav-items {
+    width: 100%;
   }
   body .navbar .nav-items .last {
     padding: 22px;
@@ -2291,9 +2293,6 @@ img,
   }
   .navbar::-webkit-scrollbar {
     height: 5px;
-  }
-  .navbar .nav-items .nav-item:first-child {
-    padding-left: 5rem;
   }
   .navbar .dropdown-content {
     position: fixed;
