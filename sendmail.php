@@ -3,7 +3,7 @@
     $email = $_POST['email'];
     $subject = $_POST['subject'];
     $messageInput = $_POST['message-input'];
-
+    $date = date('Y-m-d');
     $message = "
     <html>
     <head>
@@ -35,7 +35,7 @@
     echo "New Mail Recived! $headers Subject: $subject\n\r Message: $messageInput\n\r Destined for $to ";
 
     $conn = new mysqli('localhost', '', '', '');
-    $query = "INSERT INTO maile VALUES(null, '$name', '$email', '$subject', '$messageInput')";
+    $query = "INSERT INTO maile VALUES(null, '$name', '$email', '$subject', '$messageInput', '$date')";
     mysqli_query($conn, $query);
     mysqli_close($conn)
 ?>
