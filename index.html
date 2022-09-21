@@ -10,6 +10,7 @@
       content="I'm Frontend Web Developer, in my projects I use JS, SCSS, HTML and currently I'm learning React"
     />
     <meta name="keyword" content="portfolio, javascript, developer, frontend" />
+    <script src="./localStorageTheme.js"></script>
     <link rel="stylesheet" href="./style.css" />
     <link
       rel="stylesheet"
@@ -1016,7 +1017,7 @@
             </p>
             <div class="action-buttons">
               <div>
-                <h3>Download my CV by clicking on button below</h3>
+                <p>Download my CV by clicking on button below</p>
                 <a href="./CV_Paweł_Czarnecki.pdf" class="button" download>
                   Download My CV
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
@@ -1027,7 +1028,7 @@
                 </a>
               </div>
               <div>
-                <h3>Also take a look at my certificates</h3>
+                <p>Also take a look at my certificates</p>
                 <a href="timeline/" class="button">
                   See My Certificates
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -2963,6 +2964,7 @@
     </div>
     <div class="snackbar">Copied to Clipboard</div>
     <input
+      aria-label="copy-to-clipboard"
       type="text"
       class="copy-to-clipboard-input"
       value="pawelczarnecki0225@gmail.com"
