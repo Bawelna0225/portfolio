@@ -1,0 +1,404 @@
+.work-container {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  .bg-text {
+    position: absolute;
+    font-size: 25rem;
+    top: -50%;
+    z-index: -1;
+    font-weight: 700;
+    opacity: 0.03;
+    transform: rotate(10deg);
+  }
+  .cards {
+    display: flex;
+    margin-right: 80px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-height: 600px;
+    overflow-y: auto;
+    transition: 200ms ease-in-out;
+    &.grid-view {
+      .list-item {
+        display: none;
+      }
+    }
+    &.list-view {
+      .flip-card-grid {
+        display: none;
+      }
+      .card {
+        width: 100%;
+        background-color: var(--elem-color);
+        .list-item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0px 15px;
+          h2 {
+            font-size: min(4vw, 20px);
+          }
+          p {
+            font-size: min(3vw, 18px);
+          }
+          ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: flex-end;
+            li {
+              a {
+                svg {
+                  fill: var(--text);
+                }
+                &:hover {
+                  svg {
+                    fill: var(--accent-color);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .card {
+      &:nth-child(1) {
+        .flip-card-front {
+          .img {
+            background-image: url(./work-images/avif/random-quote-generator.avif);
+          }
+        }
+      }
+      &:nth-child(2) {
+        .flip-card-front {
+          .img {
+            background-image: url(./work-images/avif/react-movie-app.avif);
+          }
+        }
+      }
+      &:nth-child(3) {
+        .flip-card-front {
+          .img {
+            background-image: url(./work-images/avif/customizable-background.avif);
+          }
+        }
+      }
+      &:nth-child(4) {
+        .flip-card-front {
+          .img {
+            background-image: url(./work-images/avif/video_project.avif);
+          }
+        }
+      }
+      &:nth-child(5) {
+        .flip-card-front {
+          .img {
+            background-image: url(./work-images/avif/weather-app.PNG);
+          }
+        }
+      }
+      &:nth-child(6) {
+        .flip-card-front {
+          .img {
+            background-image: url(./work-images/avif/Slider.avif);
+          }
+        }
+      }
+      &:nth-child(7) {
+        .flip-card-front {
+          .img {
+            background-image: url(./work-images/avif/shopping-cart.avif);
+          }
+        }
+      }
+      &:nth-child(8) {
+        .flip-card-front {
+          .img {
+            background-image: url(./work-images/avif/react-portfolio.avif);
+          }
+        }
+      }
+      &:nth-child(9) {
+        .flip-card-front {
+          .img {
+            background-image: url(./work-images/avif/react-dashboard.PNG);
+          }
+        }
+      }
+      &:nth-child(10) {
+        .flip-card-front {
+          .img {
+            background-image: url(./work-images/avif/react-multi-step-form.PNG);
+          }
+        }
+      }
+      &:nth-child(11) {
+        .flip-card-front {
+          .img {
+            background-image: url(./work-images/avif/box-shadow-generator.png);
+          }
+        }
+      }
+      &:nth-child(12) {
+        .flip-card-front {
+          .img {
+            background-image: url(./work-images/avif/checkers-game.avif);
+          }
+        }
+      }
+
+      .flip-card-grid {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+        &:hover {
+          cursor: pointer;
+        }
+        .flip-card-front {
+          overflow: hidden;
+          .img {
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+          }
+          &:hover {
+            cursor: pointer;
+          }
+          &::before {
+            content: "Click to flip card";
+            position: absolute;
+            z-index: 3;
+            width: 200px;
+            height: 30px;
+            padding: 10px;
+            left: 0;
+            top: 0;
+            background-color: var(--navbar-color);
+            color: var(--text);
+            transform: translateX(-100%);
+            border-radius: 0px 0px 8px 0px;
+            transition: 300ms ease-in-out;
+          }
+          &:hover::before {
+            transform: translateX(0);
+          }
+        }
+        .flip-card-back {
+          color: var(--text);
+          background-color: var(--elem-color);
+          transform: rotateY(180deg);
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .card {
+            &_header {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 70px;
+              border-bottom: 1px solid var(--accent-color);
+            }
+            &_body {
+              text-align: left;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: flex-start;
+              padding: 10px 20px;
+              ul {
+                padding-top: 10px;
+                display: flex;
+                list-style-type: none;
+                flex-direction: column;
+                gap: 5px;
+                li {
+                  display: flex;
+                  width: 28px;
+                  align-items: flex-start;
+                  svg {
+                    fill: var(--text);
+                  }
+                }
+              }
+            }
+            &_footer {
+              border-top: 1px solid var(--accent-color);
+              display: flex;
+              flex-direction: column;
+              ul {
+                list-style-type: none;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                li {
+                  a {
+                    svg {
+                      fill: var(--text);
+                    }
+                    &:hover {
+                      svg {
+                        fill: var(--accent-color);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      &.flipped {
+        .flip-card-grid {
+          transform: rotateY(180deg);
+          .flip-card-front {
+            pointer-events: none;
+          }
+          .flip-card-front,
+          .flip-card-back {
+            border-radius: 8px;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+          }
+        }
+      }
+    }
+    &.grid-view {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      .card {
+        height: 400px;
+      }
+    }
+  }
+  .my-work {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .work-btns {
+      display: flex;
+      justify-content: flex-end;
+      margin: 10px 25px;
+      margin-right: 80px;
+    }
+    .list-view-btn,
+    .grid-view-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 5px;
+      padding: 5px 10px;
+      border: 1px solid var(--text);
+      border-radius: 8px;
+      &:hover {
+        transition: 300ms ease-in-out;
+        cursor: pointer;
+        border-color: var(--accent-color);
+        color: var(--accent-color);
+      }
+      &.checked {
+        background-color: var(--elem-color);
+        box-shadow: 0 0 10px var(--shadow-color);
+      }
+    }
+    &_card-container.list {
+      .list-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 15px;
+        h2 {
+          font-size: min(4vw, 20px);
+        }
+        p {
+          font-size: min(3vw, 18px);
+        }
+        ul {
+          list-style-type: none;
+          display: flex;
+          justify-content: flex-end;
+          li {
+            a {
+              svg {
+                fill: var(--text);
+              }
+              &:hover {
+                svg {
+                  fill: var(--accent-color);
+                }
+              }
+            }
+          }
+        }
+      }
+      .my-work_card {
+        width: 90%;
+        height: 80px;
+        background-color: var(--elem-color);
+        border-radius: 8px;
+        .flip-card-grid {
+          display: none;
+        }
+      }
+    }
+  }
+  .recent-work {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+///////////////////////////////////////////
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.my-work_card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}

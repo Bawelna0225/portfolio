@@ -1,0 +1,215 @@
+.social-icons-container {
+  top: calc(50vh - 120px);
+  position: fixed;
+  z-index: 20;
+  width: min(70px, 12vw);
+  height: min(120px, 30vw);
+  height: max-content;
+}
+.more-social-links-wrapper {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: var(--navbar-color);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 100px;
+  transform: scale(0);
+  opacity: 0;
+  transition: 300ms linear;
+  color: var(--text);
+  button {
+    padding: 10px 20px;
+    position: absolute;
+    background-color: var(--accent-color);
+    border: none;
+    top: 20px;
+    right: 20px;
+    color: var(--secondary);
+    user-select: none;
+    &:hover {
+      filter: brightness(80%);
+      cursor: pointer;
+    }
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: static;
+    width: 100%;
+    margin: 0 auto;
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      list-style: none;
+      gap: 50px;
+      li {
+        transition: 200ms linear;
+        &:hover {
+          transform: scale(1.3);
+        }
+        .social-icon-elem {
+          border-radius: 0px;
+          width: 60px;
+          height: 60px;
+
+          svg {
+            fill: var(--text);
+          }
+        }
+      }
+    }
+  }
+  &.open {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+#toggle-social {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--navbar-color);
+  transform: rotate(-90deg);
+  transition: transform 100ms linear;
+  z-index: 20;
+  cursor: pointer;
+  svg {
+    fill: var(--text);
+  }
+  &:hover {
+    svg {
+      fill: var(--accent-color);
+    }
+  }
+}
+.hidesocial {
+  transform: translateX(-100%);
+}
+.social {
+  position: fixed;
+  padding-left: min(20px, 1vw);
+  font-size: 30px;
+  margin-top: 25px;
+  transition: 0.2s linear;
+  z-index: 10;
+  li {
+    list-style-type: none;
+    .social-icon-elem {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      aspect-ratio: 1 / 1 !important;
+      border-radius: 50%;
+      transition: all 0.4s linear;
+      border: 1px solid var(--secondary);
+      background: var(--navbar-color);
+      color: var(--text);
+      box-shadow: 0px 0px 2px 0 var(--shadow-color);
+      svg {
+        fill: var(--text);
+        padding: 5px;
+      }
+      &:hover {
+        border: 1px solid var(--accent-color);
+        box-shadow: 0px 0px 4px 0 var(--accent-color);
+        cursor: pointer;
+      }
+      .gmail-info-box {
+        position: absolute;
+        width: 140px;
+        height: 50px;
+        left: -240px;
+        transform-origin: left;
+        transition: 300ms all ease-in-out;
+        padding: 5px;
+        border-radius: 8px;
+        background-color: var(--navbar-color);
+        box-shadow: 0px 0px 4px 0 var(--shadow-color);
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 5px;
+        backdrop-filter: blur(8px);
+        pointer-events: none;
+        &.active {
+          left: 70px;
+          pointer-events: all;
+          transition: 300ms all ease-in-out;
+        }
+        .gmail-info-btn {
+          border: 1px solid var(--text);
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &::before {
+            left: -10px;
+            position: absolute;
+            width: max-content;
+            border-radius: 8px;
+            padding: 5px;
+            height: 30px;
+            top: -50px;
+            background-color: var(--navbar-color);
+            backdrop-filter: blur(8px);
+            box-shadow: 0px 0px 4px 0 var(--shadow-color);
+            opacity: 0;
+            pointer-events: none;
+          }
+          &:hover::before {
+            opacity: 1;
+            transition: 200ms opacity ease-in-out;
+          }
+          &:hover {
+            cursor: pointer;
+            color: var(--text);
+          }
+          svg {
+            line {
+              stroke: var(--text);
+            }
+            path {
+              fill: var(--text);
+            }
+          }
+        }
+        .goto-btn {
+          &::before {
+            content: "Go to Gmail";
+          }
+        }
+        .goto-form-btn {
+          &::before {
+            content: "Go to Form";
+          }
+        }
+        .copy-to-clipboard-btn {
+          &::before {
+            left: -30px;
+            content: "Copy to Clipboard";
+          }
+        }
+      }
+    }
+  }
+}

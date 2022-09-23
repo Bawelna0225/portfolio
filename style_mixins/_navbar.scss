@@ -1,0 +1,339 @@
+.navbar {
+  // top navbar
+  width: 100%;
+  height: 80px;
+  top: 0;
+  bottom: auto;
+  box-shadow: 0px 0px 10px var(--shadow-color);
+  position: fixed;
+  z-index: 10;
+  background-color: var(--navbar-color);
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0px 0px 10px 10px;
+  align-items: center;
+  padding: 0 50px;
+  backdrop-filter: blur(6px);
+  color: var(--text);
+  .logo {
+    display: flex;
+    transition: 200ms all linear;
+    top: 0;
+    svg {
+      width: 100px;
+    }
+    #stop1 {
+      stop-color: var(--accent-color);
+    }
+    #stop2 {
+      stop-color: #2e2e2e;
+    }
+    &:hover {
+      filter: drop-shadow(0px 0px 40px var(--accent-color));
+      animation: flicker-3 2.5s linear infinite both;
+    }
+  }
+  .nav-items {
+    display: flex;
+    .nav-item {
+      position: relative;
+      padding: 15px;
+      margin: 5px;
+      border-radius: 8px;
+      a {
+        text-decoration: none;
+        color: var(--text);
+        font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+        .text {
+          display: block;
+        }
+        .icon {
+          display: none;
+        }
+      }
+      &::before {
+        content: "";
+        width: 100%;
+        height: 0px;
+        position: absolute;
+        background-color: var(--accent-color);
+        left: 0;
+        top: -15%;
+        transform: scaleX(0);
+        transition: all 300ms ease-in;
+      }
+      &:hover {
+        cursor: pointer;
+        a {
+          color: var(--accent-color);
+        }
+        &::before {
+          content: "";
+          width: 100%;
+          height: 2px;
+          position: absolute;
+          background-color: var(--accent-color);
+          left: 0;
+          box-shadow: 0px 0px 10px 1px var(--accent-color);
+          transform: scaleY(0.5);
+          transform-origin: top;
+          transition: all 300ms ease-in;
+        }
+      }
+    }
+    .last {
+      // themes button
+      transition: all 300ms ease-in;
+      position: relative;
+      width: 50px;
+      svg {
+        position: absolute;
+        pointer-events: none;
+        width: 30px;
+        height: 30px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        path {
+          fill: var(--text);
+        }
+        line,
+        rect {
+          stroke: var(--text);
+        }
+      }
+    }
+    .last:hover {
+      user-select: none;
+      transition: all 300ms ease-in;
+      box-shadow: 0px 0px 10px var(--accent-color);
+      path {
+        fill: var(--accent-color);
+      }
+      line,
+      rect {
+        stroke: var(--accent-color);
+      }
+    }
+  }
+
+  .logo {
+    color: var(--text);
+    font-size: 1.5em;
+    letter-spacing: 6px;
+  }
+  .wrapper-menu {
+    // side menu icon
+    width: 35px;
+    height: 35px;
+    display: none;
+    &:hover {
+      .line-menu {
+        background-color: var(--accent-color);
+      }
+    }
+  }
+  .wrapper-menu.open {
+    transform: rotate(-45deg);
+  }
+  .line-menu {
+    background-color: var(--text);
+    border-radius: 5px;
+    width: 100%;
+    height: 3px;
+  }
+  .line-menu.half {
+    width: 50%;
+  }
+  .line-menu.start {
+    transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+    transform-origin: right;
+  }
+  .open .line-menu.start {
+    transform: rotate(-90deg) translateX(3px);
+  }
+  .line-menu.end {
+    align-self: flex-end;
+    transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+    transform-origin: left;
+  }
+  .open .line-menu.end {
+    transform: rotate(-90deg) translateX(-3px);
+  }
+}
+////////////////////////////////////////////////////////////////////
+///////////////////////////////// THEMES ///////////////////////////
+////////////////////////////////////////////////////////////////////
+.dropdown-content {
+  // themes content
+  width: 350px;
+  height: 500px;
+  bottom: calc(100% - 580px);
+  position: fixed;
+  background-color: var(--navbar-color);
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(20, 20, 20, 0.7);
+  overflow-y: scroll;
+  transition: 400ms right linear;
+  right: -550px;
+  z-index: 100;
+  padding-bottom: 20px;
+  backdrop-filter: blur(6px);
+  overscroll-behavior: contain;
+  hr {
+    display: none;
+  }
+  .dropdown-items {
+    // themes container
+    display: grid;
+    grid-template-columns: 150px 150px;
+    column-gap: 10px;
+    row-gap: 5px;
+    justify-content: center;
+    align-items: center;
+    .dropdown-item {
+      // theme box
+      margin: 0 auto;
+      width: 100%;
+      height: 180px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px var(--shadow-color);
+      background-color: var(--navbar-color);
+      margin-top: 15px;
+      transition: 300ms all ease-in-out;
+      overflow: hidden;
+      &:hover {
+        outline: 1px solid var(--accent-color);
+        box-shadow: 0px 0px 10px var(--accent-color);
+        transition: 300ms all linear;
+      }
+      &.active {
+        // box-shadow: 0px 0px 20px var(--accent-color);
+        border: 1px solid var(--accent-color);
+      }
+      cursor: pointer;
+      .theme-description {
+        width: 100%;
+        pointer-events: none;
+        background-color: var(--navbar-color);
+        height: 35%;
+        margin-top: 80%;
+        color: var(--text);
+        font-size: 0.7em;
+        text-align: center;
+        padding-top: 5px;
+      }
+      &:nth-child(1) {
+        background: linear-gradient(
+          to right bottom,
+          rgb(26, 26, 26) 50%,
+          rgb(224, 224, 224) 50%
+        );
+      }
+      &:nth-child(2) {
+        background: linear-gradient(
+          to right bottom,
+          rgb(224, 224, 224) 50%,
+          rgb(26, 26, 26) 50%
+        );
+      }
+      &:nth-child(3) {
+        background: linear-gradient(
+          to right bottom,
+          rgb(26, 26, 26) 50%,
+          rgb(0, 0, 219) 50%
+        );
+      }
+      &:nth-child(4) {
+        background: linear-gradient(
+          to right bottom,
+          rgb(224, 224, 224) 50%,
+          rgb(0, 0, 219) 50%
+        );
+      }
+      &:nth-child(5) {
+        background: linear-gradient(
+          to right bottom,
+          rgb(26, 26, 26) 50%,
+          rgb(223, 9, 9) 50%
+        );
+      }
+      &:nth-child(6) {
+        background: linear-gradient(
+          to right bottom,
+          rgb(224, 224, 224) 50%,
+          rgb(223, 9, 9) 50%
+        );
+      }
+      &:nth-child(7) {
+        background: linear-gradient(
+          to right bottom,
+          rgb(26, 26, 26) 50%,
+          rgb(223, 209, 9) 50%
+        );
+      }
+      &:nth-child(8) {
+        background: linear-gradient(
+          to right bottom,
+          rgb(224, 224, 224) 50%,
+          rgb(223, 209, 9) 50%
+        );
+      }
+      &:nth-child(9) {
+        background: linear-gradient(
+          to right bottom,
+          rgb(26, 26, 26) 50%,
+          rgb(70, 223, 9) 50%
+        );
+      }
+      &:nth-child(10) {
+        background: linear-gradient(
+          to right bottom,
+          rgb(224, 224, 224) 50%,
+          rgb(70, 223, 9) 50%
+        );
+      }
+      &:nth-child(11) {
+        background: linear-gradient(
+          to right bottom,
+          rgb(26, 26, 26) 50%,
+          rgb(137, 9, 223) 50%
+        );
+      }
+      &:nth-child(12) {
+        background: linear-gradient(
+          to right bottom,
+          rgb(224, 224, 224) 50%,
+          rgb(137, 9, 223) 50%
+        );
+      }
+      &:nth-child(13) {
+        background: linear-gradient(
+          to right bottom,
+          rgb(26, 26, 26) 50%,
+          rgb(223, 112, 9) 50%
+        );
+      }
+      &:nth-child(14) {
+        background: linear-gradient(
+          to right bottom,
+          rgb(224, 224, 224) 50%,
+          rgb(223, 112, 9) 50%
+        );
+      }
+    }
+  }
+  p {
+    color: var(--text);
+    padding: 20px 20px 10px 20px;
+    font-size: 1.1rem;
+    span {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--accent-color);
+    }
+  }
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+}

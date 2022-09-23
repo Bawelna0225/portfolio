@@ -198,27 +198,6 @@ img,
   transition: 300ms linear;
 }
 
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: var(--scrollbar-track-color);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-color);
-  border-radius: 4px;
-  -webkit-transition: 200ms all linear;
-  transition: 200ms all linear;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: var(--scrollbar-color-hover);
-  -webkit-transition: 200ms all linear;
-  transition: 200ms all linear;
-}
-
 .navbar {
   width: 100%;
   height: 80px;
@@ -382,44 +361,6 @@ img,
   transform: rotate(-90deg) translateX(-3px);
 }
 
-.backToTop {
-  width: min(2.5em, 50px);
-  height: min(2.5em, 50px);
-  background-color: var(--navbar-color);
-  color: var(--text);
-  position: fixed;
-  right: 2rem;
-  border-radius: 8px;
-  z-index: 20;
-  opacity: 0;
-  bottom: -30px;
-  pointer-events: none;
-  transition: 200ms all ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0px 0px 10px var(--shadow-color);
-  flex-direction: column;
-}
-.backToTop:hover {
-  color: var(--accent-color);
-  border: 1px solid var(--accent-color);
-  box-shadow: 0px 0px 10px var(--accent-color);
-  -webkit-animation: jump 0.5s ease-in-out infinite both;
-          animation: jump 0.5s ease-in-out infinite both;
-  cursor: pointer;
-}
-.backToTop:hover path {
-  fill: var(--accent-color);
-}
-.backToTop svg {
-  width: 25px;
-  margin: -7px;
-}
-.backToTop svg path {
-  fill: var(--text);
-}
-
 .dropdown-content {
   width: 350px;
   height: 500px;
@@ -535,56 +476,6 @@ img,
 }
 .dropdown-content::-webkit-scrollbar {
   width: 0px;
-}
-
-.show {
-  transition: 500ms right cubic-bezier(0.42, 0, 0.11, 1.32);
-  right: 10px;
-  z-index: 10;
-}
-
-.showScroll {
-  opacity: 1;
-  pointer-events: all;
-  bottom: 2rem;
-}
-
-#about {
-  position: relative;
-  -webkit-animation: slide-in-right 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-          animation: slide-in-right 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  overflow: hidden;
-}
-#about .bg-text {
-  position: absolute;
-  font-size: 25rem;
-  left: 0;
-  z-index: -1;
-  font-weight: 700;
-  opacity: 0.03;
-  transform: rotate(30deg);
-}
-#about p {
-  font-size: 1rem;
-  padding: 10px 0px;
-}
-#about .action-buttons {
-  padding-top: 70px;
-  display: flex;
-  justify-content: space-between;
-}
-#about .action-buttons div {
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-}
-#about .action-buttons div:first-of-type {
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-#about .action-buttons div:last-of-type {
-  justify-content: flex-end;
-  align-items: flex-end;
 }
 
 .homeclass {
@@ -771,61 +662,6 @@ img,
   font-size: clamp(0.5rem, 3.5vw, 0.9rem);
 }
 
-.page {
-  overflow: hidden;
-  margin-top: 3rem;
-  padding-bottom: 90px;
-}
-.page .slide-in {
-  position: relative;
-  z-index: 1;
-}
-.page .slide-in * {
-  transition: background-color 300ms ease-in-out;
-}
-.page .slide-in .slide {
-  width: min(100% - 2rem, 70rem);
-  opacity: 0;
-  margin: 0 auto;
-  margin-top: 3rem;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  background-color: var(--secondary);
-  padding: clamp(1em, 5vw, 5em);
-  border-radius: 12px;
-  color: var(--text);
-  box-shadow: 0px 0px 10px var(--shadow-color);
-  -webkit-animation: slide-out-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-          animation: slide-out-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  overflow: hidden;
-}
-.page .slide-in .slide .caret {
-  color: var(--accent-color);
-  font-size: 1em;
-  margin-left: 2px;
-  border-right: 0.05em solid;
-  -webkit-animation: caret 1s steps(1) infinite;
-          animation: caret 1s steps(1) infinite;
-}
-.page .slide-in .slide h1 {
-  font-size: clamp(1.2rem, 5vw, 2.2rem);
-  padding-bottom: 30px;
-  color: var(--accent-color);
-}
-.page .slide-in .slide h2 {
-  font-size: clamp(0.8rem, 5vw, 1.2rem);
-  margin: 30px 0px;
-  color: var(--accent-color);
-}
-.page .slide-in .slide p {
-  font-size: clamp(0.5rem, 3.5vw, 0.9rem);
-}
-.page .slide-in .active {
-  -webkit-animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-          animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
 #about .slide-in .slide .button {
   margin: 20px 0px;
   display: flex;
@@ -857,6 +693,44 @@ img,
   cursor: pointer;
   background-color: var(--accent-color);
   color: var(--elem-color);
+}
+
+#about {
+  position: relative;
+  -webkit-animation: slide-in-right 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: slide-in-right 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  overflow: hidden;
+}
+#about .bg-text {
+  position: absolute;
+  font-size: 25rem;
+  left: 0;
+  z-index: -1;
+  font-weight: 700;
+  opacity: 0.03;
+  transform: rotate(30deg);
+}
+#about p {
+  font-size: 1rem;
+  padding: 10px 0px;
+}
+#about .action-buttons {
+  padding-top: 70px;
+  display: flex;
+  justify-content: space-between;
+}
+#about .action-buttons div {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+#about .action-buttons div:first-of-type {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+#about .action-buttons div:last-of-type {
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 #skills {
@@ -1784,32 +1658,6 @@ img,
   content: "Copy to Clipboard";
 }
 
-.snackbar {
-  position: fixed !important;
-  z-index: 20;
-  background-color: var(--navbar-color);
-  box-shadow: 0px 0px 4px 0 var(--shadow-color);
-  width: 300px;
-  height: 50px;
-  border-radius: 8px;
-  bottom: -20px;
-  opacity: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  color: var(--text);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 300ms all ease-in-out;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-}
-.snackbar.active {
-  bottom: 85px;
-  opacity: 1;
-  transition: 300ms all ease-in-out;
-}
-
 .footer {
   width: 100%;
   height: 240px;
@@ -1890,6 +1738,158 @@ img,
 .footer p {
   color: var(--text);
   position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color);
+  border-radius: 4px;
+  -webkit-transition: 200ms all linear;
+  transition: 200ms all linear;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-color-hover);
+  -webkit-transition: 200ms all linear;
+  transition: 200ms all linear;
+}
+
+.backToTop {
+  width: min(2.5em, 50px);
+  height: min(2.5em, 50px);
+  background-color: var(--navbar-color);
+  color: var(--text);
+  position: fixed;
+  right: 2rem;
+  border-radius: 8px;
+  z-index: 20;
+  opacity: 0;
+  bottom: -30px;
+  pointer-events: none;
+  transition: 200ms all ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 10px var(--shadow-color);
+  flex-direction: column;
+}
+.backToTop:hover {
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  box-shadow: 0px 0px 10px var(--accent-color);
+  -webkit-animation: jump 0.5s ease-in-out infinite both;
+          animation: jump 0.5s ease-in-out infinite both;
+  cursor: pointer;
+}
+.backToTop:hover path {
+  fill: var(--accent-color);
+}
+.backToTop svg {
+  width: 25px;
+  margin: -7px;
+}
+.backToTop svg path {
+  fill: var(--text);
+}
+
+.show {
+  transition: 500ms right cubic-bezier(0.42, 0, 0.11, 1.32);
+  right: 10px;
+  z-index: 10;
+}
+
+.showScroll {
+  opacity: 1;
+  pointer-events: all;
+  bottom: 2rem;
+}
+
+.page {
+  overflow: hidden;
+  margin-top: 3rem;
+  padding-bottom: 90px;
+}
+.page .slide-in {
+  position: relative;
+  z-index: 1;
+}
+.page .slide-in * {
+  transition: background-color 300ms ease-in-out;
+}
+.page .slide-in .slide {
+  width: min(100% - 2rem, 70rem);
+  opacity: 0;
+  margin: 0 auto;
+  margin-top: 3rem;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: var(--secondary);
+  padding: clamp(1em, 5vw, 5em);
+  border-radius: 12px;
+  color: var(--text);
+  box-shadow: 0px 0px 10px var(--shadow-color);
+  -webkit-animation: slide-out-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: slide-out-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  overflow: hidden;
+}
+.page .slide-in .slide .caret {
+  color: var(--accent-color);
+  font-size: 1em;
+  margin-left: 2px;
+  border-right: 0.05em solid;
+  -webkit-animation: caret 1s steps(1) infinite;
+          animation: caret 1s steps(1) infinite;
+}
+.page .slide-in .slide h1 {
+  font-size: clamp(1.2rem, 5vw, 2.2rem);
+  padding-bottom: 30px;
+  color: var(--accent-color);
+}
+.page .slide-in .slide h2 {
+  font-size: clamp(0.8rem, 5vw, 1.2rem);
+  margin: 30px 0px;
+  color: var(--accent-color);
+}
+.page .slide-in .slide p {
+  font-size: clamp(0.5rem, 3.5vw, 0.9rem);
+}
+.page .slide-in .active {
+  -webkit-animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.snackbar {
+  position: fixed !important;
+  z-index: 20;
+  background-color: var(--navbar-color);
+  box-shadow: 0px 0px 4px 0 var(--shadow-color);
+  width: 300px;
+  height: 50px;
+  border-radius: 8px;
+  bottom: -20px;
+  opacity: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 300ms all ease-in-out;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+.snackbar.active {
+  bottom: 85px;
+  opacity: 1;
+  transition: 300ms all ease-in-out;
 }
 
 .wrapper {
