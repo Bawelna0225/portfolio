@@ -1,16 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
-:root {
-  --primary: #2e2e2e;
-  --secondary: #252525;
-  --elem-color: #1b1b1b;
-  --navbar-color: rgba(31, 31, 31, 0.902);
-  --text: #b8b8b8;
-  --accent-color: #ffa600;
-  --shadow-color: rgba(24, 24, 24, 0.719);
-  --scrollbar-color: #222222;
-  --scrollbar-color-hover: #1f1f1f;
-  --scrollbar-track-color: #292929;
-}
+@import "./style_mixins/colors";
 * {
   margin: 0;
   padding: 0;
@@ -41,6 +30,7 @@ img,
   color: var(--primary);
   background: var(--accent-color);
 }
+// transition between index and certificates
 .transition {
   position: fixed;
   top: 0;
@@ -87,8 +77,8 @@ img,
 @import "./style_mixins/contact";
 @import "./style_mixins/social";
 @import "./style_mixins/footer";
+// scrollbars styling
 ::-webkit-scrollbar {
-  // scrollbars styling
   width: 12px;
 }
 ::-webkit-scrollbar-track {
@@ -104,8 +94,8 @@ img,
   transition: 200ms all linear;
 }
 
+// back to top button
 .backToTop {
-  // back to top button
   width: min(2.5em, 50px);
   height: min(2.5em, 50px);
   background-color: var(--navbar-color);
@@ -152,6 +142,7 @@ img,
   pointer-events: all;
   bottom: 2rem;
 }
+// general sections styling
 .page {
   overflow: hidden;
   margin-top: 3rem;
@@ -201,6 +192,7 @@ img,
     }
   }
 }
+// snackbar styling
 .snackbar {
   position: fixed !important;
   z-index: 20;
